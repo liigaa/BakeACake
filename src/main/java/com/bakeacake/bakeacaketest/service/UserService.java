@@ -40,14 +40,12 @@ public class UserService {
 
         preparedStatement.execute();
         preparedStatement.close();
-
-
     }
 
 
     public User getUserProfile(int userId) throws Exception {
         connection = DBManager.getConnection();
-        String query = "SELECT id, name, username, email, createdAt, updatedAt"
+        String query = "SELECT id, name, username, email"
                 + " FROM users WHERE id = ? LIMIT 1";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setInt(1, userId);
@@ -59,9 +57,8 @@ public class UserService {
                     result.getInt("id"),
                     result.getString("name"),
                     result.getString("username"),
-                    result.getString("email"),
-                    result.getTimestamp("createdAt"),
-                    result.getTimestamp("updatedAt"));
+                    result.getString("email"));
+
         }
         DBManager.close(result, preparedStatement,connection);
         if (user == null) throw new Exception ("User not found!");

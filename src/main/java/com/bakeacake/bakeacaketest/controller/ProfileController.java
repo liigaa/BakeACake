@@ -30,8 +30,6 @@ public class ProfileController extends ViewController implements Initializable {
             nameLabel.setText(user.getName());
             usernameLabel.setText(user.getUsername());
             emailAddressLabel.setText(user.getEmail());
-            createdAtLabel.setText(user.getCreatedAt().toString());
-            updatedAtLabel.setText(user.getUpdatedAt().toString());
         } catch (Exception e) {
             showAlert("Profile load failed", e.getMessage(), Alert.AlertType.ERROR);
             e.printStackTrace();
