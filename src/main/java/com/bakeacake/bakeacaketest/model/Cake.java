@@ -9,7 +9,7 @@ import java.util.PrimitiveIterator;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
+
 public class Cake {
 
     private Integer id;
@@ -73,5 +73,15 @@ public class Cake {
         this.bakingSoda = bakingSoda;
         this.bakingPowder = bakingPowder;
         this.confectionersSugar = confectionersSugar;
+    }
+
+    public Cake(Integer id, String cakeTitle) {
+        this.id = id;
+        this.cakeTitle = cakeTitle;
+    }
+
+    @Override
+    public String toString() {
+        return cakeTitle;
     }
 }

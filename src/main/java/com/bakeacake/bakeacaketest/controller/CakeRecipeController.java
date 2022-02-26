@@ -14,6 +14,8 @@ import java.util.ResourceBundle;
 
 public class CakeRecipeController extends ViewController implements Initializable {
 
+    
+
     public TextField flourField;
     public TextField sugarField;
     public TextField eggsField;
@@ -48,17 +50,25 @@ public class CakeRecipeController extends ViewController implements Initializabl
 
 
     }
+    private Double convertField(String value){
+        return  value.isEmpty()? 0.0 : Double.parseDouble(value);
 
+    }
 
     public void addCakeRecipe(ActionEvent actionEvent) {
-        Cake cake = new Cake(cakeTitleField.getText(), Double.parseDouble(flourField.getText()), Double.parseDouble(sugarField.getText()),
-                Double.parseDouble(eggsField.getText()), Double.parseDouble(butterField.getText()), Double.parseDouble(creamCheeseField.getText()),
-                Double.parseDouble(vanillaSugarField.getText()), Double.parseDouble(milkField.getText()), Double.parseDouble(oilField.getText()),
-                Double.parseDouble(gelatinField.getText()), Double.parseDouble(cornFlourField.getText()), Double.parseDouble(cocoaField.getText()),
-                Double.parseDouble(darkChocolateField.getText()), Double.parseDouble(whiteChocolateField.getText()),
-                Double.parseDouble(saltField.getText()), Double.parseDouble(bakingSodaField.getText()), Double.parseDouble(bakingPowderField.getText()),
-                Double.parseDouble(confectionersSugarField.getText()), otherField.getText());
+        Cake cake = new Cake(cakeTitleField.getText(), convertField(flourField.getText()), convertField(sugarField.getText()),
+                convertField(eggsField.getText()), convertField(butterField.getText()), convertField(creamCheeseField.getText()),
+                convertField(vanillaSugarField.getText()), convertField(milkField.getText()), convertField(oilField.getText()),
+                convertField(gelatinField.getText()), convertField(cornFlourField.getText()), convertField(cocoaField.getText()),
+                convertField(darkChocolateField.getText()), convertField(whiteChocolateField.getText()),
+                convertField(saltField.getText()), convertField(bakingSodaField.getText()), convertField(bakingPowderField.getText()),
+                convertField(confectionersSugarField.getText()), otherField.getText());
 
+//        if (cakeTitleField.getText().equalsIgnoreCase(cake.getCakeTitle())){
+//            showAlert(null, "Cake with title already exists", Alert.AlertType.ERROR);
+//            clear();
+//            return;
+//        }
 
         try {
 
@@ -82,75 +92,77 @@ public class CakeRecipeController extends ViewController implements Initializabl
             e.printStackTrace();
 
         }
+
         showAlert(null, "Recipe added successfully", Alert.AlertType.INFORMATION);
         clear();
+
 
     }
 
     public Cake convertIngredients20to18(){
-        Cake cake = new Cake(cakeTitleField.getText(), Double.parseDouble(flourField.getText()) / 1.23, Double.parseDouble(sugarField.getText()) / 1.23,
-                Double.parseDouble(eggsField.getText()) / 1.23, Double.parseDouble(butterField.getText()) / 1.23, Double.parseDouble(creamCheeseField.getText()) / 1.23,
-                Double.parseDouble(vanillaSugarField.getText()) / 1.23, Double.parseDouble(milkField.getText()) / 1.23, Double.parseDouble(oilField.getText()) / 1.23,
-                Double.parseDouble(gelatinField.getText()) / 1.23, Double.parseDouble(cornFlourField.getText()) / 1.23, Double.parseDouble(cocoaField.getText()) / 1.23,
-                Double.parseDouble(darkChocolateField.getText()) / 1.23, Double.parseDouble(whiteChocolateField.getText()) / 1.23,
-                Double.parseDouble(saltField.getText()) / 1.23, Double.parseDouble(bakingSodaField.getText()) / 1.23, Double.parseDouble(bakingPowderField.getText()) / 1.23,
-                Double.parseDouble(confectionersSugarField.getText()) / 1.23, otherField.getText());
+        Cake cake = new Cake(cakeTitleField.getText(), convertField(flourField.getText()) / 1.23, convertField(sugarField.getText()) / 1.23,
+                convertField(eggsField.getText()) / 1.23, convertField(butterField.getText()) / 1.23, convertField(creamCheeseField.getText()) / 1.23,
+                convertField(vanillaSugarField.getText()) / 1.23, convertField(milkField.getText()) / 1.23, convertField(oilField.getText()) / 1.23,
+                convertField(gelatinField.getText()) / 1.23, convertField(cornFlourField.getText()) / 1.23, convertField(cocoaField.getText()) / 1.23,
+                convertField(darkChocolateField.getText()) / 1.23, convertField(whiteChocolateField.getText()) / 1.23,
+                convertField(saltField.getText()) / 1.23, convertField(bakingSodaField.getText()) / 1.23, convertField(bakingPowderField.getText()) / 1.23,
+                convertField(confectionersSugarField.getText()) / 1.23, otherField.getText());
 
         return cake;
     }
 
     public Cake convertIngredients20to22(){
-        Cake cake = new Cake(cakeTitleField.getText(), Double.parseDouble(flourField.getText()) * 1.21, Double.parseDouble(sugarField.getText()) * 1.21,
-                Double.parseDouble(eggsField.getText()) * 1.21, Double.parseDouble(butterField.getText()) * 1.21, Double.parseDouble(creamCheeseField.getText()) * 1.21,
-                Double.parseDouble(vanillaSugarField.getText()) * 1.21, Double.parseDouble(milkField.getText()) * 1.21, Double.parseDouble(oilField.getText()) * 1.21,
-                Double.parseDouble(gelatinField.getText()) * 1.21, Double.parseDouble(cornFlourField.getText()) * 1.21, Double.parseDouble(cocoaField.getText()) * 1.21,
-                Double.parseDouble(darkChocolateField.getText()) * 1.21, Double.parseDouble(whiteChocolateField.getText()) * 1.21,
-                Double.parseDouble(saltField.getText()) * 1.21, Double.parseDouble(bakingSodaField.getText()) * 1.21, Double.parseDouble(bakingPowderField.getText()) * 1.21,
-                Double.parseDouble(confectionersSugarField.getText()) * 1.21, otherField.getText());
+        Cake cake = new Cake(cakeTitleField.getText(), convertField(flourField.getText()) * 1.21, convertField(sugarField.getText()) * 1.21,
+                convertField(eggsField.getText()) * 1.21, convertField(butterField.getText()) * 1.21, convertField(creamCheeseField.getText()) * 1.21,
+                convertField(vanillaSugarField.getText()) * 1.21, convertField(milkField.getText()) * 1.21, convertField(oilField.getText()) * 1.21,
+                convertField(gelatinField.getText()) * 1.21, convertField(cornFlourField.getText()) * 1.21, convertField(cocoaField.getText()) * 1.21,
+                convertField(darkChocolateField.getText()) * 1.21, convertField(whiteChocolateField.getText()) * 1.21,
+                convertField(saltField.getText()) * 1.21, convertField(bakingSodaField.getText()) * 1.21, convertField(bakingPowderField.getText()) * 1.21,
+                convertField(confectionersSugarField.getText()) * 1.21, otherField.getText());
         return cake;
     }
 
     public Cake convertIngredients18to20(){
-        Cake cake = new Cake(cakeTitleField.getText(), Double.parseDouble(flourField.getText()) * 1.23, Double.parseDouble(sugarField.getText()) * 1.23,
-                Double.parseDouble(eggsField.getText()) * 1.23, Double.parseDouble(butterField.getText()) * 1.23, Double.parseDouble(creamCheeseField.getText()) * 1.23,
-                Double.parseDouble(vanillaSugarField.getText()) * 1.23, Double.parseDouble(milkField.getText()) * 1.23, Double.parseDouble(oilField.getText()) * 1.23,
-                Double.parseDouble(gelatinField.getText()) * 1.23, Double.parseDouble(cornFlourField.getText()) * 1.23, Double.parseDouble(cocoaField.getText()) * 1.23,
-                Double.parseDouble(darkChocolateField.getText()) * 1.23, Double.parseDouble(whiteChocolateField.getText()) * 1.23,
-                Double.parseDouble(saltField.getText()) * 1.23, Double.parseDouble(bakingSodaField.getText()) * 1.23, Double.parseDouble(bakingPowderField.getText()) * 1.23,
-                Double.parseDouble(confectionersSugarField.getText()) * 1.23, otherField.getText());
+        Cake cake = new Cake(cakeTitleField.getText(), convertField(flourField.getText()) * 1.23, convertField(sugarField.getText()) * 1.23,
+                convertField(eggsField.getText()) * 1.23, convertField(butterField.getText()) * 1.23, convertField(creamCheeseField.getText()) * 1.23,
+                convertField(vanillaSugarField.getText()) * 1.23, convertField(milkField.getText()) * 1.23, convertField(oilField.getText()) * 1.23,
+                convertField(gelatinField.getText()) * 1.23, convertField(cornFlourField.getText()) * 1.23, convertField(cocoaField.getText()) * 1.23,
+                convertField(darkChocolateField.getText()) * 1.23, convertField(whiteChocolateField.getText()) * 1.23,
+                convertField(saltField.getText()) * 1.23, convertField(bakingSodaField.getText()) * 1.23, convertField(bakingPowderField.getText()) * 1.23,
+                convertField(confectionersSugarField.getText()) * 1.23, otherField.getText());
         return cake;
     }
 
     public Cake convertIngredients18to22() {
-        Cake cake = new Cake(cakeTitleField.getText(), Double.parseDouble(flourField.getText()) * 1.49, Double.parseDouble(sugarField.getText()) * 1.49,
-                Double.parseDouble(eggsField.getText()) * 1.49, Double.parseDouble(butterField.getText()) * 1.49, Double.parseDouble(creamCheeseField.getText()) * 1.49,
-                Double.parseDouble(vanillaSugarField.getText()) * 1.49, Double.parseDouble(milkField.getText()) * 1.49, Double.parseDouble(oilField.getText()) * 1.49,
-                Double.parseDouble(gelatinField.getText()) * 1.49, Double.parseDouble(cornFlourField.getText()) * 1.49, Double.parseDouble(cocoaField.getText()) * 1.49,
-                Double.parseDouble(darkChocolateField.getText()) * 1.49, Double.parseDouble(whiteChocolateField.getText()) * 1.49,
-                Double.parseDouble(saltField.getText()) * 1.49, Double.parseDouble(bakingSodaField.getText()) * 1.49, Double.parseDouble(bakingPowderField.getText()) * 1.49,
-                Double.parseDouble(confectionersSugarField.getText()) * 1.49, otherField.getText());
+        Cake cake = new Cake(cakeTitleField.getText(), convertField(flourField.getText()) * 1.49, convertField(sugarField.getText()) * 1.49,
+                convertField(eggsField.getText()) * 1.49, convertField(butterField.getText()) * 1.49, convertField(creamCheeseField.getText()) * 1.49,
+                convertField(vanillaSugarField.getText()) * 1.49, convertField(milkField.getText()) * 1.49, convertField(oilField.getText()) * 1.49,
+                convertField(gelatinField.getText()) * 1.49, convertField(cornFlourField.getText()) * 1.49, convertField(cocoaField.getText()) * 1.49,
+                convertField(darkChocolateField.getText()) * 1.49, convertField(whiteChocolateField.getText()) * 1.49,
+                convertField(saltField.getText()) * 1.49, convertField(bakingSodaField.getText()) * 1.49, convertField(bakingPowderField.getText()) * 1.49,
+                convertField(confectionersSugarField.getText()) * 1.49, otherField.getText());
         return cake;
     }
 
     public Cake convertIngredients22to18() {
-        Cake cake = new Cake(cakeTitleField.getText(), Double.parseDouble(flourField.getText()) / 1.49, Double.parseDouble(sugarField.getText()) / 1.49,
-                Double.parseDouble(eggsField.getText()) / 1.49, Double.parseDouble(butterField.getText()) / 1.49, Double.parseDouble(creamCheeseField.getText()) / 1.49,
-                Double.parseDouble(vanillaSugarField.getText()) / 1.49, Double.parseDouble(milkField.getText()) / 1.49, Double.parseDouble(oilField.getText()) / 1.49,
-                Double.parseDouble(gelatinField.getText()) / 1.49, Double.parseDouble(cornFlourField.getText()) / 1.49, Double.parseDouble(cocoaField.getText()) / 1.49,
-                Double.parseDouble(darkChocolateField.getText()) / 1.49, Double.parseDouble(whiteChocolateField.getText()) / 1.49,
-                Double.parseDouble(saltField.getText()) / 1.49, Double.parseDouble(bakingSodaField.getText()) / 1.49, Double.parseDouble(bakingPowderField.getText()) / 1.49,
-                Double.parseDouble(confectionersSugarField.getText()) / 1.49, otherField.getText());
+        Cake cake = new Cake(cakeTitleField.getText(), convertField(flourField.getText()) / 1.49, convertField(sugarField.getText()) / 1.49,
+                convertField(eggsField.getText()) / 1.49, convertField(butterField.getText()) / 1.49, convertField(creamCheeseField.getText()) / 1.49,
+                convertField(vanillaSugarField.getText()) / 1.49, convertField(milkField.getText()) / 1.49, convertField(oilField.getText()) / 1.49,
+                convertField(gelatinField.getText()) / 1.49, convertField(cornFlourField.getText()) / 1.49, convertField(cocoaField.getText()) / 1.49,
+                convertField(darkChocolateField.getText()) / 1.49, convertField(whiteChocolateField.getText()) / 1.49,
+                convertField(saltField.getText()) / 1.49, convertField(bakingSodaField.getText()) / 1.49, convertField(bakingPowderField.getText()) / 1.49,
+                convertField(confectionersSugarField.getText()) / 1.49, otherField.getText());
         return cake;
     }
 
     public Cake convertIngredients22to20(){
-        Cake cake = new Cake(cakeTitleField.getText(), Double.parseDouble(flourField.getText()) / 1.21, Double.parseDouble(sugarField.getText()) / 1.21,
-                Double.parseDouble(eggsField.getText()) / 1.21, Double.parseDouble(butterField.getText()) / 1.21, Double.parseDouble(creamCheeseField.getText()) / 1.21,
-                Double.parseDouble(vanillaSugarField.getText()) / 1.21, Double.parseDouble(milkField.getText()) / 1.21, Double.parseDouble(oilField.getText()) / 1.21,
-                Double.parseDouble(gelatinField.getText()) / 1.21, Double.parseDouble(cornFlourField.getText()) / 1.21, Double.parseDouble(cocoaField.getText()) / 1.21,
-                Double.parseDouble(darkChocolateField.getText()) / 1.21, Double.parseDouble(whiteChocolateField.getText()) / 1.21,
-                Double.parseDouble(saltField.getText()) / 1.21, Double.parseDouble(bakingSodaField.getText()) / 1.21, Double.parseDouble(bakingPowderField.getText()) / 1.21,
-                Double.parseDouble(confectionersSugarField.getText()) / 1.21, otherField.getText());
+        Cake cake = new Cake(cakeTitleField.getText(), convertField(flourField.getText()) / 1.21, convertField(sugarField.getText()) / 1.21,
+                convertField(eggsField.getText()) / 1.21, convertField(butterField.getText()) / 1.21, convertField(creamCheeseField.getText()) / 1.21,
+                convertField(vanillaSugarField.getText()) / 1.21, convertField(milkField.getText()) / 1.21, convertField(oilField.getText()) / 1.21,
+                convertField(gelatinField.getText()) / 1.21, convertField(cornFlourField.getText()) / 1.21, convertField(cocoaField.getText()) / 1.21,
+                convertField(darkChocolateField.getText()) / 1.21, convertField(whiteChocolateField.getText()) / 1.21,
+                convertField(saltField.getText()) / 1.21, convertField(bakingSodaField.getText()) / 1.21, convertField(bakingPowderField.getText()) / 1.21,
+                convertField(confectionersSugarField.getText()) / 1.21, otherField.getText());
         return cake;
     }
 

@@ -12,7 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.util.Duration;
 
-import java.io.IOException;
+
 import java.net.URL;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -96,14 +96,19 @@ public class HomePageController extends ViewController implements Initializable 
     public void addNewRecipe(ActionEvent actionEvent) {
 
         try {
-            changeScene(actionEvent, "recipe");
+            changeScene(actionEvent, "new_recipe");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
 
     }
 
-    public void updateRecipe() {
+    public void viewRecipes(ActionEvent actionEvent) {
+        try {
+            changeScene(actionEvent, "all_recipes");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
 
     }
 

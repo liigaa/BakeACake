@@ -3,7 +3,7 @@ package com.bakeacake.bakeacaketest.repository;
 public class DataManager {
     private static DataManager dataManager_instance;
     private Integer loggedInUserId = null;
-    private String selectedUserUsername = null;
+    private String selectedCakeTitle = null;
 
     DataManager(){}
 
@@ -18,11 +18,12 @@ public class DataManager {
         this.loggedInUserId = loggedInUserId;
     }
 
-    public String getSelectedUserUsername() {
-        return selectedUserUsername;
+
+    public String getSelectedCakeTitle() {
+        return selectedCakeTitle;
     }
 
-    public void setSelectedUserUsername(String selectedUserUsername) {
-        this.selectedUserUsername = selectedUserUsername;
+    public void setSelectedCakeTitle(String selectedCakeTitle) {
+        this.selectedCakeTitle = selectedCakeTitle;
     }
 }
