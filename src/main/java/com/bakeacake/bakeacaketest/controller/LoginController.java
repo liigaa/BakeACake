@@ -5,10 +5,7 @@ import com.bakeacake.bakeacaketest.service.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,10 +16,11 @@ public class LoginController extends ViewController implements Initializable {
     public Label notificationLabel;
     public TextField usernameField;
     public PasswordField passwordField;
+    public Button logInButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        logInButton.setDefaultButton(true);
     }
 
     public void handleUserLogin(ActionEvent actionEvent){
@@ -34,7 +32,6 @@ public class LoginController extends ViewController implements Initializable {
             changeScene(actionEvent, "home");
         }catch (Exception e){
             e.printStackTrace();
-            notificationLabel.setText(e.getMessage());
             showAlert("Login Failed", e.getMessage(), Alert.AlertType.ERROR);
         }
 

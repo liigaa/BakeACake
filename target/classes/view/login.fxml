@@ -18,7 +18,7 @@
     <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
     <Button onAction="#handleLoadRegister" style="-fx-font-size: 14px; -fx-text-fill: white; -fx-background-color: #444F4F" text="Register" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-    <Button onAction="#handleUserLogin" style="-fx-font-size: 14px; -fx-text-fill: white; -fx-background-color: #444F4F" text="Login" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+    <Button fx:id="logInButton" onAction="#handleUserLogin" style="-fx-font-size: 14px; -fx-text-fill: white; -fx-background-color: #444F4F" text="Login" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
     <Label fx:id="notificationLabel" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="5" />
     <columnConstraints>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.ShoppingListController">
+    <children>
+
+        <GridPane layoutX="200.0" layoutY="174.0">
+            <children>
+
+                <Label text="Flour" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Label fx:id="flourField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label text="Sugar" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <Label fx:id="sugarField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <Label text="Eggs (grams)" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <Label fx:id="eggsField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                <Label text="Butter" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <Label fx:id="butterField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                <Label text="Cream cheese" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <Label fx:id="creamCheeseField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                <Label text="Vanilla sugar" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                <Label fx:id="vanillaSugarField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+                <Label text="Milk" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                <Label fx:id="milkField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+                <Label text="Oil" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                <Label fx:id="oilField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+
+                <Label text="Gelatin" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                <Label fx:id="gelatinField" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+
+                <Label text="Corn flour" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <Label fx:id="cornFlourField" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+                <Label text="Cocoa" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <Label fx:id="cocoaField" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+                <Label text="Dark chocolate" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <Label fx:id="darkChocolateField" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+
+                <Label text="White chocolate" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <Label fx:id="whiteChocolateField" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+
+                <Label text="Salt" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                <Label fx:id="saltField" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+
+                <Label text="Backing Soda" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                <Label fx:id="bakingSodaField" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+
+                <Label text="Baking powder" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                <Label fx:id="bakingPowderField" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+
+                <Label text="Confectioners sugar" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                <Label fx:id="confectionersSugarField" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+
+                <Label text="Other" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                <Label fx:id="otherField" GridPane.columnIndex="3" GridPane.rowIndex="9" /> 
+
+
+                <Button contentDisplay="CENTER" layoutX="174.0" layoutY="320.0" mnemonicParsing="false" onAction="#saveShoppingList" prefHeight="25.0" prefWidth="50.0" text="save" GridPane.columnIndex="0" GridPane.rowIndex="11" />
+                <Button layoutX="294.0" layoutY="320.0" mnemonicParsing="false" onAction="#returnHome" text="return" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <Button contentDisplay="CENTER" layoutX="84.0" layoutY="163.0" mnemonicParsing="false" onAction="#clearShoppingList" text="clear" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+            </children>
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints />
+                <ColumnConstraints />
+                <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+        </GridPane>
+      <Label alignment="CENTER" layoutX="23.0" layoutY="103.0" prefHeight="17.0" prefWidth="644.0" text="Shopping list">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+
+
+    </children>
+</AnchorPane>

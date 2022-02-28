@@ -49,4 +49,15 @@ public class DBManager {
             ex.printStackTrace();
         }
     }
+
+    public static void executeAndClose (PreparedStatement preparedStatement, Connection connection ){
+        try{
+            preparedStatement.execute();
+            preparedStatement.close();
+            connection.close();
+        }catch (Exception ex) {
+            ex.printStackTrace();
+
+        }
+    }
 }

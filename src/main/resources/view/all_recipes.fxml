@@ -22,9 +22,9 @@
         </rowConstraints>
          <children>
             <Button mnemonicParsing="false" onAction="#viewRecipe" prefHeight="25.0" prefWidth="206.0" text="View Recipe" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="205.0" text="Update" GridPane.rowIndex="2" />
+            <Button mnemonicParsing="false" onAction="#updateRecipe" prefHeight="25.0" prefWidth="205.0" text="Update" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" onAction="#deleteRecipe" prefHeight="25.0" prefWidth="205.0" text="Delete" GridPane.rowIndex="3" />
-             <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="205.0" text="Add to Shopping list" GridPane.rowIndex="4" />
+             <Button mnemonicParsing="false" onAction="#viewRecipe" prefHeight="25.0" prefWidth="205.0" text="Add to Shopping list" GridPane.rowIndex="4" />
             <ChoiceBox fx:id="allCakesChoiceBox" prefHeight="25.0" prefWidth="208.0" />
          </children>
       </GridPane>
@@ -34,5 +34,6 @@
          </font>
       </Label>
       <Button layoutX="141.0" layoutY="507.0" mnemonicParsing="false" onAction="#returnHome" text="Return" />
+      <Button fx:id="homeButton" layoutX="35.0" layoutY="24.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="34.0" prefWidth="36.0" />
    </children>
 </AnchorPane>

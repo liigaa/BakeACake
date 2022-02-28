@@ -1,6 +1,7 @@
 package com.bakeacake.bakeacaketest.service;
 
 import com.bakeacake.bakeacaketest.model.Cake;
+import com.bakeacake.bakeacaketest.model.ShoppingList;
 import com.bakeacake.bakeacaketest.repository.DBManager;
 
 import java.sql.Connection;
@@ -40,10 +41,8 @@ public class CakeRecipeService {
         preparedStatement.setString(19, cake.getOther());
 
 
-        preparedStatement.execute();
-        preparedStatement.close();
-        connection.close();
-    }
+        DBManager.executeAndClose(preparedStatement, connection);
+}
 
     public void addCakeTin18(Cake cake) throws SQLException {
         connection = DBManager.getConnection();
@@ -71,10 +70,7 @@ public class CakeRecipeService {
         preparedStatement.setDouble(18, cake.getConfectionersSugar());
         preparedStatement.setString(19, cake.getOther());
 
-        preparedStatement.execute();
-        preparedStatement.close();
-        connection.close();
-
+        DBManager.executeAndClose(preparedStatement, connection);
     }
 
     public void addCakeTin22(Cake cake) throws SQLException {
@@ -103,9 +99,7 @@ public class CakeRecipeService {
         preparedStatement.setDouble(18, cake.getConfectionersSugar());
         preparedStatement.setString(19, cake.getOther());
 
-        preparedStatement.execute();
-        preparedStatement.close();
-        connection.close();
+        DBManager.executeAndClose(preparedStatement, connection);
     }
 
     public ArrayList<Cake> viewAllRecipes() throws Exception {
@@ -126,34 +120,38 @@ public class CakeRecipeService {
             cakes.add(cake);
 
         }
+        DBManager.close(result, preparedStatement, connection);
         return cakes;
 
     }
 
     public void deleteRecipeTin18(String title) throws SQLException {
+        connection = DBManager.getConnection();
         String query = "DELETE FROM cake_tin_18 WHERE cake_title=?";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setString(1, title);
-        preparedStatement.execute();
-        preparedStatement.close();
+
+        DBManager.executeAndClose(preparedStatement, connection);
 
     }
 
     public void deleteRecipeTin20(String title) throws SQLException {
+        connection = DBManager.getConnection();
         String query = "DELETE FROM cake_tin_20 WHERE cake_title=?";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setString(1, title);
-        preparedStatement.execute();
-        preparedStatement.close();
+
+        DBManager.executeAndClose(preparedStatement, connection);
 
     }
 
     public void deleteRecipeTin22(String title) throws SQLException {
+        connection = DBManager.getConnection();
         String query = "DELETE FROM cake_tin_22 WHERE cake_title=?";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setString(1, title);
-        preparedStatement.execute();
-        preparedStatement.close();
+
+        DBManager.executeAndClose(preparedStatement, connection);
 
     }
 
@@ -270,6 +268,131 @@ public class CakeRecipeService {
         if (cake == null) throw new Exception("Recipe not found!");
         return cake;
     }
+
+    public void addToShoppingList(Cake cake) throws SQLException {
+        connection = DBManager.getConnection();
+        String query = "INSERT INTO shopping_list (flour, sugar, eggs_grams, butter, cream_cheese," +
+                "vanilla_sugar, milk, oil, gelatin, corn_flour, cocoa, dark_chocolate, white_chocolate," +
+                " salt, baking_soda, baking_powder, confectioners_sugar, other) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+        preparedStatement.setDouble(1, cake.getFlour());
+        preparedStatement.setDouble(2, cake.getSugar());
+        preparedStatement.setDouble(3, cake.getEggs());
+        preparedStatement.setDouble(4, cake.getButter());
+        preparedStatement.setDouble(5, cake.getCreamCheese());
+        preparedStatement.setDouble(6, cake.getVanillaSugar());
+        preparedStatement.setDouble(7, cake.getMilk());
+        preparedStatement.setDouble(8, cake.getOil());
+        preparedStatement.setDouble(9, cake.getGelatin());
+        preparedStatement.setDouble(10, cake.getCornFlour());
+        preparedStatement.setDouble(11, cake.getCocoa());
+        preparedStatement.setDouble(12, cake.getDarkChocolate());
+        preparedStatement.setDouble(13, cake.getWhiteChocolate());
+        preparedStatement.setDouble(14, cake.getSalt());
+        preparedStatement.setDouble(15, cake.getBakingSoda());
+        preparedStatement.setDouble(16, cake.getBakingPowder());
+        preparedStatement.setDouble(17, cake.getConfectionersSugar());
+        preparedStatement.setString(18, cake.getOther());
+
+
+        DBManager.executeAndClose(preparedStatement, connection);
+    }
+
+
+    public void updateRecipeTinSize18 (Cake cake, String cakeTitle) throws SQLException {
+        connection = DBManager.getConnection();
+        String query = "UPDATE cake_tin_18 SET flour = ?, sugar = ?, eggs_grams = ?, butter = ?, cream_cheese = ?," +
+                "vanilla_sugar = ?, milk = ?, oil = ?, gelatin = ?, corn_flour = ?, cocoa = ?, dark_chocolate = ?, white_chocolate = ?," +
+                "salt = ?, baking_soda = ?, baking_powder = ?, confectioners_sugar = ?, other = ? WHERE cake_title = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+        preparedStatement.setDouble(1, cake.getFlour());
+        preparedStatement.setDouble(2, cake.getSugar());
+        preparedStatement.setDouble(3, cake.getEggs());
+        preparedStatement.setDouble(4, cake.getButter());
+        preparedStatement.setDouble(5, cake.getCreamCheese());
+        preparedStatement.setDouble(6, cake.getVanillaSugar());
+        preparedStatement.setDouble(7, cake.getMilk());
+        preparedStatement.setDouble(8, cake.getOil());
+        preparedStatement.setDouble(9, cake.getGelatin());
+        preparedStatement.setDouble(10, cake.getCornFlour());
+        preparedStatement.setDouble(11, cake.getCocoa());
+        preparedStatement.setDouble(12, cake.getDarkChocolate());
+        preparedStatement.setDouble(13, cake.getWhiteChocolate());
+        preparedStatement.setDouble(14, cake.getSalt());
+        preparedStatement.setDouble(15, cake.getBakingSoda());
+        preparedStatement.setDouble(16, cake.getBakingPowder());
+        preparedStatement.setDouble(17, cake.getConfectionersSugar());
+        preparedStatement.setString(18, cake.getOther());
+        preparedStatement.setString(19, cake.getCakeTitle());
+
+
+        DBManager.executeAndClose(preparedStatement, connection);
+    }
+
+
+    public void updateRecipeTinSize20 (Cake cake, String cakeTitle) throws SQLException {
+        connection = DBManager.getConnection();
+        String query = "UPDATE cake_tin_20 SET flour = ?, sugar = ?, eggs_grams = ?, butter = ?, cream_cheese = ?," +
+                "vanilla_sugar = ?, milk = ?, oil = ?, gelatin = ?, corn_flour = ?, cocoa = ?, dark_chocolate = ?, white_chocolate = ?," +
+                "salt = ?, baking_soda = ?, baking_powder = ?, confectioners_sugar = ?, other = ? WHERE cake_title = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+        preparedStatement.setDouble(1, cake.getFlour());
+        preparedStatement.setDouble(2, cake.getSugar());
+        preparedStatement.setDouble(3, cake.getEggs());
+        preparedStatement.setDouble(4, cake.getButter());
+        preparedStatement.setDouble(5, cake.getCreamCheese());
+        preparedStatement.setDouble(6, cake.getVanillaSugar());
+        preparedStatement.setDouble(7, cake.getMilk());
+        preparedStatement.setDouble(8, cake.getOil());
+        preparedStatement.setDouble(9, cake.getGelatin());
+        preparedStatement.setDouble(10, cake.getCornFlour());
+        preparedStatement.setDouble(11, cake.getCocoa());
+        preparedStatement.setDouble(12, cake.getDarkChocolate());
+        preparedStatement.setDouble(13, cake.getWhiteChocolate());
+        preparedStatement.setDouble(14, cake.getSalt());
+        preparedStatement.setDouble(15, cake.getBakingSoda());
+        preparedStatement.setDouble(16, cake.getBakingPowder());
+        preparedStatement.setDouble(17, cake.getConfectionersSugar());
+        preparedStatement.setString(18, cake.getOther());
+        preparedStatement.setString(19, cake.getCakeTitle());
+
+
+        DBManager.executeAndClose(preparedStatement, connection);
+    }
+
+    public void updateRecipeTinSize22 (Cake cake, String cakeTitle) throws SQLException {
+        connection = DBManager.getConnection();
+        String query = "UPDATE cake_tin_22 SET flour = ?, sugar = ?, eggs_grams = ?, butter = ?, cream_cheese = ?," +
+                "vanilla_sugar = ?, milk = ?, oil = ?, gelatin = ?, corn_flour = ?, cocoa = ?, dark_chocolate = ?, white_chocolate = ?," +
+                "salt = ?, baking_soda = ?, baking_powder = ?, confectioners_sugar = ?, other = ? WHERE cake_title = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+        preparedStatement.setDouble(1, cake.getFlour());
+        preparedStatement.setDouble(2, cake.getSugar());
+        preparedStatement.setDouble(3, cake.getEggs());
+        preparedStatement.setDouble(4, cake.getButter());
+        preparedStatement.setDouble(5, cake.getCreamCheese());
+        preparedStatement.setDouble(6, cake.getVanillaSugar());
+        preparedStatement.setDouble(7, cake.getMilk());
+        preparedStatement.setDouble(8, cake.getOil());
+        preparedStatement.setDouble(9, cake.getGelatin());
+        preparedStatement.setDouble(10, cake.getCornFlour());
+        preparedStatement.setDouble(11, cake.getCocoa());
+        preparedStatement.setDouble(12, cake.getDarkChocolate());
+        preparedStatement.setDouble(13, cake.getWhiteChocolate());
+        preparedStatement.setDouble(14, cake.getSalt());
+        preparedStatement.setDouble(15, cake.getBakingSoda());
+        preparedStatement.setDouble(16, cake.getBakingPowder());
+        preparedStatement.setDouble(17, cake.getConfectionersSugar());
+        preparedStatement.setString(18, cake.getOther());
+        preparedStatement.setString(19, cake.getCakeTitle());
+
+        DBManager.executeAndClose(preparedStatement, connection);
+    }
+
 
 
 }

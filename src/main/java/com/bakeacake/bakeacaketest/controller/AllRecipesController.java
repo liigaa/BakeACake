@@ -8,8 +8,10 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -22,10 +24,14 @@ public class AllRecipesController extends ViewController implements Initializabl
     private CakeRecipeService cakeRecipeService = new CakeRecipeService();
 
     public ChoiceBox allCakesChoiceBox;
+    public Button homeButton;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        ImageView imageView = new ImageView(getClass().getResource("/images/favicon.png").toExternalForm());
+        homeButton.setGraphic(imageView);
         viewAllRecipes();
 
 
@@ -35,6 +41,8 @@ public class AllRecipesController extends ViewController implements Initializabl
         try {
             ObservableList<Cake> cakes = FXCollections.observableArrayList(this.cakeRecipeService.viewAllRecipes());
             allCakesChoiceBox.getItems().addAll(cakes);
+            for (Cake cake : cakes) allCakesChoiceBox.setValue(cake);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -81,6 +89,8 @@ public class AllRecipesController extends ViewController implements Initializabl
 
     }
 
+
+
     public void viewRecipe(ActionEvent actionEvent) {
 
         DataManager.getInstance().setSelectedCakeTitle(String.valueOf(allCakesChoiceBox.getValue()));
@@ -96,7 +106,33 @@ public class AllRecipesController extends ViewController implements Initializabl
 
     public void updateRecipe(ActionEvent actionEvent) {
 
+        DataManager.getInstance().setSelectedCakeTitle(String.valueOf(allCakesChoiceBox.getValue()));
+
+        try {
+            changeScene(actionEvent, "update_recipe");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
     }
+
+
+    public void addToShoppingList (ActionEvent actionEvent) {
+
+
+        try {
+            if (allCakesChoiceBox.getValue() == null){
+                showAlert(null, "Please choose Cake from choice box", Alert.AlertType.ERROR);
+                return;
+            }
+
+            changeScene(actionEvent, "view_recipe");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+    }
+
 
 
 }

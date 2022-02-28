@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.UpdateRecipeController">
+   <children>
+      <GridPane alignment="CENTER" layoutX="101.0" layoutY="331.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+        </rowConstraints>
+         <children>
+   
+             <Label text="Flour" GridPane.columnIndex="0" />
+             <TextField fx:id="flourField" GridPane.columnIndex="1" />
+   
+             <Label text="Sugar" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+             <TextField fx:id="sugarField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+   
+             <Label text="Eggs (grams)" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+             <TextField fx:id="eggsField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+   
+             <Label text="Butter" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+             <TextField fx:id="butterField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+   
+             <Label text="Cream cheese" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+             <TextField fx:id="creamCheeseField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+   
+             <Label text="Vanilla sugar" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+             <TextField fx:id="vanillaSugarField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+   
+             <Label text="Milk" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+             <TextField fx:id="milkField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+   
+             <Label text="Oil" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+             <TextField fx:id="oilField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+   
+             <Label text="Gelatin" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+             <TextField fx:id="gelatinField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+   
+             <Label text="Corn flour" GridPane.columnIndex="2" />
+             <TextField fx:id="cornFlourField" GridPane.columnIndex="3" />
+   
+             <Label text="Cocoa" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+             <TextField fx:id="cocoaField" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+   
+             <Label text="Dark chocolate" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+             <TextField fx:id="darkChocolateField" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+   
+             <Label text="White chocolate" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+             <TextField fx:id="whiteChocolateField" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+   
+             <Label text="Salt" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+             <TextField fx:id="saltField" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+   
+             <Label text="Backing Soda" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+             <TextField fx:id="bakingSodaField" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+   
+             <Label text="Baking powder" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+             <TextField fx:id="bakingPowderField" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+   
+             <Label text="Confectioners sugar" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+             <TextField fx:id="confectionersSugarField" GridPane.columnIndex="3" GridPane.rowIndex="7" />
+   
+             <Label text="Other" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+             <TextField fx:id="otherField" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+
+             <Button layoutX="174.0" layoutY="320.0" mnemonicParsing="false" onAction="#updateRecipe" text="Update" GridPane.columnIndex="0" GridPane.rowIndex="11" />
+             <Button layoutX="294.0" layoutY="320.0" mnemonicParsing="false" onAction="#returnToRecipes" text="return" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+
+         </children>
+
+      </GridPane>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="98.0" prefHeight="27.0" prefWidth="663.0" text="Update Recipe">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="cakeTitleField" alignment="CENTER" layoutX="41.0" layoutY="138.0" prefHeight="27.0" prefWidth="623.0">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <ComboBox fx:id="tinSize" layoutX="244.0" layoutY="192.0" prefWidth="150.0" promptText="Select tin size" />
+   </children>
+</AnchorPane>

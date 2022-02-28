@@ -14,7 +14,7 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-    <ChoiceBox fx:id="tinSize" layoutX="253.0" layoutY="115.0" prefWidth="150.0" />
+    <ComboBox fx:id="tinSize" layoutX="253.0" layoutY="115.0" prefWidth="150.0" promptText="Select tin size" />
 
         <GridPane layoutX="200.0" layoutY="174.0">
    <children>
@@ -76,6 +76,7 @@
    
                <Button layoutX="174.0" layoutY="320.0" mnemonicParsing="false" onAction="#addToShoppingList" text="add to Shopping list" GridPane.columnIndex="0" GridPane.rowIndex="11" />
                <Button layoutX="294.0" layoutY="320.0" mnemonicParsing="false" onAction="#returnToRecipes" text="return" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+
    </children>
          <columnConstraints>
             <ColumnConstraints />
@@ -84,6 +85,7 @@
             <ColumnConstraints />
          </columnConstraints>
          <rowConstraints>
+            <RowConstraints />
             <RowConstraints />
             <RowConstraints />
             <RowConstraints />

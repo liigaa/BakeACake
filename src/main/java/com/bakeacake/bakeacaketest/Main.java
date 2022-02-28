@@ -14,7 +14,8 @@ public class Main extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/view/login.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 700, 700);
         stage.setTitle("Bake a Cake");
-        //stage.getIcons().add(new Image(""));
+        Image icon = new Image(String.valueOf(Main.class.getResource("/images/favicon.png")));
+        stage.getIcons().add(icon);
         stage.setScene(scene);
         stage.show();
     }

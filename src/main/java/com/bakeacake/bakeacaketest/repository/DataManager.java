@@ -4,6 +4,7 @@ public class DataManager {
     private static DataManager dataManager_instance;
     private Integer loggedInUserId = null;
     private String selectedCakeTitle = null;
+    private Double selectedTinSize = null;
 
     DataManager(){}
 
@@ -26,4 +27,14 @@ public class DataManager {
     public void setSelectedCakeTitle(String selectedCakeTitle) {
         this.selectedCakeTitle = selectedCakeTitle;
     }
+
+    public Double getSelectedTinSize() {
+        return selectedTinSize;
+    }
+
+    public void setSelectedTinSize(Double selectedTinSize) {
+        this.selectedTinSize = selectedTinSize;
+    }
+
+
 }

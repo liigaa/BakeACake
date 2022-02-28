@@ -1,21 +1,24 @@
 package com.bakeacake.bakeacaketest.controller;
 
 import com.bakeacake.bakeacaketest.model.Cake;
+import com.bakeacake.bakeacaketest.model.ShoppingList;
 import com.bakeacake.bakeacaketest.repository.DataManager;
 import com.bakeacake.bakeacaketest.service.CakeRecipeService;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class ViewRecipeController extends ViewController implements Initializable {
 
-    public Label flourField;
     public Label sugarField;
+    public Label flourField;
     public Label eggsField;
     public Label butterField;
     public Label creamCheeseField;
@@ -33,7 +36,7 @@ public class ViewRecipeController extends ViewController implements Initializabl
     public Label confectionersSugarField;
     public Label otherField;
     public Label cakeTitleField;
-    public ChoiceBox<Double> tinSize;
+    public ComboBox<Double> tinSize;
     private Double[] tins = {18.0, 20.0, 22.0};
 
 
@@ -41,23 +44,32 @@ public class ViewRecipeController extends ViewController implements Initializabl
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        try{
+
+        tinSize.getItems().addAll(tins);
+        tinSize.setOnAction(this::getRecipe);
+
+        String cakeTitle = DataManager.getInstance().getSelectedCakeTitle();
+        cakeTitleField.setText(cakeTitle);
+    }
+
+    public void getRecipe(ActionEvent actionEvent) {
+
+        try {
 
             String cakeTitle = DataManager.getInstance().getSelectedCakeTitle();
-            tinSize.getItems().addAll(tins);
-            tinSize.setValue(18.0);
 
-            if (tinSize.getValue().equals(20.0)){
+
+            if (tinSize.getValue().equals(20.0)) {
                 Cake cake = this.cakeRecipeService.getRecipeByCakeTitleTin20(cakeTitle);
                 getIngredients(cake);
             }
 
-            if (tinSize.getValue().equals(22.0)){
+            if (tinSize.getValue().equals(22.0)) {
                 Cake cake = this.cakeRecipeService.getRecipeByCakeTitleTin22(cakeTitle);
                 getIngredients(cake);
             }
 
-            if (tinSize.getValue().equals(18.0)){
+            if (tinSize.getValue().equals(18.0)) {
                 Cake cake = this.cakeRecipeService.getRecipeByCakeTitleTin18(cakeTitle);
                 getIngredients(cake);
             }
@@ -67,12 +79,11 @@ public class ViewRecipeController extends ViewController implements Initializabl
             e.printStackTrace();
         }
 
-
     }
 
 
-    public void getIngredients (Cake cake){
-        cakeTitleField.setText(cake.getCakeTitle());
+    public void getIngredients(Cake cake) {
+
         flourField.setText(String.valueOf(cake.getFlour()));
         sugarField.setText(String.valueOf(cake.getSugar()));
         eggsField.setText(String.valueOf(cake.getEggs()));
@@ -95,23 +106,57 @@ public class ViewRecipeController extends ViewController implements Initializabl
 
 
 
+
+    private Double convertField(String value){
+        return  value.isEmpty()? 0.0 : Double.parseDouble(value);
+
+    }
+
+
+    public void addToShoppingList(ActionEvent actionEvent) {
+
+        Cake cake = new Cake (cakeTitleField.getText(), convertField(flourField.getText()), convertField(sugarField.getText()),
+                convertField(eggsField.getText()), convertField(butterField.getText()), convertField(creamCheeseField.getText()),
+                convertField(vanillaSugarField.getText()), convertField(milkField.getText()), convertField(oilField.getText()),
+                convertField(gelatinField.getText()), convertField(cornFlourField.getText()), convertField(cocoaField.getText()),
+                convertField(darkChocolateField.getText()), convertField(whiteChocolateField.getText()),
+                convertField(saltField.getText()), convertField(bakingSodaField.getText()), convertField(bakingPowderField.getText()),
+                convertField(confectionersSugarField.getText()), otherField.getText());
+
+        try {
+
+            if (tinSize.getValue() == null){
+                showAlert(null, "Please choose tin size", Alert.AlertType.ERROR);
+                return;
+            }
+            this.cakeRecipeService.addToShoppingList(cake);
+
+
+
+            showAlert(null, "Ingredients added to shopping list", Alert.AlertType.INFORMATION);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            showAlert("Adding recipe failed!", e.getMessage(), Alert.AlertType.ERROR);
+        }
+
+    }
+
+
     public void returnToRecipes(ActionEvent actionEvent) {
         try {
             changeScene(actionEvent, "all_recipes");
-        }catch (Exception ex){
+        } catch (Exception ex) {
             showAlert("Problem with navigation", ex.getMessage(), Alert.AlertType.ERROR);
         }
     }
 
-    public void addToShoppingList (ActionEvent actionEvent) {
-//        try {
-//            changeScene(actionEvent, "home");
-//        }catch (Exception ex){
-//            showAlert("Problem with navigation", ex.getMessage(), Alert.AlertType.ERROR);
-//        }
+    public void goToShoppingList (ActionEvent actionEvent) {
+        try {
+            changeScene(actionEvent, "shopping_list");
+        } catch (Exception ex) {
+            showAlert("Problem with navigation", ex.getMessage(), Alert.AlertType.ERROR);
+        }
     }
-
-
 
 
 }
