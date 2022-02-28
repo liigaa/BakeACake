@@ -1,12 +1,17 @@
 package com.bakeacake.bakeacaketest.service;
 
+import com.bakeacake.bakeacaketest.model.Cake;
+import com.bakeacake.bakeacaketest.model.Client;
+import com.bakeacake.bakeacaketest.model.Order;
 import com.bakeacake.bakeacaketest.model.User;
 import com.bakeacake.bakeacaketest.repository.DBManager;
+import lombok.Value;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class UserService {
     private Connection connection = DBManager.getConnection();
@@ -95,7 +100,52 @@ public class UserService {
         return name;
 
     }
+    public void addClient(Client client) throws SQLException {
+        connection = DBManager.getConnection();
+        String query = "INSERT INTO clients (client_name, phone, address) VALUES (?,?,?)";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setString(1, client.getName());
+        preparedStatement.setString(2, client.getPhoneNumber());
+        preparedStatement.setString(3, client.getAddress());
 
+        preparedStatement.execute();
+        connection.close();
+        preparedStatement.close();
+    }
+    public ArrayList<Client> viewAllClient() throws Exception{
+        connection = DBManager.getConnection();
+        String query = "SELECT * FROM clients";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        ArrayList<Client> clients = new ArrayList<>();
+        ResultSet result = preparedStatement.executeQuery();
 
+        while (result.next()){
+            Client client = new Client(
+                    result.getInt("client_id"),
+                    result.getString("client_name")
+            );
+            clients.add(client);
+        }
+        DBManager.close(result, preparedStatement, connection);
+        return clients;
+    }
+    public void addOrder(Order order, Cake cake, Client client) throws Exception{
+        connection = DBManager.getConnection();
+        String query = "INSERT INTO orders (client_name, cake_title, cake_tin_size, delivery_date, " +
+                "delivery_time, delivery_options, description, status) " +
+                "Values(?,?,?,?,?,?,?,?)";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setString(1, client.getName());
+        preparedStatement.setString(2, cake.getCakeTitle());
+        preparedStatement.setString(3, order.getTinSize());
+        preparedStatement.setString(4, order.getDatePicker());
+        preparedStatement.setString(5, order.getDeliveryTime());
+        preparedStatement.setString(6, order.getDeliveryOptions());
+        preparedStatement.setString(7, order.getDescription());
+        preparedStatement.setString(8, order.getStatus());
 
+        preparedStatement.execute();
+        connection.close();
+        preparedStatement.close();
+    }
 }

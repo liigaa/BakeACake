@@ -60,8 +60,6 @@ public class RegisterController extends ViewController implements Initializable 
 
     }
 
-
-
     public void handleCancelRegister(ActionEvent actionEvent){
         try{
             changeScene(actionEvent, "login");

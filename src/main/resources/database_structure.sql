@@ -105,3 +105,25 @@ CREATE TABLE IF NOT EXISTS shopping_list(
     other varchar(500),
     primary key(id)
     );
+
+    CREATE TABLE IF NOT EXISTS clients(
+    client_id int not null auto_increment,
+    client_name varchar(100) not null,
+    phone text not null,
+    address varchar(100) null,
+    primary key(id)
+    );
+
+    CREATE TABLE IF NOT EXISTS orders(
+        id int not null auto_increment,
+        client_name varchar(100) not null,
+        cake_title varchar(100)  not null,
+        cake_tin_size varchar(20) not null,
+        delivery_date varchar(20) not null,
+        delivery_time varchar(20) not null,
+        delivery_options varchar(20) not null,
+        description text null,
+        status varchar(20) not null,
+        primary key(id));
+
+
