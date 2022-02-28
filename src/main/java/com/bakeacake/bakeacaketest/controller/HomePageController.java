@@ -112,8 +112,12 @@ public class HomePageController extends ViewController implements Initializable 
 
     }
 
-    public void addNewOrder() {
-
+    public void addNewOrder(ActionEvent actionEvent) {
+        try {
+            changeScene(actionEvent, "order_screen");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     public void goToShoppingList() {
