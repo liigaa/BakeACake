@@ -7,8 +7,17 @@ import com.bakeacake.bakeacaketest.service.CakeRecipeService;
 import com.bakeacake.bakeacaketest.service.ShoppingListService;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.print.PrinterJob;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.shape.Circle;
+import javafx.stage.Window;
 
 import java.io.IOException;
 import java.net.URL;
@@ -34,10 +43,15 @@ public class ShoppingListController extends ViewController implements Initializa
     public Label bakingSodaField;
     public Label bakingPowderField;
     public Label confectionersSugarField;
+    public TextArea otherTextArea;
     public Label otherField;
+    public Button homeButton;
+    public AnchorPane anchorPane;
+    public GridPane gridPane;
+    public Label shoppingListLabel;
 
 
-    //private CakeRecipeService cakeRecipeService = new CakeRecipeService();
+
     private ShoppingListService shoppingListService = new ShoppingListService();
 
 
@@ -47,10 +61,31 @@ public class ShoppingListController extends ViewController implements Initializa
 
         viewShoppingList ();
 
+        ImageView imageView = new ImageView(getClass().getResource("/images/favicon.png").toExternalForm());
+        homeButton.setGraphic(imageView);
 
-      //  String cakeTitle = DataManager.getInstance().getSelectedCakeTitle();
-       // Double tinSize = DataManager.getInstance().getSelectedTinSize();
 
+
+
+    }
+
+    public void print (ActionEvent actionEvent){
+        Node node = new AnchorPane(shoppingListLabel, otherTextArea, gridPane, homeButton);
+       //Node node = new AnchorPane(anchorPane);
+        PrinterJob job = PrinterJob.createPrinterJob();
+        try {
+            changeScene(actionEvent, "shopping_list");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (job != null) {
+            boolean success = job.printPage(node);
+            if (success) {
+                job.endJob();
+
+            }
+
+        }
 
     }
 
@@ -58,7 +93,10 @@ public class ShoppingListController extends ViewController implements Initializa
 
             try {
                 ShoppingList shoppingList = this.shoppingListService.viewShoppingList();
+                ShoppingList shoppingList1 = this.shoppingListService.viewShoppingListOther();
                 getIngredients(shoppingList);
+                getOtherField(shoppingList1);
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -83,7 +121,11 @@ public class ShoppingListController extends ViewController implements Initializa
         bakingSodaField.setText(String.valueOf(shoppingList.getBakingSoda()));
         bakingPowderField.setText(String.valueOf(shoppingList.getBakingPowder()));
         confectionersSugarField.setText(String.valueOf(shoppingList.getConfectionersSugar()));
-        otherField.setText(shoppingList.getOther());
+
+    }
+
+    public void getOtherField(ShoppingList shoppingList){
+        otherTextArea.setText(shoppingList.getOther());
     }
 
 
@@ -117,6 +159,17 @@ public class ShoppingListController extends ViewController implements Initializa
         }
 
     }
+
+    public void handleLogout(ActionEvent actionEvent) {
+        try {
+            DataManager.getInstance().setLoggedInUserId(null);
+            changeScene(actionEvent, "login");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+    }
+
 
 
 

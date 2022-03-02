@@ -133,6 +133,16 @@ public class AllRecipesController extends ViewController implements Initializabl
 
     }
 
+    public void handleLogout(ActionEvent actionEvent) {
+        try {
+            DataManager.getInstance().setLoggedInUserId(null);
+            changeScene(actionEvent, "login");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+    }
+
 
 
 }

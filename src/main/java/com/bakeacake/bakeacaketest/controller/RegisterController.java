@@ -37,7 +37,9 @@ public class RegisterController extends ViewController implements Initializable 
             showAlert(null, "Password and Confirmation password doesn't mach", Alert.AlertType.ERROR);
             return;
         }
+
         try {
+
             userService.registerUser(user);
             showAlert(null, "Welcome " + usernameField.getText() + "! Please login!", Alert.AlertType.INFORMATION);
 
@@ -48,6 +50,7 @@ public class RegisterController extends ViewController implements Initializable 
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            showAlert("Registration failed", e.getMessage() , Alert.AlertType.ERROR);
         }
 
     }

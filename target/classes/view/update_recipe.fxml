@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.UpdateRecipeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.UpdateRecipeController">
    <children>
       <GridPane alignment="CENTER" layoutX="101.0" layoutY="331.0">
         <columnConstraints>
@@ -39,7 +39,7 @@
              <Label text="Sugar" GridPane.columnIndex="0" GridPane.rowIndex="1" />
              <TextField fx:id="sugarField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
    
-             <Label text="Eggs (grams)" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+             <Label text="Eggs" GridPane.columnIndex="0" GridPane.rowIndex="2" />
              <TextField fx:id="eggsField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
    
              <Label text="Butter" GridPane.columnIndex="0" GridPane.rowIndex="3" />
@@ -103,5 +103,7 @@
             <Font size="18.0" />
          </font></Label>
       <ComboBox fx:id="tinSize" layoutX="244.0" layoutY="192.0" prefWidth="150.0" promptText="Select tin size" />
+      <Button fx:id="homeButton" layoutX="56.0" layoutY="39.0" mnemonicParsing="false" onAction="#returnHome" />
+      <Button layoutX="600.0" layoutY="39.0" mnemonicParsing="false" onAction="#handleLogout" text="Log out" />
    </children>
 </AnchorPane>
