@@ -6,10 +6,8 @@ import com.bakeacake.bakeacaketest.repository.DataManager;
 import com.bakeacake.bakeacaketest.service.CakeRecipeService;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -38,6 +36,7 @@ public class ViewRecipeController extends ViewController implements Initializabl
     public Label cakeTitleField;
     public ComboBox<Double> tinSize;
     private Double[] tins = {18.0, 20.0, 22.0};
+    public Button homeButton;
 
 
     private CakeRecipeService cakeRecipeService = new CakeRecipeService();
@@ -50,6 +49,9 @@ public class ViewRecipeController extends ViewController implements Initializabl
 
         String cakeTitle = DataManager.getInstance().getSelectedCakeTitle();
         cakeTitleField.setText(cakeTitle);
+
+        ImageView imageView = new ImageView(getClass().getResource("/images/favicon.png").toExternalForm());
+        homeButton.setGraphic(imageView);
     }
 
     public void getRecipe(ActionEvent actionEvent) {
@@ -131,8 +133,6 @@ public class ViewRecipeController extends ViewController implements Initializabl
             }
             this.cakeRecipeService.addToShoppingList(cake);
 
-
-
             showAlert(null, "Ingredients added to shopping list", Alert.AlertType.INFORMATION);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -150,13 +150,25 @@ public class ViewRecipeController extends ViewController implements Initializabl
         }
     }
 
-    public void goToShoppingList (ActionEvent actionEvent) {
+    public void returnHome(ActionEvent actionEvent) {
         try {
-            changeScene(actionEvent, "shopping_list");
+            changeScene(actionEvent, "home");
         } catch (Exception ex) {
-            showAlert("Problem with navigation", ex.getMessage(), Alert.AlertType.ERROR);
+            ex.printStackTrace();
         }
+
     }
+
+    public void handleLogout(ActionEvent actionEvent) {
+        try {
+            DataManager.getInstance().setLoggedInUserId(null);
+            changeScene(actionEvent, "login");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+    }
+
 
 
 }

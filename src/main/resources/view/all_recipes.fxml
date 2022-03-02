@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="700.0" prefWidth="700.0" style="-fx-background-color:#899494" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.AllRecipesController">
+<AnchorPane prefHeight="700.0" prefWidth="700.0" style="-fx-background-color:#899494" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.AllRecipesController">
    <children>
       <GridPane layoutX="250.0" layoutY="219.0">
         <columnConstraints>
@@ -35,5 +35,6 @@
       </Label>
       <Button layoutX="141.0" layoutY="507.0" mnemonicParsing="false" onAction="#returnHome" text="Return" />
       <Button fx:id="homeButton" layoutX="35.0" layoutY="24.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="34.0" prefWidth="36.0" />
+      <Button layoutX="594.0" layoutY="29.0" mnemonicParsing="false" onAction="#handleLogout" text="Log out" />
    </children>
 </AnchorPane>

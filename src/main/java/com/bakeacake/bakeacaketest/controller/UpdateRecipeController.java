@@ -6,6 +6,7 @@ import com.bakeacake.bakeacaketest.service.CakeRecipeService;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -34,6 +35,7 @@ public class UpdateRecipeController extends ViewController implements Initializa
     public Label cakeTitleField;
     public ComboBox<Double> tinSize;
     private Double[] tins = {18.0, 20.0, 22.0};
+    public Button homeButton;
 
     private CakeRecipeService cakeRecipeService = new CakeRecipeService();
 
@@ -48,6 +50,9 @@ public class UpdateRecipeController extends ViewController implements Initializa
 
         String cakeTitle = DataManager.getInstance().getSelectedCakeTitle();
         cakeTitleField.setText(cakeTitle);
+
+        ImageView imageView = new ImageView(getClass().getResource("/images/favicon.png").toExternalForm());
+        homeButton.setGraphic(imageView);
 
 
 
@@ -107,7 +112,10 @@ public class UpdateRecipeController extends ViewController implements Initializa
                 convertField(saltField.getText()), convertField(bakingSodaField.getText()), convertField(bakingPowderField.getText()),
                 convertField(confectionersSugarField.getText()), otherField.getText());
 
-
+        if (tinSize.getValue() == null){
+            showAlert(null, "Please choose tin size", Alert.AlertType.ERROR);
+            return;
+        }
 
 
         try {
@@ -264,6 +272,25 @@ public class UpdateRecipeController extends ViewController implements Initializa
         } catch (Exception ex) {
             showAlert("Problem with navigation", ex.getMessage(), Alert.AlertType.ERROR);
         }
+    }
+
+    public void handleLogout(ActionEvent actionEvent) {
+        try {
+            DataManager.getInstance().setLoggedInUserId(null);
+            changeScene(actionEvent, "login");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+    }
+
+    public void returnHome(ActionEvent actionEvent) {
+        try {
+            changeScene(actionEvent, "home");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
     }
 
 }

@@ -51,26 +51,8 @@ public class ShoppingList {
                 this.confectionersSugar = confectionersSugar;
         }
 
-        public ShoppingList(double flour, double sugar, double eggs, double butter, double creamCheese, double vanillaSugar, double milk, double oil, double gelatin, double cornFlour, double cocoa, double darkChocolate, double whiteChocolate, double salt, double bakingSoda, double bakingPowder, double confectionersSugar, String other) {
-                this.flour = flour;
-                this.sugar = sugar;
-                this.eggs = eggs;
-                this.butter = butter;
-                this.creamCheese = creamCheese;
-                this.vanillaSugar = vanillaSugar;
-                this.milk = milk;
-                this.oil = oil;
-                this.gelatin = gelatin;
-                this.cornFlour = cornFlour;
-                this.cocoa = cocoa;
-                this.darkChocolate = darkChocolate;
-                this.whiteChocolate = whiteChocolate;
-                this.salt = salt;
-                this.bakingSoda = bakingSoda;
-                this.bakingPowder = bakingPowder;
-                this.confectionersSugar = confectionersSugar;
+
+        public ShoppingList(String other) {
                 this.other = other;
         }
-
-
 }

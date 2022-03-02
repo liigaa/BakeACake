@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
@@ -11,8 +16,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color:#899494" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.AddOrderController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" style="-fx-background-color:#899494" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.AddOrderController">
+   <children>
+<VBox alignment="CENTER" layoutX="50.0" layoutY="135.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Text fill="#186565" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18px" text="Add Order" />
       <ChoiceBox fx:id="clientListField" prefWidth="175.0" />
@@ -35,3 +43,7 @@
       <Label fx:id="labelNote" />
    </children>
 </VBox>
+      <Button fx:id="homeButton" layoutX="50.0" layoutY="53.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="39.0" prefWidth="41.0" />
+      <Button layoutX="583.0" layoutY="51.0" mnemonicParsing="false" onAction="#handleLogout" text="Log out" />
+   </children>
+</AnchorPane>

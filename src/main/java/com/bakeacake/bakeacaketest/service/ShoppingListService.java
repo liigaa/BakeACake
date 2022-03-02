@@ -15,7 +15,7 @@ public class ShoppingListService {
         connection = DBManager.getConnection();
         String query = "SELECT SUM(flour), SUM(sugar), SUM(eggs_grams), SUM(butter), SUM(cream_cheese), SUM(vanilla_sugar), SUM(milk)," +
                 "SUM(oil), SUM(gelatin), SUM(corn_flour), SUM(cocoa), SUM(dark_chocolate), SUM(white_chocolate), SUM(salt)," +
-                "SUM(baking_soda), SUM(baking_powder), SUM(confectioners_sugar), SUM(other) FROM shopping_list";
+                "SUM(baking_soda), SUM(baking_powder), SUM(confectioners_sugar) FROM shopping_list";
 
 
         PreparedStatement preparedStatement = connection.prepareStatement(query);
@@ -23,8 +23,6 @@ public class ShoppingListService {
         ResultSet result = preparedStatement.executeQuery();
         ShoppingList shoppingList = null;
         if (result.next()) {
-
-
 
             shoppingList = new ShoppingList(
                     result.getDouble("SUM(flour)"),
@@ -43,8 +41,8 @@ public class ShoppingListService {
                     result.getDouble("SUM(salt)"),
                     result.getDouble("SUM(baking_soda)"),
                     result.getDouble("SUM(baking_powder)"),
-                    result.getDouble("SUM(confectioners_sugar)"),
-                    result.getString("SUM(other)"));
+                    result.getDouble("SUM(confectioners_sugar)"));
+
         }
         DBManager.close(result, preparedStatement, connection);
         if (shoppingList == null) throw new Exception("Shopping list not found!");
@@ -52,6 +50,27 @@ public class ShoppingListService {
 
 
     }
+
+    public ShoppingList viewShoppingListOther() throws Exception {
+        connection = DBManager.getConnection();
+        String query = "SELECT `other`, GROUP_CONCAT( `other` SEPARATOR ',\r\n' ) as concact_text from shopping_list";
+
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+        ResultSet result = preparedStatement.executeQuery();
+        ShoppingList shoppingList = null;
+        if (result.next()) {
+
+            shoppingList = new ShoppingList(
+
+                    result.getString("concact_text"));
+
+        }
+        DBManager.close(result, preparedStatement, connection);
+        if (shoppingList == null) throw new Exception("Shopping list not found!");
+        return shoppingList;
+    }
+
 
     public void clearShoppingList () throws SQLException {
         connection = DBManager.getConnection();

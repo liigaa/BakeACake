@@ -18,7 +18,7 @@ public class UserService {
 
     public int verifyUserDetail(String username, String password) throws Exception {
         connection = DBManager.getConnection();
-        String query = "SELECT * FROM users WHERE username = ? && password = ? LIMIT 1";
+        String query = "SELECT * FROM users WHERE username = ? && password = md5(?) LIMIT 1";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setString(1, username);
         statement.setString(2, password);
@@ -35,7 +35,7 @@ public class UserService {
 
     public void registerUser(User user) throws SQLException {
         connection = DBManager.getConnection();
-        String query = "INSERT INTO users (name, username, password, email) VALUES (?,?,?,?)";
+        String query = "INSERT INTO users (name, username, password, email) VALUES (?,?,md5(?),?)";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setString(1, user.getName());
         preparedStatement.setString(2, user.getUsername());
@@ -73,7 +73,7 @@ public class UserService {
     public void changePassword(int id, String password) throws Exception{
         connection = DBManager.getConnection();
 
-        String query = "UPDATE users SET password = ? WHERE id = ?";
+        String query = "UPDATE users SET password = md5(?) WHERE id = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setString(1, password);
         preparedStatement.setInt(2, id);

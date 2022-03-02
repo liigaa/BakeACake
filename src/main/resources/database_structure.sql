@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS shopping_list(
     client_name varchar(100) not null,
     phone text not null,
     address varchar(100) null,
-    primary key(id)
+    primary key(client_id)
     );
 
     CREATE TABLE IF NOT EXISTS orders(

@@ -1,12 +1,15 @@
 package com.bakeacake.bakeacaketest.controller;
 
 import com.bakeacake.bakeacaketest.model.Cake;
+import com.bakeacake.bakeacaketest.repository.DataManager;
 import com.bakeacake.bakeacaketest.service.CakeRecipeService;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -38,12 +41,15 @@ public class CakeRecipeController extends ViewController implements Initializabl
     public TextField cakeTitleField;
     public ChoiceBox<Double> tinSize;
     private Double[] tins = {18.0, 20.0, 22.0};
+    public Button homeButton;
 
     private CakeRecipeService cakeRecipeService = new CakeRecipeService();
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        ImageView imageView = new ImageView(getClass().getResource("/images/favicon.png").toExternalForm());
+        homeButton.setGraphic(imageView);
 
         tinSize.getItems().addAll(tins);
         tinSize.setValue(18.0);
@@ -194,6 +200,16 @@ public class CakeRecipeController extends ViewController implements Initializabl
     public void returnHome(ActionEvent actionEvent) {
         try {
             changeScene(actionEvent, "home");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+    }
+
+    public void handleLogout(ActionEvent actionEvent) {
+        try {
+            DataManager.getInstance().setLoggedInUserId(null);
+            changeScene(actionEvent, "login");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
