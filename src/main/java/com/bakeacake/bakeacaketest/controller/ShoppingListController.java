@@ -92,8 +92,9 @@ public class ShoppingListController extends ViewController implements Initializa
         public void viewShoppingList () {
 
             try {
-                ShoppingList shoppingList = this.shoppingListService.viewShoppingList();
-                ShoppingList shoppingList1 = this.shoppingListService.viewShoppingListOther();
+                Integer user_id = DataManager.getInstance().getLoggedInUserId();
+                ShoppingList shoppingList = this.shoppingListService.viewShoppingList(user_id);
+                ShoppingList shoppingList1 = this.shoppingListService.viewShoppingListOther(user_id);
                 getIngredients(shoppingList);
                 getOtherField(shoppingList1);
 
@@ -149,7 +150,8 @@ public class ShoppingListController extends ViewController implements Initializa
     public void clearShoppingList (ActionEvent actionEvent) {
 
         try {
-            shoppingListService.clearShoppingList();
+            Integer user_id = DataManager.getInstance().getLoggedInUserId();
+            shoppingListService.clearShoppingList(user_id);
             try {
                 changeScene(actionEvent, "shopping_list");
             } catch (IOException e) {

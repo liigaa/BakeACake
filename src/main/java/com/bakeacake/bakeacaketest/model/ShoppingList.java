@@ -12,6 +12,7 @@ public class ShoppingList {
 
 
         private Integer id;
+        private Integer user_id;
         private double flour;
         private double sugar;
         private double eggs;
@@ -58,5 +59,28 @@ public class ShoppingList {
 
         public ShoppingList(String other) {
                 this.other = other;
+        }
+
+        public ShoppingList(Integer user_id, double flour, double sugar, double eggs, double butter, double creamCheese, double vanillaSugar, double milk, double oil, double gelatin, double cornFlour, double cocoa, double darkChocolate, double whiteChocolate, double salt, double bakingSoda, double bakingPowder, double confectionersSugar, double sour_cream) {
+                this.user_id = user_id;
+                this.flour = flour;
+                this.sugar = sugar;
+                this.eggs = eggs;
+                this.butter = butter;
+                this.creamCheese = creamCheese;
+                this.vanillaSugar = vanillaSugar;
+                this.milk = milk;
+                this.oil = oil;
+                this.gelatin = gelatin;
+                this.cornFlour = cornFlour;
+                this.cocoa = cocoa;
+                this.darkChocolate = darkChocolate;
+                this.whiteChocolate = whiteChocolate;
+                this.salt = salt;
+                this.bakingSoda = bakingSoda;
+                this.bakingPowder = bakingPowder;
+                this.confectionersSugar = confectionersSugar;
+                this.sour_cream = sour_cream;
+
         }
 }

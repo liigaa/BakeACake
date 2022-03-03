@@ -41,6 +41,7 @@ public class AddOrderController extends ViewController implements Initializable 
     public Button homeButton;
     private UserService userService = new UserService();
     private CakeRecipeService cakeRecipeService = new CakeRecipeService();
+    private Integer user_id = DataManager.getInstance().getLoggedInUserId();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -58,6 +59,7 @@ public class AddOrderController extends ViewController implements Initializable 
 
 
         try {
+
             Client name = clientListField.getSelectionModel().getSelectedItem();
             Cake title = cakeTitleField.getSelectionModel().getSelectedItem();
             String tinSize = tinSizeField.getValue();
@@ -76,7 +78,7 @@ public class AddOrderController extends ViewController implements Initializable 
             if (!checkEntry()) {
                 Order order = new Order(tinSize, myDate, deliveryTime,
                         deliverOptions, description, status);
-                userService.addOrder(order, title, name);
+                userService.addOrder(this.user_id, order, title, name);
                 showAlert(null, "Order added successfully", Alert.AlertType.CONFIRMATION);
                 changeScene(actionEvent, "order_screen");
             }
@@ -117,7 +119,8 @@ public class AddOrderController extends ViewController implements Initializable 
 
     public void viewAllClients() {
         try {
-            clientListField.getItems().addAll(this.userService.viewAllClient());
+
+            clientListField.getItems().addAll(this.userService.viewAllClient(this.user_id));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -125,7 +128,8 @@ public class AddOrderController extends ViewController implements Initializable 
 
     public void viewAllCakes() {
         try {
-            cakeTitleField.getItems().addAll(this.cakeRecipeService.viewAllRecipes());
+
+            cakeTitleField.getItems().addAll(this.cakeRecipeService.viewAllRecipes(this.user_id));
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -65,20 +65,21 @@ public class UpdateRecipeController extends ViewController implements Initializa
         try {
 
             String cakeTitle = DataManager.getInstance().getSelectedCakeTitle();
+            Integer user_id = DataManager.getInstance().getLoggedInUserId();
 
 
             if (tinSize.getValue().equals(20.0)) {
-                Cake cake = this.cakeRecipeService.getRecipeByCakeTitleTin20(cakeTitle);
+                Cake cake = this.cakeRecipeService.getRecipeByCakeTitleTin20(user_id, cakeTitle);
                 getIngredients(cake);
             }
 
             if (tinSize.getValue().equals(22.0)) {
-                Cake cake = this.cakeRecipeService.getRecipeByCakeTitleTin22(cakeTitle);
+                Cake cake = this.cakeRecipeService.getRecipeByCakeTitleTin22(user_id, cakeTitle);
                 getIngredients(cake);
             }
 
             if (tinSize.getValue().equals(18.0)) {
-                Cake cake = this.cakeRecipeService.getRecipeByCakeTitleTin18(cakeTitle);
+                Cake cake = this.cakeRecipeService.getRecipeByCakeTitleTin18(user_id, cakeTitle);
                 getIngredients(cake);
             }
 
@@ -120,20 +121,21 @@ public class UpdateRecipeController extends ViewController implements Initializa
 
 
         try {
+            Integer user_id = DataManager.getInstance().getLoggedInUserId();
 
             if (tinSize.getValue().equals(20.0)) {
-                cakeRecipeService.updateRecipeTinSize20(cake, cakeTitle);
-                cakeRecipeService.updateRecipeTinSize22(convertIngredients20to22(), cakeTitle);
-                cakeRecipeService.updateRecipeTinSize18(convertIngredients20to18(), cakeTitle);
+                cakeRecipeService.updateRecipeTinSize20(user_id, cake, cakeTitle);
+                cakeRecipeService.updateRecipeTinSize22(user_id, convertIngredients20to22(), cakeTitle);
+                cakeRecipeService.updateRecipeTinSize18(user_id, convertIngredients20to18(), cakeTitle);
 
             } else if (tinSize.getValue().equals(18.0)) {
-                cakeRecipeService.updateRecipeTinSize18(cake, cakeTitle);
-                cakeRecipeService.updateRecipeTinSize20(convertIngredients18to20(), cakeTitle);
-                cakeRecipeService.updateRecipeTinSize22(convertIngredients18to22(), cakeTitle);
+                cakeRecipeService.updateRecipeTinSize18(user_id, cake, cakeTitle);
+                cakeRecipeService.updateRecipeTinSize20(user_id, convertIngredients18to20(), cakeTitle);
+                cakeRecipeService.updateRecipeTinSize22(user_id, convertIngredients18to22(), cakeTitle);
             } else if (tinSize.getValue().equals(22.0)) {
-                cakeRecipeService.updateRecipeTinSize22(cake, cakeTitle);
-                cakeRecipeService.updateRecipeTinSize18(convertIngredients22to18(), cakeTitle);
-                cakeRecipeService.updateRecipeTinSize20(convertIngredients22to20(), cakeTitle);
+                cakeRecipeService.updateRecipeTinSize22(user_id, cake, cakeTitle);
+                cakeRecipeService.updateRecipeTinSize18(user_id, convertIngredients22to18(), cakeTitle);
+                cakeRecipeService.updateRecipeTinSize20(user_id, convertIngredients22to20(), cakeTitle);
             }
 
 

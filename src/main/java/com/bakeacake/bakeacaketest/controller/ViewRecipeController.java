@@ -60,20 +60,21 @@ public class ViewRecipeController extends ViewController implements Initializabl
         try {
 
             String cakeTitle = DataManager.getInstance().getSelectedCakeTitle();
+            Integer user_id = DataManager.getInstance().getLoggedInUserId();
 
 
             if (tinSize.getValue().equals(20.0)) {
-                Cake cake = this.cakeRecipeService.getRecipeByCakeTitleTin20(cakeTitle);
+                Cake cake = this.cakeRecipeService.getRecipeByCakeTitleTin20(user_id, cakeTitle);
                 getIngredients(cake);
             }
 
             if (tinSize.getValue().equals(22.0)) {
-                Cake cake = this.cakeRecipeService.getRecipeByCakeTitleTin22(cakeTitle);
+                Cake cake = this.cakeRecipeService.getRecipeByCakeTitleTin22(user_id, cakeTitle);
                 getIngredients(cake);
             }
 
             if (tinSize.getValue().equals(18.0)) {
-                Cake cake = this.cakeRecipeService.getRecipeByCakeTitleTin18(cakeTitle);
+                Cake cake = this.cakeRecipeService.getRecipeByCakeTitleTin18(user_id, cakeTitle);
                 getIngredients(cake);
             }
 
@@ -133,7 +134,8 @@ public class ViewRecipeController extends ViewController implements Initializabl
                 showAlert(null, "Please choose tin size", Alert.AlertType.ERROR);
                 return;
             }
-            this.cakeRecipeService.addToShoppingList(cake);
+            Integer user_id = DataManager.getInstance().getLoggedInUserId();
+            this.cakeRecipeService.addToShoppingList(user_id, cake);
 
             showAlert(null, "Ingredients added to shopping list", Alert.AlertType.INFORMATION);
         } catch (SQLException e) {
