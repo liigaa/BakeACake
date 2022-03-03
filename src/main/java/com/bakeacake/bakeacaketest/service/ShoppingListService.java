@@ -76,7 +76,7 @@ public class ShoppingListService {
     }
 
 
-    public void clearShoppingList (int user_id) throws SQLException {
+    public void clearShoppingList(int user_id) throws SQLException {
         connection = DBManager.getConnection();
 
         String query = "DELETE FROM shopping_list WHERE user_id = ?";

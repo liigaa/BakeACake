@@ -13,7 +13,6 @@ public class OrderController extends ViewController implements Initializable {
     public Button homeButton;
 
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ImageView imageView = new ImageView(getClass().getResource("/images/favicon.png").toExternalForm());

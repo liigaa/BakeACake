@@ -5,8 +5,6 @@ import com.bakeacake.bakeacaketest.service.UserService;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -65,7 +63,6 @@ public class HomePageController extends ViewController implements Initializable 
         }
         welcomeLabel.setText("Welcome " + name);
     }
-
 
 
     public void changePassword(ActionEvent actionEvent) {

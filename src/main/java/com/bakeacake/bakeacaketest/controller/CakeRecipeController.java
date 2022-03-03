@@ -14,7 +14,6 @@ import java.util.ResourceBundle;
 
 public class CakeRecipeController extends ViewController implements Initializable {
 
-    
 
     public TextField flourField;
     public TextField sugarField;
@@ -54,8 +53,9 @@ public class CakeRecipeController extends ViewController implements Initializabl
 
 
     }
-    private Double convertField(String value){
-        return  value.isEmpty()? 0.0 : Double.parseDouble(value);
+
+    private Double convertField(String value) {
+        return value.isEmpty() ? 0.0 : Double.parseDouble(value);
 
     }
 
@@ -69,7 +69,6 @@ public class CakeRecipeController extends ViewController implements Initializabl
                 convertField(darkChocolateField.getText()), convertField(whiteChocolateField.getText()),
                 convertField(saltField.getText()), convertField(bakingSodaField.getText()), convertField(bakingPowderField.getText()),
                 convertField(confectionersSugarField.getText()), convertField(sourCreamField.getText()), otherTextArea.getText());
-
 
 
         try {
@@ -102,7 +101,7 @@ public class CakeRecipeController extends ViewController implements Initializabl
 
     }
 
-    public Cake convertIngredients20to18(){
+    public Cake convertIngredients20to18() {
         Cake cake = new Cake(cakeTitleField.getText(), convertField(flourField.getText()) / 1.23, convertField(sugarField.getText()) / 1.23,
                 convertField(eggsField.getText()) / 1.23, convertField(butterField.getText()) / 1.23, convertField(creamCheeseField.getText()) / 1.23,
                 convertField(vanillaSugarField.getText()) / 1.23, convertField(milkField.getText()) / 1.23, convertField(oilField.getText()) / 1.23,
@@ -114,7 +113,7 @@ public class CakeRecipeController extends ViewController implements Initializabl
         return cake;
     }
 
-    public Cake convertIngredients20to22(){
+    public Cake convertIngredients20to22() {
         Cake cake = new Cake(cakeTitleField.getText(), convertField(flourField.getText()) * 1.21, convertField(sugarField.getText()) * 1.21,
                 convertField(eggsField.getText()) * 1.21, convertField(butterField.getText()) * 1.21, convertField(creamCheeseField.getText()) * 1.21,
                 convertField(vanillaSugarField.getText()) * 1.21, convertField(milkField.getText()) * 1.21, convertField(oilField.getText()) * 1.21,
@@ -125,7 +124,7 @@ public class CakeRecipeController extends ViewController implements Initializabl
         return cake;
     }
 
-    public Cake convertIngredients18to20(){
+    public Cake convertIngredients18to20() {
         Cake cake = new Cake(cakeTitleField.getText(), convertField(flourField.getText()) * 1.23, convertField(sugarField.getText()) * 1.23,
                 convertField(eggsField.getText()) * 1.23, convertField(butterField.getText()) * 1.23, convertField(creamCheeseField.getText()) * 1.23,
                 convertField(vanillaSugarField.getText()) * 1.23, convertField(milkField.getText()) * 1.23, convertField(oilField.getText()) * 1.23,
@@ -158,7 +157,7 @@ public class CakeRecipeController extends ViewController implements Initializabl
         return cake;
     }
 
-    public Cake convertIngredients22to20(){
+    public Cake convertIngredients22to20() {
         Cake cake = new Cake(cakeTitleField.getText(), convertField(flourField.getText()) / 1.21, convertField(sugarField.getText()) / 1.21,
                 convertField(eggsField.getText()) / 1.21, convertField(butterField.getText()) / 1.21, convertField(creamCheeseField.getText()) / 1.21,
                 convertField(vanillaSugarField.getText()) / 1.21, convertField(milkField.getText()) / 1.21, convertField(oilField.getText()) / 1.21,
@@ -168,7 +167,6 @@ public class CakeRecipeController extends ViewController implements Initializabl
                 convertField(confectionersSugarField.getText()) / 1.21, convertField(sourCreamField.getText()) / 1.21, otherTextArea.getText());
         return cake;
     }
-
 
 
     public void clear() {

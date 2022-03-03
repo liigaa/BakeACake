@@ -2,8 +2,6 @@ package com.bakeacake.bakeacaketest.model;
 
 import lombok.*;
 
-import java.util.PrimitiveIterator;
-
 
 @Getter
 @Setter
@@ -129,7 +127,6 @@ public class Cake {
         this.sourCream = sourCream;
         this.other = other;
     }
-
 
 
     @Override
