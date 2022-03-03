@@ -31,7 +31,8 @@ public class UpdateRecipeController extends ViewController implements Initializa
     public TextField bakingSodaField;
     public TextField bakingPowderField;
     public TextField confectionersSugarField;
-    public TextField otherField;
+    public TextField sourCreamField;
+    public TextArea otherTextArea;
     public Label cakeTitleField;
     public ComboBox<Double> tinSize;
     private Double[] tins = {18.0, 20.0, 22.0};
@@ -110,7 +111,7 @@ public class UpdateRecipeController extends ViewController implements Initializa
                 convertField(gelatinField.getText()), convertField(cornFlourField.getText()), convertField(cocoaField.getText()),
                 convertField(darkChocolateField.getText()), convertField(whiteChocolateField.getText()),
                 convertField(saltField.getText()), convertField(bakingSodaField.getText()), convertField(bakingPowderField.getText()),
-                convertField(confectionersSugarField.getText()), otherField.getText());
+                convertField(confectionersSugarField.getText()), convertField(sourCreamField.getText()), otherTextArea.getText());
 
         if (tinSize.getValue() == null){
             showAlert(null, "Please choose tin size", Alert.AlertType.ERROR);
@@ -156,7 +157,7 @@ public class UpdateRecipeController extends ViewController implements Initializa
                 convertField(gelatinField.getText()) / 1.23, convertField(cornFlourField.getText()) / 1.23, convertField(cocoaField.getText()) / 1.23,
                 convertField(darkChocolateField.getText()) / 1.23, convertField(whiteChocolateField.getText()) / 1.23,
                 convertField(saltField.getText()) / 1.23, convertField(bakingSodaField.getText()) / 1.23, convertField(bakingPowderField.getText()) / 1.23,
-                convertField(confectionersSugarField.getText()) / 1.23, otherField.getText());
+                convertField(confectionersSugarField.getText()) / 1.23, convertField(sourCreamField.getText()) / 1.23, otherTextArea.getText());
 
         return cake;
     }
@@ -169,7 +170,7 @@ public class UpdateRecipeController extends ViewController implements Initializa
                 convertField(gelatinField.getText()) * 1.21, convertField(cornFlourField.getText()) * 1.21, convertField(cocoaField.getText()) * 1.21,
                 convertField(darkChocolateField.getText()) * 1.21, convertField(whiteChocolateField.getText()) * 1.21,
                 convertField(saltField.getText()) * 1.21, convertField(bakingSodaField.getText()) * 1.21, convertField(bakingPowderField.getText()) * 1.21,
-                convertField(confectionersSugarField.getText()) * 1.21, otherField.getText());
+                convertField(confectionersSugarField.getText()) * 1.21, convertField(sourCreamField.getText()) * 1.21, otherTextArea.getText());
         return cake;
     }
 
@@ -181,7 +182,7 @@ public class UpdateRecipeController extends ViewController implements Initializa
                 convertField(gelatinField.getText()) * 1.23, convertField(cornFlourField.getText()) * 1.23, convertField(cocoaField.getText()) * 1.23,
                 convertField(darkChocolateField.getText()) * 1.23, convertField(whiteChocolateField.getText()) * 1.23,
                 convertField(saltField.getText()) * 1.23, convertField(bakingSodaField.getText()) * 1.23, convertField(bakingPowderField.getText()) * 1.23,
-                convertField(confectionersSugarField.getText()) * 1.23, otherField.getText());
+                convertField(confectionersSugarField.getText()) * 1.23, convertField(sourCreamField.getText()) * 1.23, otherTextArea.getText());
         return cake;
     }
 
@@ -193,7 +194,7 @@ public class UpdateRecipeController extends ViewController implements Initializa
                 convertField(gelatinField.getText()) * 1.49, convertField(cornFlourField.getText()) * 1.49, convertField(cocoaField.getText()) * 1.49,
                 convertField(darkChocolateField.getText()) * 1.49, convertField(whiteChocolateField.getText()) * 1.49,
                 convertField(saltField.getText()) * 1.49, convertField(bakingSodaField.getText()) * 1.49, convertField(bakingPowderField.getText()) * 1.49,
-                convertField(confectionersSugarField.getText()) * 1.49, otherField.getText());
+                convertField(confectionersSugarField.getText()) * 1.49, convertField(sourCreamField.getText()) * 1.49, otherTextArea.getText());
         return cake;
     }
 
@@ -205,7 +206,7 @@ public class UpdateRecipeController extends ViewController implements Initializa
                 convertField(gelatinField.getText()) / 1.49, convertField(cornFlourField.getText()) / 1.49, convertField(cocoaField.getText()) / 1.49,
                 convertField(darkChocolateField.getText()) / 1.49, convertField(whiteChocolateField.getText()) / 1.49,
                 convertField(saltField.getText()) / 1.49, convertField(bakingSodaField.getText()) / 1.49, convertField(bakingPowderField.getText()) / 1.49,
-                convertField(confectionersSugarField.getText()) / 1.49, otherField.getText());
+                convertField(confectionersSugarField.getText()) / 1.49, convertField(sourCreamField.getText()) / 1.49, otherTextArea.getText());
         return cake;
     }
 
@@ -217,7 +218,7 @@ public class UpdateRecipeController extends ViewController implements Initializa
                 convertField(gelatinField.getText()) / 1.21, convertField(cornFlourField.getText()) / 1.21, convertField(cocoaField.getText()) / 1.21,
                 convertField(darkChocolateField.getText()) / 1.21, convertField(whiteChocolateField.getText()) / 1.21,
                 convertField(saltField.getText()) / 1.21, convertField(bakingSodaField.getText()) / 1.21, convertField(bakingPowderField.getText()) / 1.21,
-                convertField(confectionersSugarField.getText()) / 1.21, otherField.getText());
+                convertField(confectionersSugarField.getText()) / 1.21, convertField(sourCreamField.getText()) / 1.21, otherTextArea.getText());
         return cake;
     }
     public void clear() {
@@ -239,7 +240,8 @@ public class UpdateRecipeController extends ViewController implements Initializa
         bakingSodaField.clear();
         bakingPowderField.clear();
         confectionersSugarField.clear();
-        otherField.clear();
+        sourCreamField.clear();
+        otherTextArea.clear();
     }
 
 
@@ -263,7 +265,8 @@ public class UpdateRecipeController extends ViewController implements Initializa
         bakingSodaField.setText(String.valueOf(cake.getBakingSoda()));
         bakingPowderField.setText(String.valueOf(cake.getBakingPowder()));
         confectionersSugarField.setText(String.valueOf(cake.getConfectionersSugar()));
-        otherField.setText(cake.getOther());
+        sourCreamField.setText(String.valueOf(cake.getSourCream()));
+        otherTextArea.setText(cake.getOther());
     }
 
     public void returnToRecipes(ActionEvent actionEvent) {

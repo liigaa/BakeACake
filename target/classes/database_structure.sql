@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS cake_tin_18(
     baking_soda double (10, 2),
     baking_powder double (10, 2),
     confectioners_sugar double (10, 2),
+    sour_cream double (10, 2),
     other varchar(250),
     primary key(id)
     );
@@ -55,6 +56,7 @@ CREATE TABLE IF NOT EXISTS cake_tin_20(
     baking_soda double (10, 2),
     baking_powder double (10, 2),
     confectioners_sugar double (10, 2),
+    sour_cream double (10, 2),
     other varchar(250),
     primary key(id)
     );
@@ -79,6 +81,7 @@ CREATE TABLE IF NOT EXISTS cake_tin_22(
     baking_soda double (10, 2),
     baking_powder double (10, 2),
     confectioners_sugar double (10, 2),
+    sour_cream double (10, 2),
     other varchar(250),
     primary key(id)
     );
@@ -102,6 +105,7 @@ CREATE TABLE IF NOT EXISTS shopping_list(
     baking_soda double (10, 2),
     baking_powder double (10, 2),
     confectioners_sugar double (10, 2),
+    sour_cream double (10, 2),
     other varchar(500),
     primary key(id)
     );

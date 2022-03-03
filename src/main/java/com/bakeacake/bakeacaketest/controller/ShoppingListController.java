@@ -44,11 +44,11 @@ public class ShoppingListController extends ViewController implements Initializa
     public Label bakingPowderField;
     public Label confectionersSugarField;
     public TextArea otherTextArea;
-    public Label otherField;
     public Button homeButton;
     public AnchorPane anchorPane;
     public GridPane gridPane;
     public Label shoppingListLabel;
+    public Label sourCreamField;
 
 
 
@@ -121,6 +121,7 @@ public class ShoppingListController extends ViewController implements Initializa
         bakingSodaField.setText(String.valueOf(shoppingList.getBakingSoda()));
         bakingPowderField.setText(String.valueOf(shoppingList.getBakingPowder()));
         confectionersSugarField.setText(String.valueOf(shoppingList.getConfectionersSugar()));
+        sourCreamField.setText(String.valueOf(shoppingList.getSour_cream()));
 
     }
 

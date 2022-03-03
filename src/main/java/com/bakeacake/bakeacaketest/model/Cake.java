@@ -31,9 +31,10 @@ public class Cake {
     private double bakingSoda;
     private double bakingPowder;
     private double confectionersSugar;
+    private double sourCream;
     private String other;
 
-    public Cake(String cakeTitle, double flour, double sugar, double eggs, double butter, double creamCheese, double vanillaSugar, double milk, double oil, double gelatin, double cornFlour, double cocoa, double darkChocolate, double whiteChocolate, double salt, double bakingSoda, double bakingPowder, double confectionersSugar, String other) {
+    public Cake(String cakeTitle, double flour, double sugar, double eggs, double butter, double creamCheese, double vanillaSugar, double milk, double oil, double gelatin, double cornFlour, double cocoa, double darkChocolate, double whiteChocolate, double salt, double bakingSoda, double bakingPowder, double confectionersSugar, double sourCream, String other) {
         this.cakeTitle = cakeTitle;
         this.flour = flour;
         this.sugar = sugar;
@@ -52,10 +53,11 @@ public class Cake {
         this.bakingSoda = bakingSoda;
         this.bakingPowder = bakingPowder;
         this.confectionersSugar = confectionersSugar;
+        this.sourCream = sourCream;
         this.other = other;
     }
 
-    public Cake(double flour, double sugar, double eggs, double butter, double creamCheese, double vanillaSugar, double milk, double oil, double gelatin, double cornFlour, double cocoa, double darkChocolate, double whiteChocolate, double salt, double bakingSoda, double bakingPowder, double confectionersSugar) {
+    public Cake(double flour, double sugar, double eggs, double butter, double creamCheese, double vanillaSugar, double milk, double oil, double gelatin, double cornFlour, double cocoa, double darkChocolate, double whiteChocolate, double salt, double bakingSoda, double bakingPowder, double confectionersSugar, double sourCream) {
         this.flour = flour;
         this.sugar = sugar;
         this.eggs = eggs;
@@ -73,6 +75,7 @@ public class Cake {
         this.bakingSoda = bakingSoda;
         this.bakingPowder = bakingPowder;
         this.confectionersSugar = confectionersSugar;
+        this.sourCream = sourCream;
     }
 
     public Cake(Integer id, String cakeTitle) {
@@ -80,7 +83,7 @@ public class Cake {
         this.cakeTitle = cakeTitle;
     }
 
-    public Cake(double flour, double sugar, double eggs, double butter, double creamCheese, double vanillaSugar, double milk, double oil, double gelatin, double cornFlour, double cocoa, double darkChocolate, double whiteChocolate, double salt, double bakingSoda, double bakingPowder, double confectionersSugar, String other) {
+    public Cake(double flour, double sugar, double eggs, double butter, double creamCheese, double vanillaSugar, double milk, double oil, double gelatin, double cornFlour, double cocoa, double darkChocolate, double whiteChocolate, double salt, double bakingSoda, double bakingPowder, double confectionersSugar, double sourCream, String other) {
         this.flour = flour;
         this.sugar = sugar;
         this.eggs = eggs;
@@ -98,8 +101,11 @@ public class Cake {
         this.bakingSoda = bakingSoda;
         this.bakingPowder = bakingPowder;
         this.confectionersSugar = confectionersSugar;
+        this.sourCream = sourCream;
         this.other = other;
     }
+
+
 
     @Override
     public String toString() {

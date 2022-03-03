@@ -15,7 +15,7 @@ public class ShoppingListService {
         connection = DBManager.getConnection();
         String query = "SELECT SUM(flour), SUM(sugar), SUM(eggs_grams), SUM(butter), SUM(cream_cheese), SUM(vanilla_sugar), SUM(milk)," +
                 "SUM(oil), SUM(gelatin), SUM(corn_flour), SUM(cocoa), SUM(dark_chocolate), SUM(white_chocolate), SUM(salt)," +
-                "SUM(baking_soda), SUM(baking_powder), SUM(confectioners_sugar) FROM shopping_list";
+                "SUM(baking_soda), SUM(baking_powder), SUM(confectioners_sugar), SUM(sour_cream) FROM shopping_list";
 
 
         PreparedStatement preparedStatement = connection.prepareStatement(query);
@@ -41,7 +41,8 @@ public class ShoppingListService {
                     result.getDouble("SUM(salt)"),
                     result.getDouble("SUM(baking_soda)"),
                     result.getDouble("SUM(baking_powder)"),
-                    result.getDouble("SUM(confectioners_sugar)"));
+                    result.getDouble("SUM(confectioners_sugar)"),
+                    result.getDouble("SUM(sour_cream)"));
 
         }
         DBManager.close(result, preparedStatement, connection);

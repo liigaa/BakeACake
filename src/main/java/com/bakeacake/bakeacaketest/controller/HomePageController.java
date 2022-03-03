@@ -122,6 +122,7 @@ public class HomePageController extends ViewController implements Initializable 
 
     public void goToShoppingList(ActionEvent actionEvent) {
         try {
+
             changeScene(actionEvent, "shopping_list");
         } catch (Exception ex) {
             ex.printStackTrace();
