@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
 public class LoginController extends ViewController implements Initializable {
     UserService userService = new UserService();
 
-    public Label notificationLabel;
+
     public TextField usernameField;
     public PasswordField passwordField;
     public Button logInButton;
@@ -27,7 +27,6 @@ public class LoginController extends ViewController implements Initializable {
 
         try{
             Integer userId = userService.verifyUserDetail(usernameField.getText(), passwordField.getText());
-            notificationLabel.setText("Login successful for " + usernameField.getText() + " User " + userId);
             DataManager.getInstance().setLoggedInUserId(userId);
             changeScene(actionEvent, "home");
         }catch (Exception e){
@@ -40,6 +39,15 @@ public class LoginController extends ViewController implements Initializable {
     public void handleLoadRegister(ActionEvent actionEvent){
         try{
             changeScene(actionEvent, "register");
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+
+    }
+
+    public void resetPassword(ActionEvent actionEvent){
+        try{
+            changeScene(actionEvent, "reset_password");
         }catch (Exception ex){
             ex.printStackTrace();
         }

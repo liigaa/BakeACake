@@ -4,9 +4,7 @@ import com.bakeacake.bakeacaketest.repository.DataManager;
 import com.bakeacake.bakeacaketest.service.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 import java.net.URL;
@@ -16,6 +14,12 @@ public class PasswordController extends ViewController implements Initializable 
 
     public PasswordField newPasswordField;
     public Button homeButton;
+//    public TextField usernameField;
+//    public TextField emailField;
+//    public TextField answerField;
+//    public ComboBox<String> secretQuestionBox;
+//    private String [] secretQuestion = {"Your cat's name", "Your dog's name", "Your first teacher's name"};
+
 
     UserService userService = new UserService();
 
@@ -24,6 +28,7 @@ public class PasswordController extends ViewController implements Initializable 
 
         ImageView imageView = new ImageView(getClass().getResource("/images/favicon.png").toExternalForm());
         homeButton.setGraphic(imageView);
+        //secretQuestionBox.getItems().addAll(secretQuestion);
 
     }
 
@@ -36,7 +41,7 @@ public class PasswordController extends ViewController implements Initializable 
                 showAlert(null, "New password field is empty. Please enter new password!", Alert.AlertType.INFORMATION);
                 return;
             }
-            //changeScene(actionEvent, "home");
+            changeScene(actionEvent, "home");
             showAlert(null, "Password changed successfully", Alert.AlertType.INFORMATION);
             newPasswordField.clear();
 
@@ -46,6 +51,8 @@ public class PasswordController extends ViewController implements Initializable 
 
 
     }
+
+
 
     public void returnHome(ActionEvent actionEvent){
         try{
@@ -65,6 +72,29 @@ public class PasswordController extends ViewController implements Initializable 
         }
 
     }
+
+//    public void resetPassword (ActionEvent actionEvent) {
+//        try{
+//            Integer userId = userService.verifyUserForResetPassword(usernameField.getText(), emailField.getText(),
+//                    secretQuestionBox.getValue(), answerField.getText());
+//            DataManager.getInstance().setLoggedInUserId(userId);
+//            changeScene(actionEvent, "reset_password");
+//        }catch (Exception e){
+//            e.printStackTrace();
+//            showAlert("Login Failed", e.getMessage(), Alert.AlertType.ERROR);
+//        }
+//
+//    }
+//
+//    public void cancelResetPassword(ActionEvent actionEvent){
+//        try{
+//            changeScene(actionEvent, "login");
+//        }catch (Exception ex){
+//            ex.printStackTrace();
+//        }
+//
+//    }
+
 
 
 
