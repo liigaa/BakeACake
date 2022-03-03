@@ -14,6 +14,8 @@ public class User {
     private String username;
     private String password;
     private String email;
+    private String secretQuestion;
+    private String secretAnswer;
 
 
     public User(Integer id, String name, String username, String email) {
@@ -30,6 +32,15 @@ public class User {
         this.password = password;
         this.email = email;
 
+    }
+
+    public User(String name, String username, String password, String email, String secretQuestion, String secretAnswer) {
+        this.name = name;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.secretQuestion = secretQuestion;
+        this.secretAnswer = secretAnswer;
     }
 
 

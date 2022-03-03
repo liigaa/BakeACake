@@ -8,6 +8,8 @@ name varchar(100) not null,
 username varchar(100) unique not null,
 password text not null,
 email varchar(100) unique null,
+secret_question varchar(100) not null,
+secret_answer varchar (100) not null,
 primary key(id)
 );
 

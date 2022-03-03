@@ -33,14 +33,35 @@ public class UserService {
 
     }
 
+    public int verifyUserForResetPassword(String username, String email, String secret_question, String answer) throws Exception {
+        connection = DBManager.getConnection();
+        String query = "SELECT * FROM users WHERE username = ? && email = ? && secret_question = ? && secret_answer = md5(?) LIMIT 1";
+        PreparedStatement statement = connection.prepareStatement(query);
+        statement.setString(1, username);
+        statement.setString(2, email);
+        statement.setString(3, secret_question);
+        statement.setString(4, answer);
+
+        Integer userId = null;
+        ResultSet resultSet = statement.executeQuery();
+
+        if(resultSet.next()) userId = resultSet.getInt("id");
+        DBManager.close(resultSet, statement, connection);
+        if(userId == null || userId == 0) throw new Exception("User name, email, secret question or answer not correct");
+        return userId;
+
+    }
+
     public void registerUser(User user) throws SQLException {
         connection = DBManager.getConnection();
-        String query = "INSERT INTO users (name, username, password, email) VALUES (?,?,md5(?),?)";
+        String query = "INSERT INTO users (name, username, password, email,  secret_question, secret_answer) VALUES (?,?,md5(?),?,?,md5(?))";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setString(1, user.getName());
         preparedStatement.setString(2, user.getUsername());
         preparedStatement.setString(3, user.getPassword());
         preparedStatement.setString(4, user.getEmail());
+        preparedStatement.setString(5, user.getSecretQuestion());
+        preparedStatement.setString(6, user.getSecretAnswer());
 
 
         preparedStatement.execute();

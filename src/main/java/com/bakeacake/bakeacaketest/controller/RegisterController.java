@@ -12,26 +12,32 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class RegisterController extends ViewController implements Initializable {
-    public Label notificationLabel;
+
     public TextField nameField;
     public TextField usernameField;
     public PasswordField passwordField;
     public PasswordField confirmPasswordField;
     public TextField emailField;
+    public ComboBox<String> secretQuestionBox;
+    private String [] secretQuestion = {"Your cat's name", "Your dog's name", "Your first teacher's name"};
+    public TextField answerField;
 
     private UserService userService = new UserService();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        secretQuestionBox.getItems().addAll(secretQuestion);
+        secretQuestionBox.setValue("Your cat's name");
+
     }
 
     public void handleRegistration(ActionEvent actionEvent) {
         User user = new User(nameField.getText(), usernameField.getText(), passwordField.getText(),
-                emailField.getText());
+                emailField.getText(), secretQuestionBox.getValue(), answerField.getText());
         if (nameField.getText().isEmpty() || usernameField.getText().isEmpty() || passwordField.getText().isEmpty()
-                || emailField.getText().isEmpty()) {
-            showAlert(null, "Please provide name, username, password and email", Alert.AlertType.ERROR);
+                || emailField.getText().isEmpty() || answerField.getText().isEmpty()) {
+            showAlert(null, "Please provide name, username, password, email and answer ", Alert.AlertType.ERROR);
             return;
         }
         if (!(passwordField.getText().equals(confirmPasswordField.getText()))) {

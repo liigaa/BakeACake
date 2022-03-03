@@ -28,11 +28,16 @@
    
        <Label text="Email" GridPane.columnIndex="0" GridPane.rowIndex="5" />
        <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+       <Label text="Secret question" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+       <ComboBox fx:id="secretQuestionBox" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+       <Label text="Answer" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+       <TextField fx:id="answerField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
    
        <Button onAction="#handleRegistration" style="-fx-font-size: 14px; -fx-text-fill: white; -fx-background-color: #444F4F" text="Register" GridPane.columnIndex="0" GridPane.rowIndex="8" />
        <Button onAction="#handleCancelRegister" style="-fx-font-size: 14px; -fx-text-fill: white; -fx-background-color: #444F4F" text="Cancel" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-   
-       <Label fx:id="notificationLabel" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="9" />
+
             <Button mnemonicParsing="false" onAction="#handleLogin" prefHeight="25.0" prefWidth="72.0" text="Log in" GridPane.columnIndex="2" GridPane.rowIndex="8" />
    </children>
    <columnConstraints>
