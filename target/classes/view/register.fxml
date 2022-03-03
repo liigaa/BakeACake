@@ -8,7 +8,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
 
-<GridPane alignment="CENTER" hgap="10" style="-fx-background-color:#899494" vgap="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.RegisterController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" style="-fx-background-color:#899494" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.RegisterController">
+    <children>
+<GridPane alignment="CENTER" hgap="10" layoutX="210.0" layoutY="258.0" vgap="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
        <Text text="Create an account" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
    
@@ -31,10 +33,12 @@
        <Button onAction="#handleCancelRegister" style="-fx-font-size: 14px; -fx-text-fill: white; -fx-background-color: #444F4F" text="Cancel" GridPane.columnIndex="1" GridPane.rowIndex="8" />
    
        <Label fx:id="notificationLabel" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="9" />
+            <Button mnemonicParsing="false" onAction="#handleLogin" prefHeight="25.0" prefWidth="72.0" text="Log in" GridPane.columnIndex="2" GridPane.rowIndex="8" />
    </children>
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />
+            <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints />
@@ -49,3 +53,5 @@
       <RowConstraints />
    </rowConstraints>
 </GridPane>
+    </children>
+</AnchorPane>
