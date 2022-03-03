@@ -32,7 +32,8 @@ public class ViewRecipeController extends ViewController implements Initializabl
     public Label bakingSodaField;
     public Label bakingPowderField;
     public Label confectionersSugarField;
-    public Label otherField;
+    public Label sourCreamField;
+    public TextArea otherTextArea;
     public Label cakeTitleField;
     public ComboBox<Double> tinSize;
     private Double[] tins = {18.0, 20.0, 22.0};
@@ -103,7 +104,8 @@ public class ViewRecipeController extends ViewController implements Initializabl
         bakingSodaField.setText(String.valueOf(cake.getBakingSoda()));
         bakingPowderField.setText(String.valueOf(cake.getBakingPowder()));
         confectionersSugarField.setText(String.valueOf(cake.getConfectionersSugar()));
-        otherField.setText(cake.getOther());
+        sourCreamField.setText(String.valueOf(cake.getSourCream()));
+        otherTextArea.setText(cake.getOther());
     }
 
 
@@ -123,7 +125,7 @@ public class ViewRecipeController extends ViewController implements Initializabl
                 convertField(gelatinField.getText()), convertField(cornFlourField.getText()), convertField(cocoaField.getText()),
                 convertField(darkChocolateField.getText()), convertField(whiteChocolateField.getText()),
                 convertField(saltField.getText()), convertField(bakingSodaField.getText()), convertField(bakingPowderField.getText()),
-                convertField(confectionersSugarField.getText()), otherField.getText());
+                convertField(confectionersSugarField.getText()), convertField(sourCreamField.getText()), otherTextArea.getText());
 
         try {
 

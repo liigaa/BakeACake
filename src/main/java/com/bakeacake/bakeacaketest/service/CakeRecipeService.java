@@ -18,7 +18,7 @@ public class CakeRecipeService {
         connection = DBManager.getConnection();
         String query = "INSERT INTO cake_tin_20 (cake_title, flour, sugar, eggs_grams, butter, cream_cheese," +
                 "vanilla_sugar, milk, oil, gelatin, corn_flour, cocoa, dark_chocolate, white_chocolate," +
-                " salt, baking_soda, baking_powder, confectioners_sugar, other) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                " salt, baking_soda, baking_powder, confectioners_sugar, sour_cream, other) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setString(1, cake.getCakeTitle());
         preparedStatement.setDouble(2, cake.getFlour());
@@ -38,7 +38,8 @@ public class CakeRecipeService {
         preparedStatement.setDouble(16, cake.getBakingSoda());
         preparedStatement.setDouble(17, cake.getBakingPowder());
         preparedStatement.setDouble(18, cake.getConfectionersSugar());
-        preparedStatement.setString(19, cake.getOther());
+        preparedStatement.setDouble(19, cake.getSourCream());
+        preparedStatement.setString(20, cake.getOther());
 
 
         DBManager.executeAndClose(preparedStatement, connection);
@@ -48,7 +49,7 @@ public class CakeRecipeService {
         connection = DBManager.getConnection();
         String query = "INSERT INTO cake_tin_18 (cake_title, flour, sugar, eggs_grams, butter, cream_cheese," +
                 "vanilla_sugar, milk, oil, gelatin, corn_flour, cocoa, dark_chocolate, white_chocolate," +
-                " salt, baking_soda, baking_powder, confectioners_sugar, other) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                " salt, baking_soda, baking_powder, confectioners_sugar, sour_cream, other) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setString(1, cake.getCakeTitle());
         preparedStatement.setDouble(2, cake.getFlour());
@@ -68,7 +69,8 @@ public class CakeRecipeService {
         preparedStatement.setDouble(16, cake.getBakingSoda());
         preparedStatement.setDouble(17, cake.getBakingPowder());
         preparedStatement.setDouble(18, cake.getConfectionersSugar());
-        preparedStatement.setString(19, cake.getOther());
+        preparedStatement.setDouble(19, cake.getSourCream());
+        preparedStatement.setString(20, cake.getOther());
 
         DBManager.executeAndClose(preparedStatement, connection);
     }
@@ -77,7 +79,7 @@ public class CakeRecipeService {
         connection = DBManager.getConnection();
         String query = "INSERT INTO cake_tin_22 (cake_title, flour, sugar, eggs_grams, butter, cream_cheese," +
                 "vanilla_sugar, milk, oil, gelatin, corn_flour, cocoa, dark_chocolate, white_chocolate," +
-                " salt, baking_soda, baking_powder, confectioners_sugar, other) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                " salt, baking_soda, baking_powder, confectioners_sugar, sour_cream, other) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setString(1, cake.getCakeTitle());
         preparedStatement.setDouble(2, cake.getFlour());
@@ -97,7 +99,8 @@ public class CakeRecipeService {
         preparedStatement.setDouble(16, cake.getBakingSoda());
         preparedStatement.setDouble(17, cake.getBakingPowder());
         preparedStatement.setDouble(18, cake.getConfectionersSugar());
-        preparedStatement.setString(19, cake.getOther());
+        preparedStatement.setDouble(19, cake.getSourCream());
+        preparedStatement.setString(20, cake.getOther());
 
         DBManager.executeAndClose(preparedStatement, connection);
     }
@@ -159,7 +162,7 @@ public class CakeRecipeService {
         connection = DBManager.getConnection();
         String query = "SELECT cake_title, flour, sugar, eggs_grams, butter, cream_cheese," +
                 "vanilla_sugar, milk, oil, gelatin, corn_flour, cocoa, dark_chocolate, white_chocolate," +
-                "salt, baking_soda, baking_powder, confectioners_sugar, other FROM cake_tin_20 WHERE cake_title = ? LIMIT 1";
+                "salt, baking_soda, baking_powder, confectioners_sugar, sour_cream, other FROM cake_tin_20 WHERE cake_title = ? LIMIT 1";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setString(1, cakeTitle);
 
@@ -186,6 +189,7 @@ public class CakeRecipeService {
                     result.getDouble("baking_soda"),
                     result.getDouble("baking_powder"),
                     result.getDouble("confectioners_sugar"),
+                    result.getDouble("sour_cream"),
                     result.getString("other"));
         }
         DBManager.close(result, preparedStatement, connection);
@@ -197,7 +201,7 @@ public class CakeRecipeService {
         connection = DBManager.getConnection();
         String query = "SELECT cake_title, flour, sugar, eggs_grams, butter, cream_cheese," +
                 "vanilla_sugar, milk, oil, gelatin, corn_flour, cocoa, dark_chocolate, white_chocolate," +
-                "salt, baking_soda, baking_powder, confectioners_sugar, other FROM cake_tin_18 WHERE cake_title = ? LIMIT 1";
+                "salt, baking_soda, baking_powder, confectioners_sugar, sour_cream, other FROM cake_tin_18 WHERE cake_title = ? LIMIT 1";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setString(1, cakeTitle);
 
@@ -224,6 +228,7 @@ public class CakeRecipeService {
                     result.getDouble("baking_soda"),
                     result.getDouble("baking_powder"),
                     result.getDouble("confectioners_sugar"),
+                    result.getDouble("sour_cream"),
                     result.getString("other"));
         }
         DBManager.close(result, preparedStatement, connection);
@@ -235,7 +240,7 @@ public class CakeRecipeService {
         connection = DBManager.getConnection();
         String query = "SELECT cake_title, flour, sugar, eggs_grams, butter, cream_cheese," +
                 "vanilla_sugar, milk, oil, gelatin, corn_flour, cocoa, dark_chocolate, white_chocolate," +
-                "salt, baking_soda, baking_powder, confectioners_sugar, other FROM cake_tin_22 WHERE cake_title = ? LIMIT 1";
+                "salt, baking_soda, baking_powder, confectioners_sugar, sour_cream, other FROM cake_tin_22 WHERE cake_title = ? LIMIT 1";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setString(1, cakeTitle);
 
@@ -262,6 +267,7 @@ public class CakeRecipeService {
                     result.getDouble("baking_soda"),
                     result.getDouble("baking_powder"),
                     result.getDouble("confectioners_sugar"),
+                    result.getDouble("sour_cream"),
                     result.getString("other"));
         }
         DBManager.close(result, preparedStatement, connection);
@@ -273,7 +279,7 @@ public class CakeRecipeService {
         connection = DBManager.getConnection();
         String query = "INSERT INTO shopping_list (flour, sugar, eggs_grams, butter, cream_cheese," +
                 "vanilla_sugar, milk, oil, gelatin, corn_flour, cocoa, dark_chocolate, white_chocolate," +
-                " salt, baking_soda, baking_powder, confectioners_sugar, other) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                " salt, baking_soda, baking_powder, confectioners_sugar, sour_cream, other) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
 
         preparedStatement.setDouble(1, cake.getFlour());
@@ -293,7 +299,8 @@ public class CakeRecipeService {
         preparedStatement.setDouble(15, cake.getBakingSoda());
         preparedStatement.setDouble(16, cake.getBakingPowder());
         preparedStatement.setDouble(17, cake.getConfectionersSugar());
-        preparedStatement.setString(18, cake.getOther());
+        preparedStatement.setDouble(18, cake.getSourCream());
+        preparedStatement.setString(19, cake.getOther());
 
 
         DBManager.executeAndClose(preparedStatement, connection);
@@ -304,7 +311,7 @@ public class CakeRecipeService {
         connection = DBManager.getConnection();
         String query = "UPDATE cake_tin_18 SET flour = ?, sugar = ?, eggs_grams = ?, butter = ?, cream_cheese = ?," +
                 "vanilla_sugar = ?, milk = ?, oil = ?, gelatin = ?, corn_flour = ?, cocoa = ?, dark_chocolate = ?, white_chocolate = ?," +
-                "salt = ?, baking_soda = ?, baking_powder = ?, confectioners_sugar = ?, other = ? WHERE cake_title = ?";
+                "salt = ?, baking_soda = ?, baking_powder = ?, confectioners_sugar = ?, sour_cream = ?, other = ? WHERE cake_title = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
 
         preparedStatement.setDouble(1, cake.getFlour());
@@ -324,8 +331,9 @@ public class CakeRecipeService {
         preparedStatement.setDouble(15, cake.getBakingSoda());
         preparedStatement.setDouble(16, cake.getBakingPowder());
         preparedStatement.setDouble(17, cake.getConfectionersSugar());
-        preparedStatement.setString(18, cake.getOther());
-        preparedStatement.setString(19, cake.getCakeTitle());
+        preparedStatement.setDouble(18, cake.getSourCream());
+        preparedStatement.setString(19, cake.getOther());
+        preparedStatement.setString(20, cake.getCakeTitle());
 
 
         DBManager.executeAndClose(preparedStatement, connection);
@@ -336,7 +344,7 @@ public class CakeRecipeService {
         connection = DBManager.getConnection();
         String query = "UPDATE cake_tin_20 SET flour = ?, sugar = ?, eggs_grams = ?, butter = ?, cream_cheese = ?," +
                 "vanilla_sugar = ?, milk = ?, oil = ?, gelatin = ?, corn_flour = ?, cocoa = ?, dark_chocolate = ?, white_chocolate = ?," +
-                "salt = ?, baking_soda = ?, baking_powder = ?, confectioners_sugar = ?, other = ? WHERE cake_title = ?";
+                "salt = ?, baking_soda = ?, baking_powder = ?, confectioners_sugar = ?, sour_cream = ?, other = ? WHERE cake_title = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
 
         preparedStatement.setDouble(1, cake.getFlour());
@@ -356,8 +364,9 @@ public class CakeRecipeService {
         preparedStatement.setDouble(15, cake.getBakingSoda());
         preparedStatement.setDouble(16, cake.getBakingPowder());
         preparedStatement.setDouble(17, cake.getConfectionersSugar());
-        preparedStatement.setString(18, cake.getOther());
-        preparedStatement.setString(19, cake.getCakeTitle());
+        preparedStatement.setDouble(18, cake.getSourCream());
+        preparedStatement.setString(19, cake.getOther());
+        preparedStatement.setString(20, cake.getCakeTitle());
 
 
         DBManager.executeAndClose(preparedStatement, connection);
@@ -367,7 +376,7 @@ public class CakeRecipeService {
         connection = DBManager.getConnection();
         String query = "UPDATE cake_tin_22 SET flour = ?, sugar = ?, eggs_grams = ?, butter = ?, cream_cheese = ?," +
                 "vanilla_sugar = ?, milk = ?, oil = ?, gelatin = ?, corn_flour = ?, cocoa = ?, dark_chocolate = ?, white_chocolate = ?," +
-                "salt = ?, baking_soda = ?, baking_powder = ?, confectioners_sugar = ?, other = ? WHERE cake_title = ?";
+                "salt = ?, baking_soda = ?, baking_powder = ?, confectioners_sugar = ?, sour_cream = ?, other = ? WHERE cake_title = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
 
         preparedStatement.setDouble(1, cake.getFlour());
@@ -387,8 +396,9 @@ public class CakeRecipeService {
         preparedStatement.setDouble(15, cake.getBakingSoda());
         preparedStatement.setDouble(16, cake.getBakingPowder());
         preparedStatement.setDouble(17, cake.getConfectionersSugar());
-        preparedStatement.setString(18, cake.getOther());
-        preparedStatement.setString(19, cake.getCakeTitle());
+        preparedStatement.setDouble(18, cake.getSourCream());
+        preparedStatement.setString(19, cake.getOther());
+        preparedStatement.setString(20, cake.getCakeTitle());
 
         DBManager.executeAndClose(preparedStatement, connection);
     }

@@ -65,8 +65,8 @@
                 <Label text="Confectioners sugar" GridPane.columnIndex="2" GridPane.rowIndex="8" />
                 <Label fx:id="confectionersSugarField" GridPane.columnIndex="3" GridPane.rowIndex="8" />
 
-                <Label text="Other" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-                <Label GridPane.columnIndex="3" GridPane.rowIndex="9" />
+                <Label text="Sour cream" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                <Label fx:id="sourCreamField" GridPane.columnIndex="3" GridPane.rowIndex="9" />
             </children>
             <columnConstraints>
                 <ColumnConstraints />
