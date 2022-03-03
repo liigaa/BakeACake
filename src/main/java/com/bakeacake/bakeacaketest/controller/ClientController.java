@@ -30,7 +30,8 @@ public class ClientController extends ViewController implements Initializable {
             showAlert(null, "Please provide name and phone number", Alert.AlertType.ERROR);
         }
         try {
-            userService.addClient(client);
+            Integer user_id = DataManager.getInstance().getLoggedInUserId();
+            userService.addClient(user_id, client);
             showAlert(null, "Client " + nameField.getText() + " added successfully", Alert.AlertType.CONFIRMATION);
             changeScene(actionEvent, "add_order");
             clear();

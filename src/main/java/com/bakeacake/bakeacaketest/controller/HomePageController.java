@@ -90,6 +90,7 @@ public class HomePageController extends ViewController implements Initializable 
     public void addNewRecipe(ActionEvent actionEvent) {
 
         try {
+
             changeScene(actionEvent, "new_recipe");
         } catch (Exception ex) {
             ex.printStackTrace();

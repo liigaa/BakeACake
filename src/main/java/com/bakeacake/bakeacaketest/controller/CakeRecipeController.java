@@ -60,6 +60,8 @@ public class CakeRecipeController extends ViewController implements Initializabl
     }
 
     public void addCakeRecipe(ActionEvent actionEvent) {
+
+
         Cake cake = new Cake(cakeTitleField.getText(), convertField(flourField.getText()), convertField(sugarField.getText()),
                 convertField(eggsField.getText()), convertField(butterField.getText()), convertField(creamCheeseField.getText()),
                 convertField(vanillaSugarField.getText()), convertField(milkField.getText()), convertField(oilField.getText()),
@@ -71,20 +73,21 @@ public class CakeRecipeController extends ViewController implements Initializabl
 
 
         try {
+            Integer user_id = DataManager.getInstance().getLoggedInUserId();
 
             if (tinSize.getValue().equals(20.0)) {
-                cakeRecipeService.addCakeTin20(cake);
-                cakeRecipeService.addCakeTin22(convertIngredients20to22());
-                cakeRecipeService.addCakeTin18(convertIngredients20to18());
+                cakeRecipeService.addCakeTin20(user_id, cake);
+                cakeRecipeService.addCakeTin22(user_id, convertIngredients20to22());
+                cakeRecipeService.addCakeTin18(user_id, convertIngredients20to18());
 
             } else if (tinSize.getValue().equals(18.0)) {
-                cakeRecipeService.addCakeTin18(cake);
-                cakeRecipeService.addCakeTin20(convertIngredients18to20());
-                cakeRecipeService.addCakeTin22(convertIngredients18to22());
+                cakeRecipeService.addCakeTin18(user_id, cake);
+                cakeRecipeService.addCakeTin20(user_id, convertIngredients18to20());
+                cakeRecipeService.addCakeTin22(user_id, convertIngredients18to22());
             } else if (tinSize.getValue().equals(22.0)) {
-                cakeRecipeService.addCakeTin22(cake);
-                cakeRecipeService.addCakeTin18(convertIngredients22to18());
-                cakeRecipeService.addCakeTin20(convertIngredients22to20());
+                cakeRecipeService.addCakeTin22(user_id, cake);
+                cakeRecipeService.addCakeTin18(user_id, convertIngredients22to18());
+                cakeRecipeService.addCakeTin20(user_id, convertIngredients22to20());
             }
 
 

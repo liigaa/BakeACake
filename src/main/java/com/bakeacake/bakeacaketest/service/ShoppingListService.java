@@ -11,20 +11,22 @@ import java.sql.SQLException;
 public class ShoppingListService {
     private Connection connection = DBManager.getConnection();
 
-    public ShoppingList viewShoppingList() throws Exception {
+    public ShoppingList viewShoppingList(int user_id) throws Exception {
         connection = DBManager.getConnection();
         String query = "SELECT SUM(flour), SUM(sugar), SUM(eggs_grams), SUM(butter), SUM(cream_cheese), SUM(vanilla_sugar), SUM(milk)," +
                 "SUM(oil), SUM(gelatin), SUM(corn_flour), SUM(cocoa), SUM(dark_chocolate), SUM(white_chocolate), SUM(salt)," +
-                "SUM(baking_soda), SUM(baking_powder), SUM(confectioners_sugar), SUM(sour_cream) FROM shopping_list";
+                "SUM(baking_soda), SUM(baking_powder), SUM(confectioners_sugar), SUM(sour_cream) FROM shopping_list WHERE user_id = ?";
 
 
         PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, user_id);
 
         ResultSet result = preparedStatement.executeQuery();
         ShoppingList shoppingList = null;
         if (result.next()) {
 
             shoppingList = new ShoppingList(
+
                     result.getDouble("SUM(flour)"),
                     result.getDouble("SUM(sugar)"),
                     result.getDouble("SUM(eggs_grams)"),
@@ -52,11 +54,12 @@ public class ShoppingListService {
 
     }
 
-    public ShoppingList viewShoppingListOther() throws Exception {
+    public ShoppingList viewShoppingListOther(int user_id) throws Exception {
         connection = DBManager.getConnection();
-        String query = "SELECT `other`, GROUP_CONCAT( `other` SEPARATOR ',\r\n' ) as concact_text from shopping_list";
+        String query = "SELECT `other`, GROUP_CONCAT( `other` SEPARATOR ',\r\n' ) as concact_text from shopping_list WHERE user_id = ?";
 
         PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, user_id);
 
         ResultSet result = preparedStatement.executeQuery();
         ShoppingList shoppingList = null;
@@ -73,11 +76,12 @@ public class ShoppingListService {
     }
 
 
-    public void clearShoppingList () throws SQLException {
+    public void clearShoppingList (int user_id) throws SQLException {
         connection = DBManager.getConnection();
 
-        String query = "DELETE FROM shopping_list";
+        String query = "DELETE FROM shopping_list WHERE user_id = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, user_id);
         preparedStatement.execute();
         preparedStatement.close();
         connection.close();
