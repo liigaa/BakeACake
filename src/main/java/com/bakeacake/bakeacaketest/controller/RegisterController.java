@@ -32,6 +32,7 @@ public class RegisterController extends ViewController implements Initializable 
         if (nameField.getText().isEmpty() || usernameField.getText().isEmpty() || passwordField.getText().isEmpty()
                 || emailField.getText().isEmpty()) {
             showAlert(null, "Please provide name, username, password and email", Alert.AlertType.ERROR);
+            return;
         }
         if (!(passwordField.getText().equals(confirmPasswordField.getText()))) {
             showAlert(null, "Password and Confirmation password doesn't mach", Alert.AlertType.ERROR);
@@ -41,22 +42,22 @@ public class RegisterController extends ViewController implements Initializable 
         try {
 
             userService.registerUser(user);
-            showAlert(null, "Welcome " + usernameField.getText() + "! Please login!", Alert.AlertType.INFORMATION);
+            showAlert(null, "Welcome " + nameField.getText() + "! Please login!", Alert.AlertType.INFORMATION);
 
-            try {
-                changeScene(actionEvent, "login");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                changeScene(actionEvent, "login");
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
         } catch (SQLException e) {
             e.printStackTrace();
             showAlert("Registration failed", e.getMessage() , Alert.AlertType.ERROR);
         }
 
     }
-    public void handleLoadRegister(ActionEvent actionEvent){
+    public void handleLogin(ActionEvent actionEvent){
         try{
-            changeScene(actionEvent, "profile");
+            changeScene(actionEvent, "login");
         }catch (Exception ex){
             ex.printStackTrace();
         }
