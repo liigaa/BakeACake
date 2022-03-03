@@ -27,14 +27,14 @@ public class DataManager {
     public void setSelectedCakeTitle(String selectedCakeTitle) {
         this.selectedCakeTitle = selectedCakeTitle;
     }
-
-    public Double getSelectedTinSize() {
-        return selectedTinSize;
-    }
-
-    public void setSelectedTinSize(Double selectedTinSize) {
-        this.selectedTinSize = selectedTinSize;
-    }
+//
+//    public Double getSelectedTinSize() {
+//        return selectedTinSize;
+//    }
+//
+//    public void setSelectedTinSize(Double selectedTinSize) {
+//        this.selectedTinSize = selectedTinSize;
+//    }
 
 
 }

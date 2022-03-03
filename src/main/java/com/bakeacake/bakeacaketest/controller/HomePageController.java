@@ -23,7 +23,6 @@ public class HomePageController extends ViewController implements Initializable 
     public ListView listViewAllUsers;
 
 
-    public DatePicker datePicker;
     public Label welcomeLabel;
     public Label dateTime;
 
@@ -67,11 +66,6 @@ public class HomePageController extends ViewController implements Initializable 
         welcomeLabel.setText("Welcome " + name);
     }
 
-
-//    public void getDate(ActionEvent actionEvent){
-//        LocalDate myDate = datePicker.getValue();
-//        System.out.println(myDate.toString());
-//    }
 
 
     public void changePassword(ActionEvent actionEvent) {
