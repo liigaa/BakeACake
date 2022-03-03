@@ -41,8 +41,6 @@ public class UpdateRecipeController extends ViewController implements Initializa
     private CakeRecipeService cakeRecipeService = new CakeRecipeService();
 
 
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         tinSize.getItems().addAll(tins);
@@ -54,8 +52,6 @@ public class UpdateRecipeController extends ViewController implements Initializa
 
         ImageView imageView = new ImageView(getClass().getResource("/images/favicon.png").toExternalForm());
         homeButton.setGraphic(imageView);
-
-
 
 
     }
@@ -91,10 +87,6 @@ public class UpdateRecipeController extends ViewController implements Initializa
     }
 
 
-
-
-
-
     private Double convertField(String value) {
         return value.isEmpty() ? 0.0 : Double.parseDouble(value);
     }
@@ -114,7 +106,7 @@ public class UpdateRecipeController extends ViewController implements Initializa
                 convertField(saltField.getText()), convertField(bakingSodaField.getText()), convertField(bakingPowderField.getText()),
                 convertField(confectionersSugarField.getText()), convertField(sourCreamField.getText()), otherTextArea.getText());
 
-        if (tinSize.getValue() == null){
+        if (tinSize.getValue() == null) {
             showAlert(null, "Please choose tin size", Alert.AlertType.ERROR);
             return;
         }
@@ -151,7 +143,7 @@ public class UpdateRecipeController extends ViewController implements Initializa
 
     }
 
-    public Cake convertIngredients20to18(){
+    public Cake convertIngredients20to18() {
         String cakeTitle = DataManager.getInstance().getSelectedCakeTitle();
         Cake cake = new Cake(cakeTitle, convertField(flourField.getText()) / 1.23, convertField(sugarField.getText()) / 1.23,
                 convertField(eggsField.getText()) / 1.23, convertField(butterField.getText()) / 1.23, convertField(creamCheeseField.getText()) / 1.23,
@@ -164,9 +156,9 @@ public class UpdateRecipeController extends ViewController implements Initializa
         return cake;
     }
 
-    public Cake convertIngredients20to22(){
+    public Cake convertIngredients20to22() {
         String cakeTitle = DataManager.getInstance().getSelectedCakeTitle();
-        Cake cake = new Cake(cakeTitle,convertField(flourField.getText()) * 1.21, convertField(sugarField.getText()) * 1.21,
+        Cake cake = new Cake(cakeTitle, convertField(flourField.getText()) * 1.21, convertField(sugarField.getText()) * 1.21,
                 convertField(eggsField.getText()) * 1.21, convertField(butterField.getText()) * 1.21, convertField(creamCheeseField.getText()) * 1.21,
                 convertField(vanillaSugarField.getText()) * 1.21, convertField(milkField.getText()) * 1.21, convertField(oilField.getText()) * 1.21,
                 convertField(gelatinField.getText()) * 1.21, convertField(cornFlourField.getText()) * 1.21, convertField(cocoaField.getText()) * 1.21,
@@ -176,9 +168,9 @@ public class UpdateRecipeController extends ViewController implements Initializa
         return cake;
     }
 
-    public Cake convertIngredients18to20(){
+    public Cake convertIngredients18to20() {
         String cakeTitle = DataManager.getInstance().getSelectedCakeTitle();
-        Cake cake = new Cake(cakeTitle,convertField(flourField.getText()) * 1.23, convertField(sugarField.getText()) * 1.23,
+        Cake cake = new Cake(cakeTitle, convertField(flourField.getText()) * 1.23, convertField(sugarField.getText()) * 1.23,
                 convertField(eggsField.getText()) * 1.23, convertField(butterField.getText()) * 1.23, convertField(creamCheeseField.getText()) * 1.23,
                 convertField(vanillaSugarField.getText()) * 1.23, convertField(milkField.getText()) * 1.23, convertField(oilField.getText()) * 1.23,
                 convertField(gelatinField.getText()) * 1.23, convertField(cornFlourField.getText()) * 1.23, convertField(cocoaField.getText()) * 1.23,
@@ -202,7 +194,7 @@ public class UpdateRecipeController extends ViewController implements Initializa
 
     public Cake convertIngredients22to18() {
         String cakeTitle = DataManager.getInstance().getSelectedCakeTitle();
-        Cake cake = new Cake(cakeTitle,convertField(flourField.getText()) / 1.49, convertField(sugarField.getText()) / 1.49,
+        Cake cake = new Cake(cakeTitle, convertField(flourField.getText()) / 1.49, convertField(sugarField.getText()) / 1.49,
                 convertField(eggsField.getText()) / 1.49, convertField(butterField.getText()) / 1.49, convertField(creamCheeseField.getText()) / 1.49,
                 convertField(vanillaSugarField.getText()) / 1.49, convertField(milkField.getText()) / 1.49, convertField(oilField.getText()) / 1.49,
                 convertField(gelatinField.getText()) / 1.49, convertField(cornFlourField.getText()) / 1.49, convertField(cocoaField.getText()) / 1.49,
@@ -212,9 +204,9 @@ public class UpdateRecipeController extends ViewController implements Initializa
         return cake;
     }
 
-    public Cake convertIngredients22to20(){
+    public Cake convertIngredients22to20() {
         String cakeTitle = DataManager.getInstance().getSelectedCakeTitle();
-        Cake cake = new Cake(cakeTitle,convertField(flourField.getText()) / 1.21, convertField(sugarField.getText()) / 1.21,
+        Cake cake = new Cake(cakeTitle, convertField(flourField.getText()) / 1.21, convertField(sugarField.getText()) / 1.21,
                 convertField(eggsField.getText()) / 1.21, convertField(butterField.getText()) / 1.21, convertField(creamCheeseField.getText()) / 1.21,
                 convertField(vanillaSugarField.getText()) / 1.21, convertField(milkField.getText()) / 1.21, convertField(oilField.getText()) / 1.21,
                 convertField(gelatinField.getText()) / 1.21, convertField(cornFlourField.getText()) / 1.21, convertField(cocoaField.getText()) / 1.21,
@@ -223,6 +215,7 @@ public class UpdateRecipeController extends ViewController implements Initializa
                 convertField(confectionersSugarField.getText()) / 1.21, convertField(sourCreamField.getText()) / 1.21, otherTextArea.getText());
         return cake;
     }
+
     public void clear() {
 
         flourField.clear();
@@ -245,7 +238,6 @@ public class UpdateRecipeController extends ViewController implements Initializa
         sourCreamField.clear();
         otherTextArea.clear();
     }
-
 
 
     public void getIngredients(Cake cake) {

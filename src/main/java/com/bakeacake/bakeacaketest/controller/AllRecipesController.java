@@ -12,7 +12,6 @@ import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -90,7 +89,6 @@ public class AllRecipesController extends ViewController implements Initializabl
     }
 
 
-
     public void viewRecipe(ActionEvent actionEvent) {
 
         DataManager.getInstance().setSelectedCakeTitle(String.valueOf(allCakesChoiceBox.getValue()));
@@ -117,11 +115,11 @@ public class AllRecipesController extends ViewController implements Initializabl
     }
 
 
-    public void addToShoppingList (ActionEvent actionEvent) {
+    public void addToShoppingList(ActionEvent actionEvent) {
 
 
         try {
-            if (allCakesChoiceBox.getValue() == null){
+            if (allCakesChoiceBox.getValue() == null) {
                 showAlert(null, "Please choose Cake from choice box", Alert.AlertType.ERROR);
                 return;
             }
@@ -142,7 +140,6 @@ public class AllRecipesController extends ViewController implements Initializabl
         }
 
     }
-
 
 
 }

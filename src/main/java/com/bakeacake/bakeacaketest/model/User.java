@@ -1,8 +1,8 @@
 package com.bakeacake.bakeacaketest.model;
 
-import java.sql.Timestamp;
 
 import lombok.*;
+
 @ToString
 @Getter
 @Setter
@@ -26,13 +26,6 @@ public class User {
 
     }
 
-    public User(String name, String username, String password, String email) {
-        this.name = name;
-        this.username = username;
-        this.password = password;
-        this.email = email;
-
-    }
 
     public User(String name, String username, String password, String email, String secretQuestion, String secretAnswer) {
         this.name = name;

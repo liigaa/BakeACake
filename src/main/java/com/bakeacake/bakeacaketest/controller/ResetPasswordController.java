@@ -11,13 +11,12 @@ import java.util.ResourceBundle;
 
 public class ResetPasswordController extends ViewController implements Initializable {
 
-    public PasswordField newPasswordField;
     public Button homeButton;
     public TextField usernameField;
     public TextField emailField;
     public TextField answerField;
     public ComboBox<String> secretQuestionBox;
-    private String [] secretQuestion = {"Your cat's name", "Your dog's name", "Your first teacher's name"};
+    private String[] secretQuestion = {"Your cat's name", "Your dog's name", "Your first teacher's name"};
 
 
     UserService userService = new UserService();
@@ -29,23 +28,23 @@ public class ResetPasswordController extends ViewController implements Initializ
 
     }
 
-    public void resetPassword (ActionEvent actionEvent) {
-        try{
+    public void resetPassword(ActionEvent actionEvent) {
+        try {
             Integer userId = userService.verifyUserForResetPassword(usernameField.getText(), emailField.getText(),
                     secretQuestionBox.getValue(), answerField.getText());
             DataManager.getInstance().setLoggedInUserId(userId);
             changeScene(actionEvent, "password");
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             showAlert("Login Failed", e.getMessage(), Alert.AlertType.ERROR);
         }
 
     }
 
-    public void cancelResetPassword(ActionEvent actionEvent){
-        try{
+    public void cancelResetPassword(ActionEvent actionEvent) {
+        try {
             changeScene(actionEvent, "login");
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
 

@@ -5,8 +5,6 @@ import com.bakeacake.bakeacaketest.model.Client;
 import com.bakeacake.bakeacaketest.model.Order;
 import com.bakeacake.bakeacaketest.model.User;
 import com.bakeacake.bakeacaketest.repository.DBManager;
-import lombok.Value;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -26,9 +24,9 @@ public class UserService {
         Integer userId = null;
         ResultSet resultSet = statement.executeQuery();
 
-        if(resultSet.next()) userId = resultSet.getInt("id");
+        if (resultSet.next()) userId = resultSet.getInt("id");
         DBManager.close(resultSet, statement, connection);
-        if(userId == null || userId == 0) throw new Exception("User name or password not correct");
+        if (userId == null || userId == 0) throw new Exception("User name or password not correct");
         return userId;
 
     }
@@ -45,9 +43,10 @@ public class UserService {
         Integer userId = null;
         ResultSet resultSet = statement.executeQuery();
 
-        if(resultSet.next()) userId = resultSet.getInt("id");
+        if (resultSet.next()) userId = resultSet.getInt("id");
         DBManager.close(resultSet, statement, connection);
-        if(userId == null || userId == 0) throw new Exception("User name, email, secret question or answer not correct");
+        if (userId == null || userId == 0)
+            throw new Exception("User name, email, secret question or answer not correct");
         return userId;
 
     }
@@ -67,31 +66,31 @@ public class UserService {
         preparedStatement.execute();
         preparedStatement.close();
     }
+//
+//
+//    public User getUserProfile(int userId) throws Exception {
+//        connection = DBManager.getConnection();
+//        String query = "SELECT id, name, username, email"
+//                + " FROM users WHERE id = ? LIMIT 1";
+//        PreparedStatement preparedStatement = connection.prepareStatement(query);
+//        preparedStatement.setInt(1, userId);
+//
+//        ResultSet result = preparedStatement.executeQuery();
+//        User user = null;
+//        if (result.next()) {
+//            user = new User(
+//                    result.getInt("id"),
+//                    result.getString("name"),
+//                    result.getString("username"),
+//                    result.getString("email"));
+//
+//        }
+//        DBManager.close(result, preparedStatement, connection);
+//        if (user == null) throw new Exception("User not found!");
+//        return user;
+//    }
 
-
-    public User getUserProfile(int userId) throws Exception {
-        connection = DBManager.getConnection();
-        String query = "SELECT id, name, username, email"
-                + " FROM users WHERE id = ? LIMIT 1";
-        PreparedStatement preparedStatement = connection.prepareStatement(query);
-        preparedStatement.setInt(1, userId);
-
-        ResultSet result = preparedStatement.executeQuery();
-        User user = null;
-        if(result.next()){
-            user = new User(
-                    result.getInt("id"),
-                    result.getString("name"),
-                    result.getString("username"),
-                    result.getString("email"));
-
-        }
-        DBManager.close(result, preparedStatement,connection);
-        if (user == null) throw new Exception ("User not found!");
-        return user;
-    }
-
-    public void changePassword(int id, String password) throws Exception{
+    public void changePassword(int id, String password) throws Exception {
         connection = DBManager.getConnection();
 
         String query = "UPDATE users SET password = md5(?) WHERE id = ?";
@@ -115,12 +114,13 @@ public class UserService {
         String name = null;
         ResultSet resultSet = statement.executeQuery();
 
-        if(resultSet.next()) name = resultSet.getString("name");
+        if (resultSet.next()) name = resultSet.getString("name");
         DBManager.close(resultSet, statement, connection);
-        if(name == null) throw new Exception("No users found with provided id");
+        if (name == null) throw new Exception("No users found with provided id");
         return name;
 
     }
+
     public void addClient(int user_id, Client client) throws SQLException {
         connection = DBManager.getConnection();
         String query = "INSERT INTO clients (user_id, client_name, phone, address) VALUES (?,?,?,?)";
@@ -134,7 +134,8 @@ public class UserService {
         connection.close();
         preparedStatement.close();
     }
-    public ArrayList<Client> viewAllClient(int user_id) throws Exception{
+
+    public ArrayList<Client> viewAllClient(int user_id) throws Exception {
         connection = DBManager.getConnection();
         String query = "SELECT * FROM clients WHERE user_id = ?";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
@@ -143,7 +144,7 @@ public class UserService {
         ArrayList<Client> clients = new ArrayList<>();
         ResultSet result = preparedStatement.executeQuery();
 
-        while (result.next()){
+        while (result.next()) {
             Client client = new Client(
                     result.getInt("client_id"),
                     result.getString("client_name")
@@ -153,7 +154,8 @@ public class UserService {
         DBManager.close(result, preparedStatement, connection);
         return clients;
     }
-    public void addOrder(int user_id, Order order, Cake cake, Client client) throws Exception{
+
+    public void addOrder(int user_id, Order order, Cake cake, Client client) throws Exception {
         connection = DBManager.getConnection();
         String query = "INSERT INTO orders (user_id, client_name, cake_title, cake_tin_size, delivery_date, " +
                 "delivery_time, delivery_options, description, status) " +

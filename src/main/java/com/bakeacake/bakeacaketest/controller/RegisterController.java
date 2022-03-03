@@ -5,8 +5,6 @@ import com.bakeacake.bakeacaketest.service.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-
-import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -19,7 +17,7 @@ public class RegisterController extends ViewController implements Initializable 
     public PasswordField confirmPasswordField;
     public TextField emailField;
     public ComboBox<String> secretQuestionBox;
-    private String [] secretQuestion = {"Your cat's name", "Your dog's name", "Your first teacher's name"};
+    private String[] secretQuestion = {"Your cat's name", "Your dog's name", "Your first teacher's name"};
     public TextField answerField;
 
     private UserService userService = new UserService();
@@ -50,30 +48,26 @@ public class RegisterController extends ViewController implements Initializable 
             userService.registerUser(user);
             showAlert(null, "Welcome " + nameField.getText() + "! Please login!", Alert.AlertType.INFORMATION);
 
-//            try {
-//                changeScene(actionEvent, "login");
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
         } catch (SQLException e) {
             e.printStackTrace();
-            showAlert("Registration failed", e.getMessage() , Alert.AlertType.ERROR);
+            showAlert("Registration failed", e.getMessage(), Alert.AlertType.ERROR);
         }
 
     }
-    public void handleLogin(ActionEvent actionEvent){
-        try{
+
+    public void handleLogin(ActionEvent actionEvent) {
+        try {
             changeScene(actionEvent, "login");
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
 
     }
 
-    public void handleCancelRegister(ActionEvent actionEvent){
-        try{
+    public void handleCancelRegister(ActionEvent actionEvent) {
+        try {
             changeScene(actionEvent, "login");
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
 

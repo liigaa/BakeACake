@@ -1,7 +1,6 @@
 package com.bakeacake.bakeacaketest.service;
 
 import com.bakeacake.bakeacaketest.model.Cake;
-import com.bakeacake.bakeacaketest.model.ShoppingList;
 import com.bakeacake.bakeacaketest.repository.DBManager;
 
 import java.sql.Connection;
@@ -44,7 +43,7 @@ public class CakeRecipeService {
 
 
         DBManager.executeAndClose(preparedStatement, connection);
-}
+    }
 
     public void addCakeTin18(int user_id, Cake cake) throws SQLException {
         connection = DBManager.getConnection();
@@ -323,7 +322,7 @@ public class CakeRecipeService {
     }
 
 
-    public void updateRecipeTinSize18 (int user_id, Cake cake, String cakeTitle) throws SQLException {
+    public void updateRecipeTinSize18(int user_id, Cake cake, String cakeTitle) throws SQLException {
         connection = DBManager.getConnection();
         String query = "UPDATE cake_tin_18 SET flour = ?, sugar = ?, eggs_grams = ?, butter = ?, cream_cheese = ?," +
                 "vanilla_sugar = ?, milk = ?, oil = ?, gelatin = ?, corn_flour = ?, cocoa = ?, dark_chocolate = ?, white_chocolate = ?," +
@@ -357,7 +356,7 @@ public class CakeRecipeService {
     }
 
 
-    public void updateRecipeTinSize20 (int user_id, Cake cake, String cakeTitle) throws SQLException {
+    public void updateRecipeTinSize20(int user_id, Cake cake, String cakeTitle) throws SQLException {
         connection = DBManager.getConnection();
         String query = "UPDATE cake_tin_20 SET flour = ?, sugar = ?, eggs_grams = ?, butter = ?, cream_cheese = ?," +
                 "vanilla_sugar = ?, milk = ?, oil = ?, gelatin = ?, corn_flour = ?, cocoa = ?, dark_chocolate = ?, white_chocolate = ?," +
@@ -390,7 +389,7 @@ public class CakeRecipeService {
         DBManager.executeAndClose(preparedStatement, connection);
     }
 
-    public void updateRecipeTinSize22 (int user_id, Cake cake, String cakeTitle) throws SQLException {
+    public void updateRecipeTinSize22(int user_id, Cake cake, String cakeTitle) throws SQLException {
         connection = DBManager.getConnection();
         String query = "UPDATE cake_tin_22 SET flour = ?, sugar = ?, eggs_grams = ?, butter = ?, cream_cheese = ?," +
                 "vanilla_sugar = ?, milk = ?, oil = ?, gelatin = ?, corn_flour = ?, cocoa = ?, dark_chocolate = ?, white_chocolate = ?," +
@@ -421,7 +420,6 @@ public class CakeRecipeService {
 
         DBManager.executeAndClose(preparedStatement, connection);
     }
-
 
 
 }

@@ -16,9 +16,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ClientController extends ViewController implements Initializable {
-    @FXML TextField nameField;
-    @FXML TextField phoneField;
-    @FXML TextField addressField;
+    @FXML
+    TextField nameField;
+    @FXML
+    TextField phoneField;
+    @FXML
+    TextField addressField;
     public Button homeButton;
 
 
@@ -26,7 +29,7 @@ public class ClientController extends ViewController implements Initializable {
 
     public void handleAddNewClient(ActionEvent actionEvent) {
         Client client = new Client(nameField.getText(), phoneField.getText(), addressField.getText());
-        if(nameField.getText().isEmpty() || phoneField.getText().isEmpty()){
+        if (nameField.getText().isEmpty() || phoneField.getText().isEmpty()) {
             showAlert(null, "Please provide name and phone number", Alert.AlertType.ERROR);
         }
         try {
@@ -35,24 +38,25 @@ public class ClientController extends ViewController implements Initializable {
             showAlert(null, "Client " + nameField.getText() + " added successfully", Alert.AlertType.CONFIRMATION);
             changeScene(actionEvent, "add_order");
             clear();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public void handleReturn(ActionEvent actionEvent) {
-        try{
+        try {
             changeScene(actionEvent, "order_screen");
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
 
     }
-     private void clear(){
+
+    private void clear() {
         nameField.clear();
         phoneField.clear();
         addressField.clear();
-     }
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -80,7 +84,6 @@ public class ClientController extends ViewController implements Initializable {
         }
 
     }
-
 
 
 }
