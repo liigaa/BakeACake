@@ -1,5 +1,6 @@
 package com.bakeacake.bakeacaketest.controller;
 
+import com.bakeacake.bakeacaketest.model.Client;
 import com.bakeacake.bakeacaketest.model.Order;
 import com.bakeacake.bakeacaketest.repository.DataManager;
 import com.bakeacake.bakeacaketest.service.OrderService;
@@ -8,10 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 import java.net.URL;
@@ -25,7 +23,7 @@ public class AllOrderController extends ViewController implements Initializable 
    @FXML DatePicker endDataField;
    @FXML ListView<Order> listViewField;
     public Button homeButton;
-   // private Integer user_id = DataManager.getInstance().getLoggedInUserId();
+   private Integer user_id = DataManager.getInstance().getLoggedInUserId();
     OrderService orderService = new OrderService();
 
     @Override
@@ -34,6 +32,7 @@ public class AllOrderController extends ViewController implements Initializable 
         statusField.setValue("All");
         ImageView imageView = new ImageView(getClass().getResource("/images/favicon.png").toExternalForm());
         homeButton.setGraphic(imageView);
+        homeButton.setTooltip(new Tooltip("Home"));
     }
 
     public void handleOderList(ActionEvent actionEvent) {
@@ -57,7 +56,7 @@ public class AllOrderController extends ViewController implements Initializable 
     }
     private void viewAllOrders(){
         try {
-            ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllOder());
+            ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllOder(this.user_id));
             for(Order order1 : orders){
                 Order order = new Order(order1.getClient(), order1.getCake(),order1.getTinSize(),
                         order1.getDatePicker(), order1.getDeliveryTime(), order1.getDeliveryOptions(),
@@ -71,7 +70,7 @@ public class AllOrderController extends ViewController implements Initializable 
         String startData = String.valueOf(startDataField.getValue());
         String endData = String.valueOf(endDataField.getValue());
         try {
-            ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllOderBetweenDate(startData, endData));
+            ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllOderBetweenDate(this.user_id, startData, endData));
             for(Order order1 : orders){
                 Order order = new Order(order1.getClient(), order1.getCake(),order1.getTinSize(),
                         order1.getDatePicker(), order1.getDeliveryTime(), order1.getDeliveryOptions(),
@@ -84,7 +83,7 @@ public class AllOrderController extends ViewController implements Initializable 
     }
     private void viewAllPendingOrders(){
         try {
-            ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllPendingOder());
+            ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllPendingOder(this.user_id));
             for(Order order1 : orders){
                 Order order = new Order(order1.getClient(), order1.getCake(),order1.getTinSize(),
                         order1.getDatePicker(), order1.getDeliveryTime(), order1.getDeliveryOptions(),
@@ -97,7 +96,7 @@ public class AllOrderController extends ViewController implements Initializable 
     }
     private void viewAllDeliveredOrders(){
         try {
-            ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllDeliveredOder());
+            ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllDeliveredOder(this.user_id));
             for(Order order1 : orders){
                 Order order = new Order(order1.getClient(), order1.getCake(),order1.getTinSize(),
                         order1.getDatePicker(), order1.getDeliveryTime(), order1.getDeliveryOptions(),
@@ -110,7 +109,7 @@ public class AllOrderController extends ViewController implements Initializable 
     }
     private void viewAllCanceledOrders(){
         try {
-            ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllCanceledOder());
+            ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllCanceledOder(this.user_id));
             for(Order order1 : orders){
                 Order order = new Order(order1.getClient(), order1.getCake(),order1.getTinSize(),
                         order1.getDatePicker(), order1.getDeliveryTime(), order1.getDeliveryOptions(),
@@ -122,7 +121,17 @@ public class AllOrderController extends ViewController implements Initializable 
         }
     }
     public void handleClientInfo(ActionEvent actionEvent) {
-
+        try {
+            ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllOder(this.user_id));
+          String name = listViewField.getSelectionModel().getSelectedItem().getClient();
+            for(Order order : orders){
+                if(order.getClient().equals(name)){
+                    DataManager.getInstance().setClientId(order.getClient_id());
+                    changeScene(actionEvent, "client_info");
+                }}
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void handleReturn(ActionEvent actionEvent) {

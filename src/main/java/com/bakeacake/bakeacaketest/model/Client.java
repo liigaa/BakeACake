@@ -24,6 +24,11 @@ public class Client {
         this.name = name;
     }
 
+    public Client(String phoneNumber, String address) {
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+    }
+
     public Client(Integer user_id, String name, String phoneNumber, String address) {
         this.user_id = user_id;
         this.name = name;

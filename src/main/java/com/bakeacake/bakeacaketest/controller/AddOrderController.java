@@ -20,7 +20,7 @@ import java.util.ResourceBundle;
 
 public class AddOrderController extends ViewController implements Initializable {
     @FXML
-    ComboBox<Client> clientListField;
+    ChoiceBox<Client> clientListField;
     @FXML
     ChoiceBox<Cake> cakeTitleField;
     @FXML
@@ -43,7 +43,8 @@ public class AddOrderController extends ViewController implements Initializable 
     public Button homeButton;
     private OrderService orderService = new OrderService();
     private CakeRecipeService cakeRecipeService = new CakeRecipeService();
-    public ArrayList<Client> clients;
+    private Integer user_id = DataManager.getInstance().getLoggedInUserId();
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -61,11 +62,9 @@ public class AddOrderController extends ViewController implements Initializable 
     }
 
     public void handleAddOrder(ActionEvent actionEvent) {
-
-
         try {
             Client name = clientListField.getSelectionModel().getSelectedItem();
-            clients = this.orderService.viewAllClient();
+            ObservableList<Client> clients = FXCollections.observableArrayList(this.orderService.viewAllClient(this.user_id));
             String name1 = String.valueOf(clientListField.getSelectionModel().getSelectedItem());
             for(Client client : clients){
                 if(client.getName().equals(name1)){
@@ -88,7 +87,7 @@ public class AddOrderController extends ViewController implements Initializable 
             if (!checkEntry()) {
                 Order order = new Order(id, tinSize, myDate, deliveryTime,
                         deliverOptions, description, status);
-                orderService.addOrder(order, title, name);
+                orderService.addOrder(this.user_id,order, title, name);
                 showAlert(null, "Order added successfully", Alert.AlertType.INFORMATION);
                 changeScene(actionEvent, "order_screen");
             }
@@ -116,11 +115,9 @@ public class AddOrderController extends ViewController implements Initializable 
 
     public void viewAllClients() {
         try {
-            ObservableList<Client> clients = FXCollections.observableArrayList(this.orderService.viewAllClient());
+            ObservableList<Client> clients = FXCollections.observableArrayList(this.orderService.viewAllClient(this.user_id));
             clientListField.getItems().addAll(clients);
             for(Client client : clients) clientListField.setValue(client);
-
-            clientListField.getItems().addAll(this.userService.viewAllClient(this.user_id));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -128,11 +125,9 @@ public class AddOrderController extends ViewController implements Initializable 
 
     public void viewAllCakes() {
         try {
-            ObservableList<Cake> cakes = FXCollections.observableArrayList(this.cakeRecipeService.viewAllRecipes());
+            ObservableList<Cake> cakes = FXCollections.observableArrayList(this.cakeRecipeService.viewAllRecipes(this.user_id));
             cakeTitleField.getItems().addAll(cakes);
             for(Cake cake : cakes) cakeTitleField.setValue(cake);
-
-            cakeTitleField.getItems().addAll(this.cakeRecipeService.viewAllRecipes(this.user_id));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -150,7 +145,6 @@ public class AddOrderController extends ViewController implements Initializable 
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
     }
 
     public void returnHome(ActionEvent actionEvent) {
@@ -159,6 +153,5 @@ public class AddOrderController extends ViewController implements Initializable 
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
     }
 }

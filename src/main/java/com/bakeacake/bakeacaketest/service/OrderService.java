@@ -13,79 +13,110 @@ import java.util.ArrayList;
 
 public class OrderService {
     private Connection connection = DBManager.getConnection();
-    public void addClient(Client client) throws SQLException {
+    public void addClient(int user_id, Client client) throws SQLException {
         connection = DBManager.getConnection();
-        String query = "INSERT INTO clients (client_name, phone, address) VALUES (?,?,?)";
+        String query = "INSERT INTO clients (user_id, client_name, phone, address) VALUES (?,?,?,?)";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
-        preparedStatement.setString(1, client.getName());
-        preparedStatement.setString(2, client.getPhoneNumber());
-        preparedStatement.setString(3, client.getAddress());
+        preparedStatement.setInt(1, user_id);
+        preparedStatement.setString(2, client.getName());
+        preparedStatement.setString(3, client.getPhoneNumber());
+        preparedStatement.setString(4, client.getAddress());
 
         preparedStatement.execute();
         connection.close();
         preparedStatement.close();
     }
-    public ArrayList<Client> viewAllClient() throws Exception{
+    public ArrayList<Client> viewAllClient(int user_id) throws Exception {
         connection = DBManager.getConnection();
-        String query = "SELECT * FROM clients ORDER BY client_name";
-        PreparedStatement statement = connection.prepareStatement(query);
-        ArrayList<Client> clients = new ArrayList<>();
-        ResultSet result = statement.executeQuery();
+        String query = "SELECT * FROM clients WHERE user_id = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(query);
+        preparedStatement.setInt(1, user_id);
 
-        while (result.next()){
+        ArrayList<Client> clients = new ArrayList<>();
+        ResultSet result = preparedStatement.executeQuery();
+
+        while (result.next()) {
             Client client = new Client(
                     result.getInt("client_id"),
                     result.getString("client_name")
             );
             clients.add(client);
         }
-        DBManager.close(result, statement, connection);
+        DBManager.close(result, preparedStatement, connection);
         return clients;
     }
-    public void addOrder(Order order, Cake cake, Client client) throws Exception{
+    public Client viewClientProfile(int client_id) throws Exception{
         connection = DBManager.getConnection();
-        String query = "INSERT INTO orders (client_name, client_id, cake_title, cake_tin_size, delivery_date, " +
+        String query = "SELECT client_name, phone, address FROM clients WHERE client_id=" + client_id;
+        PreparedStatement statement = connection.prepareStatement(query);
+        ResultSet result = statement.executeQuery();
+        Client client=null;
+        if(result.next()){
+            client = new Client(
+                    result.getString("client_name"),
+                    result.getString("phone"),
+                    result.getString("address")
+            );
+        }
+        DBManager.close(result, statement, connection);
+        if (client == null) throw new Exception("client not found");
+        return client;
+    }
+    public void updateClient(Client client, int client_id) throws Exception{
+        connection = DBManager.getConnection();
+        String query = "UPDATE clients SET phone=?, address=? WHERE client_id=?";
+        PreparedStatement statement = connection.prepareStatement(query);
+        statement.setString(1, client.getPhoneNumber());
+        statement.setString(2, client.getAddress());
+        statement.setInt(3, client_id);
+        statement.execute();
+        statement.close();
+    }
+    public void addOrder(int user_id, Order order, Cake cake, Client client) throws Exception {
+        connection = DBManager.getConnection();
+        String query = "INSERT INTO orders (user_id, client_name, client_id, cake_title, cake_tin_size, delivery_date, " +
                 "delivery_time, delivery_options, description, status) " +
-                "Values(?,?,?,?,?,?,?,?,?)";
+                "Values(?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
-        preparedStatement.setString(1, client.getName());
-        preparedStatement.setInt(2, client.getId());
-        preparedStatement.setString(3, cake.getCakeTitle());
-        preparedStatement.setString(4, order.getTinSize());
-        preparedStatement.setString(5, order.getDatePicker());
-        preparedStatement.setString(6, order.getDeliveryTime());
-        preparedStatement.setString(7, order.getDeliveryOptions());
-        preparedStatement.setString(8, order.getDescription());
-        preparedStatement.setString(9, order.getStatus());
+        preparedStatement.setInt(1, user_id);
+        preparedStatement.setString(2, client.getName());
+        preparedStatement.setInt(3, client.getId());
+        preparedStatement.setString(4, cake.getCakeTitle());
+        preparedStatement.setString(5, order.getTinSize());
+        preparedStatement.setString(6, order.getDatePicker());
+        preparedStatement.setString(7, order.getDeliveryTime());
+        preparedStatement.setString(8, order.getDeliveryOptions());
+        preparedStatement.setString(9, order.getDescription());
+        preparedStatement.setString(10, order.getStatus());
 
         preparedStatement.execute();
         connection.close();
         preparedStatement.close();
     }
-    public ArrayList<Order> viewAllOder() throws Exception{
+    public ArrayList<Order> viewAllOder(int user_id) throws Exception{
         connection = DBManager.getConnection();
-        String query = "SELECT * FROM orders ORDER BY delivery_date";
+        String query = "SELECT * FROM orders WHERE user_id=" + user_id +" ORDER BY delivery_date";
         return getOrders(query);
     }
-    public ArrayList<Order> viewAllOderBetweenDate(String date, String date1) throws Exception{
+    public ArrayList<Order> viewAllOderBetweenDate(int user_id, String date, String date1) throws Exception{
         connection = DBManager.getConnection();
-        String query = "SELECT * FROM orders WHERE delivery_date BETWEEN " + date + " AND " + date1+
+        String query = "SELECT * FROM orders WHERE user_id=" + user_id +" AND delivery_date BETWEEN " + date + " AND " + date1+
                 " ORDER BY delivery_date";
         return getOrders(query);
     }
-    public ArrayList<Order> viewAllPendingOder() throws Exception{
+    public ArrayList<Order> viewAllPendingOder(int user_id) throws Exception{
         connection = DBManager.getConnection();
-        String query = "SELECT * FROM orders WHERE status='Pending' ORDER BY delivery_date";
+        String query = "SELECT * FROM orders WHERE user_id=" + user_id +" AND status='Pending' ORDER BY delivery_date";
         return getOrders(query);
     }
-    public ArrayList<Order> viewAllDeliveredOder() throws Exception{
+    public ArrayList<Order> viewAllDeliveredOder(int user_id) throws Exception{
         connection = DBManager.getConnection();
-        String query = "SELECT * FROM orders WHERE status='Delivered' ORDER BY delivery_date";
+        String query = "SELECT * FROM orders WHERE user_id=" + user_id +" AND status='Delivered' ORDER BY delivery_date";
         return getOrders(query);
     }
-    public ArrayList<Order> viewAllCanceledOder() throws Exception{
+    public ArrayList<Order> viewAllCanceledOder(int user_id) throws Exception{
         connection = DBManager.getConnection();
-        String query = "SELECT * FROM orders WHERE status='Canceled' ORDER BY delivery_date";
+        String query = "SELECT * FROM orders WHERE user_id=" + user_id +" AND status='Canceled' ORDER BY delivery_date";
         return getOrders(query);
     }
 
@@ -96,6 +127,7 @@ public class OrderService {
         while (result.next()){
             Order order = new Order(
                     result.getString("client_name"),
+                    result.getInt("client_id"),
                     result.getString("cake_title"),
                     result.getString("cake_tin_size"),
                     result.getString("delivery_date"),
