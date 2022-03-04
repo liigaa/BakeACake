@@ -33,7 +33,7 @@ public class UserService {
 
     public int verifyUserForResetPassword(String username, String email, String secret_question, String answer) throws Exception {
         connection = DBManager.getConnection();
-        String query = "SELECT * FROM users WHERE username = ? && email = ? && secret_question = ? && secret_answer = md5(?) LIMIT 1";
+        String query = "SELECT * FROM users WHERE username = ? AND email = ? AND secret_question = ? AND secret_answer = md5(?)";
         PreparedStatement statement = connection.prepareStatement(query);
         statement.setString(1, username);
         statement.setString(2, email);

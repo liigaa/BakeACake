@@ -35,8 +35,9 @@ public class PasswordController extends ViewController implements Initializable 
                 showAlert(null, "New password field is empty. Please enter new password!", Alert.AlertType.INFORMATION);
                 return;
             }
-            changeScene(actionEvent, "home");
             showAlert(null, "Password changed successfully", Alert.AlertType.INFORMATION);
+            //changeScene(actionEvent, "home");
+
             newPasswordField.clear();
 
         } catch (Exception e) {
