@@ -5,7 +5,9 @@ import com.bakeacake.bakeacaketest.model.Client;
 import com.bakeacake.bakeacaketest.model.Order;
 import com.bakeacake.bakeacaketest.repository.DataManager;
 import com.bakeacake.bakeacaketest.service.CakeRecipeService;
-import com.bakeacake.bakeacaketest.service.UserService;
+import com.bakeacake.bakeacaketest.service.OrderService;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,12 +15,12 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 import java.net.URL;
-import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class AddOrderController extends ViewController implements Initializable {
     @FXML
-    ChoiceBox<Client> clientListField;
+    ComboBox<Client> clientListField;
     @FXML
     ChoiceBox<Cake> cakeTitleField;
     @FXML
@@ -39,26 +41,36 @@ public class AddOrderController extends ViewController implements Initializable 
     @FXML
     Label labelNote;
     public Button homeButton;
-    private UserService userService = new UserService();
+    private OrderService orderService = new OrderService();
     private CakeRecipeService cakeRecipeService = new CakeRecipeService();
+    public ArrayList<Client> clients;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         viewAllClients();
         viewAllCakes();
         tinSizeField.getItems().addAll(tins);
+        tinSizeField.setValue("18.0");
         deliveryField.getItems().addAll(choice);
+        deliveryField.setValue("Pick-up");
         statusField.getItems().addAll(status);
+        statusField.setValue("Pending");
 
         ImageView imageView = new ImageView(getClass().getResource("/images/favicon.png").toExternalForm());
         homeButton.setGraphic(imageView);
     }
 
     public void handleAddOrder(ActionEvent actionEvent) {
-
-
         try {
             Client name = clientListField.getSelectionModel().getSelectedItem();
+            clients = this.orderService.viewAllClient();
+            String name1 = String.valueOf(clientListField.getSelectionModel().getSelectedItem());
+            for(Client client : clients){
+                if(client.getName().equals(name1)){
+                    DataManager.getInstance().setClientId(client.getId());
+                }
+            }
+            Integer id = DataManager.getInstance().getClientId();
             Cake title = cakeTitleField.getSelectionModel().getSelectedItem();
             String tinSize = tinSizeField.getValue();
             String myDate = String.valueOf(datePicker.getValue());
@@ -67,42 +79,27 @@ public class AddOrderController extends ViewController implements Initializable 
             String description = descriptionField.getText();
             String status = statusField.getSelectionModel().getSelectedItem();
 
-//            if(clientListField.getItems().isEmpty() || cakeTitleField.getItems().isEmpty()
-//            || tinSizeField.getItems().isEmpty() || String.valueOf(datePicker.getValue()).isEmpty()
-//            || timeField.getText().isEmpty() || deliveryField.getItems().isEmpty()
-//            || statusField.getItems().isEmpty()){
+//            if(String.valueOf(datePicker.getValue()).isEmpty()
+//            || timeField.getText().isEmpty()){
 //                showAlert(null, "Please fill all fields", Alert.AlertType.ERROR);
 //            } else{
             if (!checkEntry()) {
-                Order order = new Order(tinSize, myDate, deliveryTime,
+                Order order = new Order(id, tinSize, myDate, deliveryTime,
                         deliverOptions, description, status);
-                userService.addOrder(order, title, name);
-                showAlert(null, "Order added successfully", Alert.AlertType.CONFIRMATION);
+                orderService.addOrder(order, title, name);
+                showAlert(null, "Order added successfully", Alert.AlertType.INFORMATION);
                 changeScene(actionEvent, "order_screen");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
 
     public boolean checkEntry() {
-        if (String.valueOf(clientListField.getItems()).isEmpty()) {
-            labelNote.setText("Choose client");
-            showAlert(null, "Please choose client", Alert.AlertType.ERROR);
-        } else if (cakeTitleField.getItems().isEmpty()) {
-            showAlert(null, "Please choose cake", Alert.AlertType.ERROR);
-        } else if (tinSizeField.getItems().isEmpty()) {
-            showAlert(null, "Please choose tin size", Alert.AlertType.ERROR);
-        } else if (String.valueOf(datePicker.getValue()).isEmpty()) {
+        if (String.valueOf(datePicker.getValue()).isEmpty()) {
             showAlert(null, "Please select due date", Alert.AlertType.ERROR);
         } else if (timeField.getText().isEmpty()) {
             showAlert(null, "Please add due time", Alert.AlertType.ERROR);
-        } else if (deliveryField.getItems().isEmpty()) {
-            showAlert(null, "Please choose delivery options", Alert.AlertType.ERROR);
-        } else if (statusField.getItems().isEmpty()) {
-            showAlert(null, "Please choose status", Alert.AlertType.ERROR);
         }
         return false;
     }
@@ -117,7 +114,9 @@ public class AddOrderController extends ViewController implements Initializable 
 
     public void viewAllClients() {
         try {
-            clientListField.getItems().addAll(this.userService.viewAllClient());
+            ObservableList<Client> clients = FXCollections.observableArrayList(this.orderService.viewAllClient());
+            clientListField.getItems().addAll(clients);
+            for(Client client : clients) clientListField.setValue(client);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -125,7 +124,9 @@ public class AddOrderController extends ViewController implements Initializable 
 
     public void viewAllCakes() {
         try {
-            cakeTitleField.getItems().addAll(this.cakeRecipeService.viewAllRecipes());
+            ObservableList<Cake> cakes = FXCollections.observableArrayList(this.cakeRecipeService.viewAllRecipes());
+            cakeTitleField.getItems().addAll(cakes);
+            for(Cake cake : cakes) cakeTitleField.setValue(cake);
         } catch (Exception e) {
             e.printStackTrace();
         }

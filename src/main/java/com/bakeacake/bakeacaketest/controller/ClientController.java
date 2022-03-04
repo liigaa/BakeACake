@@ -2,13 +2,12 @@ package com.bakeacake.bakeacaketest.controller;
 
 import com.bakeacake.bakeacaketest.model.Client;
 import com.bakeacake.bakeacaketest.repository.DataManager;
-import com.bakeacake.bakeacaketest.service.UserService;
+import com.bakeacake.bakeacaketest.service.OrderService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
@@ -22,7 +21,7 @@ public class ClientController extends ViewController implements Initializable {
     public Button homeButton;
 
 
-    private UserService userService = new UserService();
+    private OrderService orderService = new OrderService();
 
     public void handleAddNewClient(ActionEvent actionEvent) {
         Client client = new Client(nameField.getText(), phoneField.getText(), addressField.getText());
@@ -30,9 +29,8 @@ public class ClientController extends ViewController implements Initializable {
             showAlert(null, "Please provide name and phone number", Alert.AlertType.ERROR);
         }
         try {
-            userService.addClient(client);
-            showAlert(null, "Client " + nameField.getText() + " added successfully", Alert.AlertType.CONFIRMATION);
-            changeScene(actionEvent, "add_order");
+            orderService.addClient(client);
+            showAlert(null, "Client " + nameField.getText() + " added successfully", Alert.AlertType.INFORMATION);
             clear();
         }catch (Exception e){
             e.printStackTrace();

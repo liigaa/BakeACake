@@ -125,8 +125,12 @@ public class HomePageController extends ViewController implements Initializable 
 
     }
 
-    public void viewOrders() {
-
+    public void viewOrders(ActionEvent actionEvent) {
+        try {
+            changeScene(actionEvent, "all_order");
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
 

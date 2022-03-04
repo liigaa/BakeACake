@@ -5,6 +5,7 @@ public class DataManager {
     private Integer loggedInUserId = null;
     private String selectedCakeTitle = null;
     private Double selectedTinSize = null;
+    private Integer clientId = null;
 
     DataManager(){}
 
@@ -27,7 +28,15 @@ public class DataManager {
     public void setSelectedCakeTitle(String selectedCakeTitle) {
         this.selectedCakeTitle = selectedCakeTitle;
     }
-//
+
+    public Integer getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(Integer clientId) {
+        this.clientId = clientId;
+    }
+    //
 //    public Double getSelectedTinSize() {
 //        return selectedTinSize;
 //    }

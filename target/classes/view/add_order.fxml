@@ -23,7 +23,7 @@
 <VBox alignment="CENTER" layoutX="50.0" layoutY="135.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Text fill="#186565" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18px" text="Add Order" />
-      <ChoiceBox fx:id="clientListField" prefWidth="175.0" />
+      <ComboBox fx:id="clientListField" prefWidth="175.0" />
       <ChoiceBox fx:id="cakeTitleField" prefWidth="175.0" />
       <ComboBox fx:id="tinSizeField" prefWidth="175.0" />
       <DatePicker fx:id="datePicker" />
