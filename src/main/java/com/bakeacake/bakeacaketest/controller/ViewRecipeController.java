@@ -8,7 +8,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -60,20 +59,21 @@ public class ViewRecipeController extends ViewController implements Initializabl
         try {
 
             String cakeTitle = DataManager.getInstance().getSelectedCakeTitle();
+            Integer user_id = DataManager.getInstance().getLoggedInUserId();
 
 
             if (tinSize.getValue().equals(20.0)) {
-                Cake cake = this.cakeRecipeService.getRecipeByCakeTitleTin20(cakeTitle);
+                Cake cake = this.cakeRecipeService.getRecipeByCakeTitleTin20(user_id, cakeTitle);
                 getIngredients(cake);
             }
 
             if (tinSize.getValue().equals(22.0)) {
-                Cake cake = this.cakeRecipeService.getRecipeByCakeTitleTin22(cakeTitle);
+                Cake cake = this.cakeRecipeService.getRecipeByCakeTitleTin22(user_id, cakeTitle);
                 getIngredients(cake);
             }
 
             if (tinSize.getValue().equals(18.0)) {
-                Cake cake = this.cakeRecipeService.getRecipeByCakeTitleTin18(cakeTitle);
+                Cake cake = this.cakeRecipeService.getRecipeByCakeTitleTin18(user_id, cakeTitle);
                 getIngredients(cake);
             }
 
@@ -109,17 +109,15 @@ public class ViewRecipeController extends ViewController implements Initializabl
     }
 
 
-
-
-    private Double convertField(String value){
-        return  value.isEmpty()? 0.0 : Double.parseDouble(value);
+    private Double convertField(String value) {
+        return value.isEmpty() ? 0.0 : Double.parseDouble(value);
 
     }
 
 
     public void addToShoppingList(ActionEvent actionEvent) {
 
-        Cake cake = new Cake (cakeTitleField.getText(), convertField(flourField.getText()), convertField(sugarField.getText()),
+        Cake cake = new Cake(cakeTitleField.getText(), convertField(flourField.getText()), convertField(sugarField.getText()),
                 convertField(eggsField.getText()), convertField(butterField.getText()), convertField(creamCheeseField.getText()),
                 convertField(vanillaSugarField.getText()), convertField(milkField.getText()), convertField(oilField.getText()),
                 convertField(gelatinField.getText()), convertField(cornFlourField.getText()), convertField(cocoaField.getText()),
@@ -129,11 +127,12 @@ public class ViewRecipeController extends ViewController implements Initializabl
 
         try {
 
-            if (tinSize.getValue() == null){
+            if (tinSize.getValue() == null) {
                 showAlert(null, "Please choose tin size", Alert.AlertType.ERROR);
                 return;
             }
-            this.cakeRecipeService.addToShoppingList(cake);
+            Integer user_id = DataManager.getInstance().getLoggedInUserId();
+            this.cakeRecipeService.addToShoppingList(user_id, cake);
 
             showAlert(null, "Ingredients added to shopping list", Alert.AlertType.INFORMATION);
         } catch (SQLException e) {
@@ -170,7 +169,6 @@ public class ViewRecipeController extends ViewController implements Initializabl
         }
 
     }
-
 
 
 }

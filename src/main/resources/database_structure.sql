@@ -8,11 +8,14 @@ name varchar(100) not null,
 username varchar(100) unique not null,
 password text not null,
 email varchar(100) unique null,
+secret_question varchar(100) not null,
+secret_answer varchar (100) not null,
 primary key(id)
 );
 
 CREATE TABLE IF NOT EXISTS cake_tin_18(
     id int not null auto_increment,
+    user_id int not null,
     cake_title varchar(100) unique not null,
     flour double (10, 2),
     sugar double (10, 2),
@@ -38,6 +41,7 @@ CREATE TABLE IF NOT EXISTS cake_tin_18(
 
 CREATE TABLE IF NOT EXISTS cake_tin_20(
     id int not null auto_increment,
+    user_id int not null,
     cake_title varchar(100) unique not null,
     flour double (10, 2),
     sugar double (10, 2),
@@ -63,6 +67,7 @@ CREATE TABLE IF NOT EXISTS cake_tin_20(
 
 CREATE TABLE IF NOT EXISTS cake_tin_22(
     id int not null auto_increment,
+    user_id int not null,
     cake_title varchar(100) unique not null,
     flour double (10, 2),
     sugar double (10, 2),
@@ -88,6 +93,7 @@ CREATE TABLE IF NOT EXISTS cake_tin_22(
 
 CREATE TABLE IF NOT EXISTS shopping_list(
     id int not null auto_increment,
+    user_id int not null,
     flour double (10, 2),
     sugar double (10, 2),
     eggs_grams double (10, 2),
@@ -111,6 +117,7 @@ CREATE TABLE IF NOT EXISTS shopping_list(
     );
 
     CREATE TABLE IF NOT EXISTS clients(
+    user_id int not null,
     client_id int not null auto_increment,
     client_name varchar(100) not null,
     phone text not null,
@@ -119,6 +126,7 @@ CREATE TABLE IF NOT EXISTS shopping_list(
     );
 
     CREATE TABLE IF NOT EXISTS orders(
+        user_id int not null,
         id int not null auto_increment,
         client_name varchar(100) not null,
         client_id int not null,

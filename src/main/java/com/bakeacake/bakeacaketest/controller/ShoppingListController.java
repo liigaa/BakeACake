@@ -1,9 +1,8 @@
 package com.bakeacake.bakeacaketest.controller;
 
-import com.bakeacake.bakeacaketest.model.Cake;
+
 import com.bakeacake.bakeacaketest.model.ShoppingList;
 import com.bakeacake.bakeacaketest.repository.DataManager;
-import com.bakeacake.bakeacaketest.service.CakeRecipeService;
 import com.bakeacake.bakeacaketest.service.ShoppingListService;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
@@ -16,9 +15,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.shape.Circle;
-import javafx.stage.Window;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -51,27 +47,23 @@ public class ShoppingListController extends ViewController implements Initializa
     public Label sourCreamField;
 
 
-
     private ShoppingListService shoppingListService = new ShoppingListService();
-
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        viewShoppingList ();
+        viewShoppingList();
 
         ImageView imageView = new ImageView(getClass().getResource("/images/favicon.png").toExternalForm());
         homeButton.setGraphic(imageView);
 
 
-
-
     }
 
-    public void print (ActionEvent actionEvent){
+    public void print(ActionEvent actionEvent) {
         Node node = new AnchorPane(shoppingListLabel, otherTextArea, gridPane, homeButton);
-       //Node node = new AnchorPane(anchorPane);
+        //Node node = new AnchorPane(anchorPane);
         PrinterJob job = PrinterJob.createPrinterJob();
         try {
             changeScene(actionEvent, "shopping_list");
@@ -89,19 +81,20 @@ public class ShoppingListController extends ViewController implements Initializa
 
     }
 
-        public void viewShoppingList () {
+    public void viewShoppingList() {
 
-            try {
-                ShoppingList shoppingList = this.shoppingListService.viewShoppingList();
-                ShoppingList shoppingList1 = this.shoppingListService.viewShoppingListOther();
-                getIngredients(shoppingList);
-                getOtherField(shoppingList1);
+        try {
+            Integer user_id = DataManager.getInstance().getLoggedInUserId();
+            ShoppingList shoppingList = this.shoppingListService.viewShoppingList(user_id);
+            ShoppingList shoppingList1 = this.shoppingListService.viewShoppingListOther(user_id);
+            getIngredients(shoppingList);
+            getOtherField(shoppingList1);
 
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
+    }
 
     public void getIngredients(ShoppingList shoppingList) {
         flourField.setText(String.valueOf(shoppingList.getFlour()));
@@ -125,12 +118,12 @@ public class ShoppingListController extends ViewController implements Initializa
 
     }
 
-    public void getOtherField(ShoppingList shoppingList){
+    public void getOtherField(ShoppingList shoppingList) {
         otherTextArea.setText(shoppingList.getOther());
     }
 
 
-            public void returnHome(ActionEvent actionEvent) {
+    public void returnHome(ActionEvent actionEvent) {
         try {
             changeScene(actionEvent, "home");
         } catch (Exception ex) {
@@ -138,18 +131,12 @@ public class ShoppingListController extends ViewController implements Initializa
         }
     }
 
-    public void saveShoppingList (ActionEvent actionEvent) {
-//        try {
-//            changeScene(actionEvent, "all_recipes");
-//        } catch (Exception ex) {
-//            showAlert("Problem with navigation", ex.getMessage(), Alert.AlertType.ERROR);
-//        }
-    }
 
-    public void clearShoppingList (ActionEvent actionEvent) {
+    public void clearShoppingList(ActionEvent actionEvent) {
 
         try {
-            shoppingListService.clearShoppingList();
+            Integer user_id = DataManager.getInstance().getLoggedInUserId();
+            shoppingListService.clearShoppingList(user_id);
             try {
                 changeScene(actionEvent, "shopping_list");
             } catch (IOException e) {
@@ -170,8 +157,6 @@ public class ShoppingListController extends ViewController implements Initializa
         }
 
     }
-
-
 
 
 }

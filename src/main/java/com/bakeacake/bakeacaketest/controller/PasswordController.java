@@ -4,9 +4,7 @@ import com.bakeacake.bakeacaketest.repository.DataManager;
 import com.bakeacake.bakeacaketest.service.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 import java.net.URL;
@@ -25,6 +23,7 @@ public class PasswordController extends ViewController implements Initializable 
         ImageView imageView = new ImageView(getClass().getResource("/images/favicon.png").toExternalForm());
         homeButton.setGraphic(imageView);
 
+
     }
 
     public void changePassword(ActionEvent actionEvent) {
@@ -32,11 +31,11 @@ public class PasswordController extends ViewController implements Initializable 
         Integer userId = DataManager.getInstance().getLoggedInUserId();
         try {
             this.userService.changePassword(userId, newPasswordField.getText());
-            if (newPasswordField.getText().isEmpty() || newPasswordField.getText() == null ){
+            if (newPasswordField.getText().isEmpty() || newPasswordField.getText() == null) {
                 showAlert(null, "New password field is empty. Please enter new password!", Alert.AlertType.INFORMATION);
                 return;
             }
-            //changeScene(actionEvent, "home");
+            changeScene(actionEvent, "home");
             showAlert(null, "Password changed successfully", Alert.AlertType.INFORMATION);
             newPasswordField.clear();
 
@@ -47,10 +46,11 @@ public class PasswordController extends ViewController implements Initializable 
 
     }
 
-    public void returnHome(ActionEvent actionEvent){
-        try{
+
+    public void returnHome(ActionEvent actionEvent) {
+        try {
             changeScene(actionEvent, "home");
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
 
@@ -65,7 +65,6 @@ public class PasswordController extends ViewController implements Initializable 
         }
 
     }
-
 
 
 }

@@ -61,6 +61,8 @@ public class AddOrderController extends ViewController implements Initializable 
     }
 
     public void handleAddOrder(ActionEvent actionEvent) {
+
+
         try {
             Client name = clientListField.getSelectionModel().getSelectedItem();
             clients = this.orderService.viewAllClient();
@@ -117,6 +119,8 @@ public class AddOrderController extends ViewController implements Initializable 
             ObservableList<Client> clients = FXCollections.observableArrayList(this.orderService.viewAllClient());
             clientListField.getItems().addAll(clients);
             for(Client client : clients) clientListField.setValue(client);
+
+            clientListField.getItems().addAll(this.userService.viewAllClient(this.user_id));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -127,6 +131,8 @@ public class AddOrderController extends ViewController implements Initializable 
             ObservableList<Cake> cakes = FXCollections.observableArrayList(this.cakeRecipeService.viewAllRecipes());
             cakeTitleField.getItems().addAll(cakes);
             for(Cake cake : cakes) cakeTitleField.setValue(cake);
+
+            cakeTitleField.getItems().addAll(this.cakeRecipeService.viewAllRecipes(this.user_id));
         } catch (Exception e) {
             e.printStackTrace();
         }

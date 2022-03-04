@@ -2,8 +2,6 @@ package com.bakeacake.bakeacaketest.model;
 
 import lombok.*;
 
-import java.util.PrimitiveIterator;
-
 
 @Getter
 @Setter
@@ -13,6 +11,7 @@ import java.util.PrimitiveIterator;
 public class Cake {
 
     private Integer id;
+    private Integer user_id;
     private String cakeTitle;
     private double flour;
     private double sugar;
@@ -35,6 +34,30 @@ public class Cake {
     private String other;
 
     public Cake(String cakeTitle, double flour, double sugar, double eggs, double butter, double creamCheese, double vanillaSugar, double milk, double oil, double gelatin, double cornFlour, double cocoa, double darkChocolate, double whiteChocolate, double salt, double bakingSoda, double bakingPowder, double confectionersSugar, double sourCream, String other) {
+        this.cakeTitle = cakeTitle;
+        this.flour = flour;
+        this.sugar = sugar;
+        this.eggs = eggs;
+        this.butter = butter;
+        this.creamCheese = creamCheese;
+        this.vanillaSugar = vanillaSugar;
+        this.milk = milk;
+        this.oil = oil;
+        this.gelatin = gelatin;
+        this.cornFlour = cornFlour;
+        this.cocoa = cocoa;
+        this.darkChocolate = darkChocolate;
+        this.whiteChocolate = whiteChocolate;
+        this.salt = salt;
+        this.bakingSoda = bakingSoda;
+        this.bakingPowder = bakingPowder;
+        this.confectionersSugar = confectionersSugar;
+        this.sourCream = sourCream;
+        this.other = other;
+    }
+
+    public Cake(Integer user_id, String cakeTitle, double flour, double sugar, double eggs, double butter, double creamCheese, double vanillaSugar, double milk, double oil, double gelatin, double cornFlour, double cocoa, double darkChocolate, double whiteChocolate, double salt, double bakingSoda, double bakingPowder, double confectionersSugar, double sourCream, String other) {
+        this.user_id = user_id;
         this.cakeTitle = cakeTitle;
         this.flour = flour;
         this.sugar = sugar;
@@ -104,7 +127,6 @@ public class Cake {
         this.sourCream = sourCream;
         this.other = other;
     }
-
 
 
     @Override

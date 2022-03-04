@@ -11,7 +11,7 @@ public class DBManager {
     private static String connectionUrl;
     private static Connection connection;
 
-    private static void getSetDatabaseInfo(){
+    private static void getSetDatabaseInfo() {
         PropertiesConfiguration databaseProperties = new PropertiesConfiguration();
         try {
             databaseProperties.load("database.properties");
@@ -28,34 +28,34 @@ public class DBManager {
         connectionUrl = host + ":" + port + "/" + dbName + "?serverTimezone=GMT%2B2";
     }
 
-    public static Connection getConnection(){
-        try{
-            if (connection == null || connection.isClosed()){
+    public static Connection getConnection() {
+        try {
+            if (connection == null || connection.isClosed()) {
                 getSetDatabaseInfo();
                 connection = DriverManager.getConnection(connectionUrl, user, password);
             }
-        }catch (SQLException ex){
+        } catch (SQLException ex) {
             ex.printStackTrace();
         }
         return connection;
     }
 
-    public static void close(ResultSet resultSet, PreparedStatement preparedStatement, Connection connection){
+    public static void close(ResultSet resultSet, PreparedStatement preparedStatement, Connection connection) {
         try {
             connection.close();
             preparedStatement.close();
             resultSet.close();
-        }catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
 
-    public static void executeAndClose (PreparedStatement preparedStatement, Connection connection ){
-        try{
+    public static void executeAndClose(PreparedStatement preparedStatement, Connection connection) {
+        try {
             preparedStatement.execute();
             preparedStatement.close();
             connection.close();
-        }catch (Exception ex) {
+        } catch (Exception ex) {
             ex.printStackTrace();
 
         }

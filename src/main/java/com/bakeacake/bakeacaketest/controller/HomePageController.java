@@ -5,8 +5,6 @@ import com.bakeacake.bakeacaketest.service.UserService;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -67,7 +65,6 @@ public class HomePageController extends ViewController implements Initializable 
     }
 
 
-
     public void changePassword(ActionEvent actionEvent) {
         try {
             changeScene(actionEvent, "password");
@@ -90,6 +87,7 @@ public class HomePageController extends ViewController implements Initializable 
     public void addNewRecipe(ActionEvent actionEvent) {
 
         try {
+
             changeScene(actionEvent, "new_recipe");
         } catch (Exception ex) {
             ex.printStackTrace();

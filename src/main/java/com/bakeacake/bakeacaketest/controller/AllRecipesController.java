@@ -7,22 +7,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.sql.SQLException;
-import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
 public class AllRecipesController extends ViewController implements Initializable {
 
     private CakeRecipeService cakeRecipeService = new CakeRecipeService();
-
+    private Integer user_id = DataManager.getInstance().getLoggedInUserId();
     public ChoiceBox allCakesChoiceBox;
     public Button homeButton;
 
@@ -32,6 +28,7 @@ public class AllRecipesController extends ViewController implements Initializabl
 
         ImageView imageView = new ImageView(getClass().getResource("/images/favicon.png").toExternalForm());
         homeButton.setGraphic(imageView);
+        homeButton.setTooltip(new Tooltip("Home"));
         viewAllRecipes();
 
 
@@ -39,7 +36,8 @@ public class AllRecipesController extends ViewController implements Initializabl
 
     public void viewAllRecipes() {
         try {
-            ObservableList<Cake> cakes = FXCollections.observableArrayList(this.cakeRecipeService.viewAllRecipes());
+
+            ObservableList<Cake> cakes = FXCollections.observableArrayList(this.cakeRecipeService.viewAllRecipes(user_id));
             allCakesChoiceBox.getItems().addAll(cakes);
             for (Cake cake : cakes) allCakesChoiceBox.setValue(cake);
 
@@ -57,17 +55,18 @@ public class AllRecipesController extends ViewController implements Initializabl
         if (result.isPresent() && result.get() == ButtonType.OK) {
 
             try {
-                cakeRecipeService.deleteRecipeTin18(String.valueOf(allCakesChoiceBox.getValue()));
+
+                cakeRecipeService.deleteRecipeTin18(user_id, String.valueOf(allCakesChoiceBox.getValue()));
             } catch (SQLException e) {
                 e.printStackTrace();
             }
             try {
-                cakeRecipeService.deleteRecipeTin20(String.valueOf(allCakesChoiceBox.getValue()));
+                cakeRecipeService.deleteRecipeTin20(user_id, String.valueOf(allCakesChoiceBox.getValue()));
             } catch (SQLException e) {
                 e.printStackTrace();
             }
             try {
-                cakeRecipeService.deleteRecipeTin22(String.valueOf(allCakesChoiceBox.getValue()));
+                cakeRecipeService.deleteRecipeTin22(user_id, String.valueOf(allCakesChoiceBox.getValue()));
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -88,7 +87,6 @@ public class AllRecipesController extends ViewController implements Initializabl
         }
 
     }
-
 
 
     public void viewRecipe(ActionEvent actionEvent) {
@@ -117,11 +115,11 @@ public class AllRecipesController extends ViewController implements Initializabl
     }
 
 
-    public void addToShoppingList (ActionEvent actionEvent) {
+    public void addToShoppingList(ActionEvent actionEvent) {
 
 
         try {
-            if (allCakesChoiceBox.getValue() == null){
+            if (allCakesChoiceBox.getValue() == null) {
                 showAlert(null, "Please choose Cake from choice box", Alert.AlertType.ERROR);
                 return;
             }
@@ -142,7 +140,6 @@ public class AllRecipesController extends ViewController implements Initializabl
         }
 
     }
-
 
 
 }
