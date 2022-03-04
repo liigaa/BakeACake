@@ -15,6 +15,8 @@ public class ResetPasswordController extends ViewController implements Initializ
     public TextField usernameField;
     public TextField emailField;
     public TextField answerField;
+    public PasswordField passwordField;
+    public PasswordField confirmPasswordField;
     public ComboBox<String> secretQuestionBox;
     private String[] secretQuestion = {"Your cat's name", "Your dog's name", "Your first teacher's name"};
 
@@ -26,14 +28,15 @@ public class ResetPasswordController extends ViewController implements Initializ
 
         secretQuestionBox.getItems().addAll(secretQuestion);
 
+
     }
 
-    public void resetPassword(ActionEvent actionEvent) {
+    public void collectUserResetPasswordInformation(ActionEvent actionEvent) {
         try {
             Integer userId = userService.verifyUserForResetPassword(usernameField.getText(), emailField.getText(),
                     secretQuestionBox.getValue(), answerField.getText());
             DataManager.getInstance().setLoggedInUserId(userId);
-            changeScene(actionEvent, "password");
+            changeScene(actionEvent, "reset_password");
         } catch (Exception e) {
             e.printStackTrace();
             showAlert("Login Failed", e.getMessage(), Alert.AlertType.ERROR);
@@ -49,4 +52,6 @@ public class ResetPasswordController extends ViewController implements Initializ
         }
 
     }
+
+
 }
