@@ -46,7 +46,7 @@ public class LoginController extends ViewController implements Initializable {
 
     public void resetPassword(ActionEvent actionEvent) {
         try {
-            changeScene(actionEvent, "reset_password");
+            changeScene(actionEvent, "forgot_password");
         } catch (Exception ex) {
             ex.printStackTrace();
         }

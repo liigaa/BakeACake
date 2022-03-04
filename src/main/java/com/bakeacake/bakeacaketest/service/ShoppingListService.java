@@ -56,7 +56,7 @@ public class ShoppingListService {
 
     public ShoppingList viewShoppingListOther(int user_id) throws Exception {
         connection = DBManager.getConnection();
-        String query = "SELECT `other`, GROUP_CONCAT( `other` SEPARATOR ',\r\n' ) as concact_text from shopping_list WHERE user_id = ?";
+        String query = "SELECT `other`, GROUP_CONCAT( `other` SEPARATOR '\r\n' ) as concact_text from shopping_list WHERE user_id = ?";
 
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setInt(1, user_id);
