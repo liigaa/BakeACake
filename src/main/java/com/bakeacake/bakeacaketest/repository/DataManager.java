@@ -5,6 +5,7 @@ public class DataManager {
     private Integer loggedInUserId = null;
     private String selectedCakeTitle = null;
     private Integer clientId = null;
+    private Integer orderId = null;
 
     DataManager(){}
 
@@ -34,5 +35,13 @@ public class DataManager {
 
     public void setClientId(Integer clientId) {
         this.clientId = clientId;
+    }
+
+    public Integer getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Integer orderId) {
+        this.orderId = orderId;
     }
 }

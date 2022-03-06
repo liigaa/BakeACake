@@ -1,5 +1,4 @@
 package com.bakeacake.bakeacaketest.controller;
-
 import com.bakeacake.bakeacaketest.model.Cake;
 import com.bakeacake.bakeacaketest.model.Client;
 import com.bakeacake.bakeacaketest.model.Order;
@@ -13,9 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class AddOrderController extends ViewController implements Initializable {
@@ -45,7 +42,6 @@ public class AddOrderController extends ViewController implements Initializable 
     private CakeRecipeService cakeRecipeService = new CakeRecipeService();
     private Integer user_id = DataManager.getInstance().getLoggedInUserId();
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         viewAllClients();
@@ -56,9 +52,9 @@ public class AddOrderController extends ViewController implements Initializable 
         deliveryField.setValue("Pick-up");
         statusField.getItems().addAll(status);
         statusField.setValue("Pending");
-
         ImageView imageView = new ImageView(getClass().getResource("/images/favicon.png").toExternalForm());
         homeButton.setGraphic(imageView);
+        homeButton.setTooltip(new Tooltip("Home"));
     }
 
     public void handleAddOrder(ActionEvent actionEvent) {
@@ -80,29 +76,21 @@ public class AddOrderController extends ViewController implements Initializable 
             String description = descriptionField.getText();
             String status = statusField.getSelectionModel().getSelectedItem();
 
-//            if(String.valueOf(datePicker.getValue()).isEmpty()
-//            || timeField.getText().isEmpty()){
-//                showAlert(null, "Please fill all fields", Alert.AlertType.ERROR);
-//            } else{
-            if (!checkEntry()) {
+            if(datePicker.getValue() == null){
+                showAlert(null, "Please add delivery date", Alert.AlertType.ERROR);
+            } else if(timeField.getText().isEmpty()){
+                showAlert(null, "Please add delivery time", Alert.AlertType.ERROR);
+            }
+            else {
                 Order order = new Order(id, tinSize, myDate, deliveryTime,
                         deliverOptions, description, status);
-                orderService.addOrder(this.user_id,order, title, name);
+                orderService.addOrder(this.user_id, order, title, name);
                 showAlert(null, "Order added successfully", Alert.AlertType.INFORMATION);
                 changeScene(actionEvent, "order_screen");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public boolean checkEntry() {
-        if (String.valueOf(datePicker.getValue()).isEmpty()) {
-            showAlert(null, "Please select due date", Alert.AlertType.ERROR);
-        } else if (timeField.getText().isEmpty()) {
-            showAlert(null, "Please add due time", Alert.AlertType.ERROR);
-        }
-        return false;
     }
 
     public void handleReturn(ActionEvent actionEvent) {
@@ -131,11 +119,6 @@ public class AddOrderController extends ViewController implements Initializable 
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public void clear() {
-        timeField.clear();
-        descriptionField.clear();
     }
 
     public void handleLogout(ActionEvent actionEvent) {

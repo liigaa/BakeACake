@@ -1,5 +1,4 @@
 package com.bakeacake.bakeacaketest.controller;
-
 import com.bakeacake.bakeacaketest.model.Client;
 import com.bakeacake.bakeacaketest.repository.DataManager;
 import com.bakeacake.bakeacaketest.service.OrderService;
@@ -9,8 +8,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -19,7 +18,6 @@ public class ClientController extends ViewController implements Initializable {
     @FXML TextField phoneField;
     @FXML TextField addressField;
     public Button homeButton;
-
 
     private OrderService orderService = new OrderService();
 
@@ -57,7 +55,7 @@ public class ClientController extends ViewController implements Initializable {
 
         ImageView imageView = new ImageView(getClass().getResource("/images/favicon.png").toExternalForm());
         homeButton.setGraphic(imageView);
-
+        homeButton.setTooltip(new Tooltip("Home"));
     }
 
     public void handleLogout(ActionEvent actionEvent) {
