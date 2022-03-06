@@ -1,5 +1,6 @@
 package com.bakeacake.bakeacaketest.controller;
 
+import com.bakeacake.bakeacaketest.Main;
 import com.bakeacake.bakeacaketest.model.Cake;
 import com.bakeacake.bakeacaketest.repository.DataManager;
 import com.bakeacake.bakeacaketest.service.CakeRecipeService;
@@ -8,7 +9,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.SQLException;
@@ -49,6 +52,14 @@ public class AllRecipesController extends ViewController implements Initializabl
     public void deleteRecipe(ActionEvent actionEvent) {
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+
+        Image image = new Image(String.valueOf(Main.class.getResource("/images/question.png")));
+        ImageView imageView = new ImageView(image);
+        alert.setGraphic(imageView);
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image(Main.class.getResource("/images/favicon.png").toString()));
+
+
         alert.setHeaderText("Delete recipe?!");
 
         Optional<ButtonType> result = alert.showAndWait();
