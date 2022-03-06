@@ -1,5 +1,4 @@
 package com.bakeacake.bakeacaketest.controller;
-
 import com.bakeacake.bakeacaketest.model.Client;
 import com.bakeacake.bakeacaketest.repository.DataManager;
 import com.bakeacake.bakeacaketest.service.OrderService;
@@ -8,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -41,7 +39,6 @@ public class ClientUpdateController extends ViewController implements Initializa
             Client client = orderService.viewClientProfile(client_id);
             client.setPhoneNumber(phoneField.getText());
             client.setAddress(addressField.getText());
-            System.out.println(client_id + " phone " + phoneField.getText() + " address " + addressField.getText());
             this.orderService.updateClient(client, client_id);
             phoneField.clear();
             addressField.clear();

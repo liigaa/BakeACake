@@ -28,7 +28,7 @@ public class OrderService {
     }
     public ArrayList<Client> viewAllClient(int user_id) throws Exception {
         connection = DBManager.getConnection();
-        String query = "SELECT * FROM clients WHERE user_id = ?";
+        String query = "SELECT * FROM clients WHERE user_id = ? ORDER BY client_name";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setInt(1, user_id);
 
@@ -71,6 +71,7 @@ public class OrderService {
         statement.setInt(3, client_id);
         statement.execute();
         statement.close();
+        connection.close();
     }
     public void addOrder(int user_id, Order order, Cake cake, Client client) throws Exception {
         connection = DBManager.getConnection();
@@ -93,39 +94,64 @@ public class OrderService {
         connection.close();
         preparedStatement.close();
     }
+    public Order viewOrder(int id) throws Exception{
+        connection = DBManager.getConnection();
+        String query = "SELECT * FROM orders WHERE id=" + id;
+        PreparedStatement statement = connection.prepareStatement(query);
+        ResultSet result = statement.executeQuery();
+        Order order=null;
+        if(result.next()){
+            order = new Order(
+                    result.getString("client_name"),
+                    result.getString("cake_title"),
+                    result.getString("cake_tin_size"),
+                    result.getString("delivery_date"),
+                    result.getString("delivery_time"),
+                    result.getString("delivery_options"),
+                    result.getString("description"),
+                    result.getString("status")
+            );
+        }
+        DBManager.close(result, statement, connection);
+        if (order == null) throw new Exception("order not found");
+        return order;
+    }
+    public void updateOrder(Order order, int id) throws Exception{
+        connection = DBManager.getConnection();
+        String query = "UPDATE orders SET cake_tin_size=?, delivery_date=?, delivery_time=?, " +
+                "delivery_options=?, description=?, status=? WHERE id=" + id;
+        PreparedStatement statement = connection.prepareStatement(query);
+        statement.setString(1, order.getTinSize());
+        statement.setString(2, order.getDatePicker());
+        statement.setString(3, order.getDeliveryTime());
+        statement.setString(4, order.getDeliveryOptions());
+        statement.setString(5, order.getDescription());
+        statement.setString(6, order.getStatus());
+        statement.execute();
+        statement.close();
+        connection.close();
+    }
+
     public ArrayList<Order> viewAllOder(int user_id) throws Exception{
         connection = DBManager.getConnection();
-        String query = "SELECT * FROM orders WHERE user_id=" + user_id +" ORDER BY delivery_date";
+        String query = "SELECT * FROM orders WHERE user_id=" + user_id +" ORDER BY delivery_date, delivery_time";
         return getOrders(query);
     }
     public ArrayList<Order> viewAllOderBetweenDate(int user_id, String date, String date1) throws Exception{
         connection = DBManager.getConnection();
-        String query = "SELECT * FROM orders WHERE user_id=" + user_id +" AND delivery_date BETWEEN " + date + " AND " + date1+
-                " ORDER BY delivery_date";
-        return getOrders(query);
-    }
-    public ArrayList<Order> viewAllPendingOder(int user_id) throws Exception{
-        connection = DBManager.getConnection();
-        String query = "SELECT * FROM orders WHERE user_id=" + user_id +" AND status='Pending' ORDER BY delivery_date";
-        return getOrders(query);
-    }
-    public ArrayList<Order> viewAllDeliveredOder(int user_id) throws Exception{
-        connection = DBManager.getConnection();
-        String query = "SELECT * FROM orders WHERE user_id=" + user_id +" AND status='Delivered' ORDER BY delivery_date";
-        return getOrders(query);
-    }
-    public ArrayList<Order> viewAllCanceledOder(int user_id) throws Exception{
-        connection = DBManager.getConnection();
-        String query = "SELECT * FROM orders WHERE user_id=" + user_id +" AND status='Canceled' ORDER BY delivery_date";
-        return getOrders(query);
+        String query = "SELECT * FROM orders WHERE user_id=" + user_id +" AND delivery_date BETWEEN ? AND ? ORDER BY delivery_date, delivery_time";
+        PreparedStatement statement = connection.prepareStatement(query);
+        statement.setString(1, date);
+        statement.setString(2, date1);
+        return getOrders(statement);
     }
 
-    private ArrayList<Order> getOrders(String query) throws SQLException {
-        PreparedStatement statement = connection.prepareStatement(query);
+    private ArrayList<Order> getOrders(PreparedStatement statement) throws SQLException {
         ArrayList<Order> orders = new ArrayList<>();
         ResultSet result = statement.executeQuery();
         while (result.next()){
             Order order = new Order(
+                    result.getInt("id"),
                     result.getString("client_name"),
                     result.getInt("client_id"),
                     result.getString("cake_title"),
@@ -140,5 +166,49 @@ public class OrderService {
         }
         DBManager.close(result, statement, connection);
         return orders;
+    }
+
+    public ArrayList<Order> viewAllPendingOder(int user_id) throws Exception{
+        connection = DBManager.getConnection();
+        String query = "SELECT * FROM orders WHERE user_id=" + user_id +" AND status='Pending' ORDER BY delivery_date, delivery_time";
+        return getOrders(query);
+    }
+    public ArrayList<Order> viewPendingOderBetweenDate(int user_id, String date, String date1) throws Exception{
+        connection = DBManager.getConnection();
+        String query = "SELECT * FROM orders WHERE user_id=" + user_id +" AND status='Pending' AND delivery_date BETWEEN ? AND ? ORDER BY delivery_date, delivery_time";
+        PreparedStatement statement = connection.prepareStatement(query);
+        statement.setString(1, date);
+        statement.setString(2, date1);
+        return getOrders(statement);
+    }
+    public ArrayList<Order> viewAllDeliveredOder(int user_id) throws Exception{
+        connection = DBManager.getConnection();
+        String query = "SELECT * FROM orders WHERE user_id=" + user_id +" AND status='Delivered' ORDER BY delivery_date, delivery_time";
+        return getOrders(query);
+    }
+    public ArrayList<Order> viewDeliveredOderBetweenDate(int user_id, String date, String date1) throws Exception{
+        connection = DBManager.getConnection();
+        String query = "SELECT * FROM orders WHERE user_id=" + user_id +" AND status='Delivered' AND delivery_date BETWEEN ? AND ? ORDER BY delivery_date, delivery_time";
+        PreparedStatement statement = connection.prepareStatement(query);
+        statement.setString(1, date);
+        statement.setString(2, date1);
+        return getOrders(statement);
+    }
+    public ArrayList<Order> viewAllCanceledOder(int user_id) throws Exception{
+        connection = DBManager.getConnection();
+        String query = "SELECT * FROM orders WHERE user_id=" + user_id +" AND status='Canceled' ORDER BY delivery_date, delivery_time";
+        return getOrders(query);
+    }
+    public ArrayList<Order> viewCanceledOderBetweenDate(int user_id, String date, String date1) throws Exception{
+        connection = DBManager.getConnection();
+        String query = "SELECT * FROM orders WHERE user_id=" + user_id +" AND status='Canceled' AND delivery_date BETWEEN ? AND ? ORDER BY delivery_date, delivery_time";
+        PreparedStatement statement = connection.prepareStatement(query);
+        statement.setString(1, date);
+        statement.setString(2, date1);
+        return getOrders(statement);
+    }
+    private ArrayList<Order> getOrders(String query) throws SQLException {
+        PreparedStatement statement = connection.prepareStatement(query);
+        return getOrders(statement);
     }
 }
