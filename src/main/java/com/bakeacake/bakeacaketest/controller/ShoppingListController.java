@@ -41,7 +41,7 @@ public class ShoppingListController extends ViewController implements Initializa
     public Label confectionersSugarField;
     public TextArea otherTextArea;
     public Button homeButton;
-    public AnchorPane anchorPane;
+    public AnchorPane anchorPane; 
     public GridPane gridPane;
     public Label shoppingListLabel;
     public Label sourCreamField;
@@ -63,7 +63,7 @@ public class ShoppingListController extends ViewController implements Initializa
 
     public void print(ActionEvent actionEvent) {
         Node node = new AnchorPane(shoppingListLabel, otherTextArea, gridPane, homeButton);
-        //Node node = new AnchorPane(anchorPane);
+
         PrinterJob job = PrinterJob.createPrinterJob();
         try {
             changeScene(actionEvent, "shopping_list");

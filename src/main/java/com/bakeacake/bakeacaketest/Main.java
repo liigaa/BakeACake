@@ -16,6 +16,11 @@ public class Main extends Application {
         stage.setTitle("Bake a Cake");
         Image icon = new Image(String.valueOf(Main.class.getResource("/images/favicon.png")));
         stage.getIcons().add(icon);
+
+        //Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        //stage.getIcons().add(new Image(this.getClass().getResource("/images/favicon.png").toString()));
+        //alert.initOwner(stage);
+
         stage.setScene(scene);
         stage.show();
     }
