@@ -6,7 +6,8 @@
 
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="700.0" prefWidth="700.0" style="-fx-background-color:#899494" xmlns="http://javafx.com/javafx/17"
+            prefHeight="700.0" prefWidth="700.0"  stylesheets="@stylesheet.css" styleClass="root"
+            xmlns="http://javafx.com/javafx/17"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.bakeacake.bakeacaketest.controller.RegisterController">
     <children>

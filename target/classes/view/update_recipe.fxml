@@ -5,7 +5,10 @@
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.UpdateRecipeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            stylesheets="@stylesheet.css" styleClass="root"
+            fx:controller="com.bakeacake.bakeacaketest.controller.UpdateRecipeController">
    <children>
       <GridPane alignment="CENTER" layoutX="164.0" layoutY="274.0">
         <columnConstraints>

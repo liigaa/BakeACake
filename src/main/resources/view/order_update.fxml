@@ -13,7 +13,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.OrderUpdateController">
+<AnchorPane prefHeight="700.0" prefWidth="700.0" stylesheets="@stylesheet.css"  styleClass="root"
+            xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.bakeacake.bakeacaketest.controller.OrderUpdateController">
     <children>
         <VBox alignment="CENTER" layoutX="50.0" layoutY="135.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
             <children>

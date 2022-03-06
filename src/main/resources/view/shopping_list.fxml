@@ -8,7 +8,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.ShoppingListController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="700.0" prefWidth="700.0" stylesheets="@stylesheet.css" styleClass="root"
+            xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.ShoppingListController">
     <children>
 
         <GridPane fx:id="gridPane" hgap="30.0" layoutX="200.0" layoutY="174.0">
