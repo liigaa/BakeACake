@@ -7,8 +7,8 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.geometry.Insets?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            stylesheets="@stylesheet.css"  styleClass="root"
             fx:controller="com.bakeacake.bakeacaketest.controller.ClientUpdateController"
             prefHeight="700.0" prefWidth="700.0">
     <children>

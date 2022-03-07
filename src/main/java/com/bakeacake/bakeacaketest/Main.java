@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class Main extends Application {
     @Override
@@ -20,6 +21,7 @@ public class Main extends Application {
 //        scene.getStylesheets().add("/stylesheet.css");
 
         String css = getClass().getResource("/view/stylesheet.css").toExternalForm();
+//      String css = Objects.requireNonNull(getClass().getResource("/view/stylesheet.css")).toExternalForm();
         scene.getStylesheets().clear();
         scene.getStylesheets().add(css);
 
@@ -38,6 +40,5 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch();
-
     }
 }

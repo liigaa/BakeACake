@@ -10,7 +10,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.AllOrderController">
+<AnchorPane prefHeight="700.0" prefWidth="700.0"
+            stylesheets="@stylesheet.css"  styleClass="root"
+            xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.AllOrderController">
    <children>
       <VBox alignment="CENTER" layoutX="136.0" layoutY="46.0" prefHeight="473.0" prefWidth="400.0">
          <children>
