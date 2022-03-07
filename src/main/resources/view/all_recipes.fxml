@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="700.0" prefWidth="700.0" style="-fx-background-color:#899494"
+<AnchorPane prefHeight="700.0" prefWidth="700.0" stylesheets="@stylesheet.css"  styleClass="root"
             xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.bakeacake.bakeacaketest.controller.AllRecipesController">
     <children>

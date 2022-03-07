@@ -7,7 +7,8 @@
 
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
-            prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            prefWidth="700.0" stylesheets="@stylesheet.css"  styleClass="root"
+            xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.bakeacake.bakeacaketest.controller.ClientController">
     <children>
         <GridPane alignment="CENTER" layoutX="239.0" layoutY="293.0">

@@ -6,7 +6,7 @@
 
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
-            prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+            prefWidth="700.0" stylesheets="@stylesheet.css"  styleClass="root" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.bakeacake.bakeacaketest.controller.CakeRecipeController">
     <children>
         <Label alignment="CENTER" layoutX="153.0" layoutY="33.0" prefHeight="27.0" prefWidth="308.0"

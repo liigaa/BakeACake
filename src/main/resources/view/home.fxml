@@ -7,8 +7,8 @@
 
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
-            prefWidth="742.0" style="-fx-background-color:#899494" xmlns="http://javafx.com/javafx/17"
-            xmlns:fx="http://javafx.com/fxml/1"
+            prefWidth="742.0"  stylesheets="@stylesheet.css"  styleClass="root"
+            xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.bakeacake.bakeacaketest.controller.HomePageController">
     <children>
         <Button layoutX="371.0" layoutY="14.0" mnemonicParsing="false" onAction="#changePassword" prefHeight="30.0"

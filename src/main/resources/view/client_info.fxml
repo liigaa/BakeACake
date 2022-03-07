@@ -11,7 +11,8 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<AnchorPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.ClientInfoController">
+<AnchorPane prefHeight="700.0" prefWidth="700.0" stylesheets="@stylesheet.css"  styleClass="root"
+            xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.ClientInfoController">
    <children>
       <VBox alignment="TOP_CENTER" layoutX="172.0" layoutY="161.0" prefHeight="298.0" prefWidth="303.0">
          <children>
