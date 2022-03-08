@@ -59,7 +59,6 @@ public class AllRecipesController extends ViewController implements Initializabl
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
         stage.getIcons().add(new Image(Main.class.getResource("/images/favicon.png").toString()));
 
-
         alert.setHeaderText("Delete recipe?!");
 
         Optional<ButtonType> result = alert.showAndWait();
@@ -104,7 +103,6 @@ public class AllRecipesController extends ViewController implements Initializabl
 
         DataManager.getInstance().setSelectedCakeTitle(String.valueOf(allCakesChoiceBox.getValue()));
 
-
         try {
             changeScene(actionEvent, "view_recipe");
         } catch (Exception ex) {
@@ -125,22 +123,22 @@ public class AllRecipesController extends ViewController implements Initializabl
 
     }
 
-
-    public void addToShoppingList(ActionEvent actionEvent) {
-
-
-        try {
-            if (allCakesChoiceBox.getValue() == null) {
-                showAlert(null, "Please choose Cake from choice box", Alert.AlertType.ERROR);
-                return;
-            }
-
-            changeScene(actionEvent, "view_recipe");
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
-
-    }
+//
+//    public void addToShoppingList(ActionEvent actionEvent) {
+//
+//
+//        try {
+//            if (allCakesChoiceBox.getValue() == null) {
+//                showAlert(null, "Please choose Cake from choice box", Alert.AlertType.ERROR);
+//                return;
+//            }
+//
+//            changeScene(actionEvent, "view_recipe");
+//        } catch (Exception ex) {
+//            ex.printStackTrace();
+//        }
+//
+//    }
 
     public void handleLogout(ActionEvent actionEvent) {
         try {
