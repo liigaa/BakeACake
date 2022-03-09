@@ -23,7 +23,7 @@ public class ViewController {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         Parent parent = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(scenePath)));
-        stage.setScene(new Scene(parent, 700, 700));
+        stage.setScene(new Scene(parent, 650, 700));
         stage.show();
     }
 
