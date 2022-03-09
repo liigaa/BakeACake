@@ -2,6 +2,12 @@ DROP DATABASE IF EXISTS bake_a_cake;
 CREATE DATABASE IF NOT EXISTS bake_a_cake;
 USE bake_a_cake;
 
+/*DROP DATABASE IF EXISTS RFU5gLWxAR;
+
+CREATE DATABASE IF NOT EXISTS RFU5gLWxAR;
+
+USE RFU5gLWxAR;*/
+
 CREATE TABLE IF NOT EXISTS users(
    id int not null auto_increment,
    name varchar(100) not null,
@@ -138,3 +144,5 @@ CREATE TABLE IF NOT EXISTS orders(
     description text null,
     status varchar(20) not null,
     primary key(id));
+
+
