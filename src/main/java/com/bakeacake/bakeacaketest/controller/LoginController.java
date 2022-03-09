@@ -24,6 +24,11 @@ public class LoginController extends ViewController implements Initializable {
 
     public void handleUserLogin(ActionEvent actionEvent) {
 
+        if(usernameField.getText().isEmpty() || passwordField.getText().isEmpty()){
+            showAlert(null, "Please enter username and password", Alert.AlertType.ERROR);
+            return;
+        }
+
         try {
             Integer userId = userService.verifyUserDetail(usernameField.getText(), passwordField.getText());
             DataManager.getInstance().setLoggedInUserId(userId);

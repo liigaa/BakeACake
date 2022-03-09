@@ -1,4 +1,5 @@
 package com.bakeacake.bakeacaketest.controller;
+
 import com.bakeacake.bakeacaketest.model.Cake;
 import com.bakeacake.bakeacaketest.model.Client;
 import com.bakeacake.bakeacaketest.model.Order;
@@ -12,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -62,8 +64,8 @@ public class AddOrderController extends ViewController implements Initializable 
             Client name = clientListField.getSelectionModel().getSelectedItem();
             ObservableList<Client> clients = FXCollections.observableArrayList(this.orderService.viewAllClient(this.user_id));
             String name1 = String.valueOf(clientListField.getSelectionModel().getSelectedItem());
-            for(Client client : clients){
-                if(client.getName().equals(name1)){
+            for (Client client : clients) {
+                if (client.getName().equals(name1)) {
                     DataManager.getInstance().setClientId(client.getId());
                 }
             }
@@ -76,12 +78,11 @@ public class AddOrderController extends ViewController implements Initializable 
             String description = descriptionField.getText();
             String status = statusField.getSelectionModel().getSelectedItem();
 
-            if(datePicker.getValue() == null){
+            if (datePicker.getValue() == null) {
                 showAlert(null, "Please add delivery date", Alert.AlertType.ERROR);
-            } else if(timeField.getText().isEmpty()){
+            } else if (timeField.getText().isEmpty()) {
                 showAlert(null, "Please add delivery time", Alert.AlertType.ERROR);
-            }
-            else {
+            } else {
                 Order order = new Order(id, tinSize, myDate, deliveryTime,
                         deliverOptions, description, status);
                 orderService.addOrder(this.user_id, order, title, name);
@@ -105,7 +106,7 @@ public class AddOrderController extends ViewController implements Initializable 
         try {
             ObservableList<Client> clients = FXCollections.observableArrayList(this.orderService.viewAllClient(this.user_id));
             clientListField.getItems().addAll(clients);
-            for(Client client : clients) clientListField.setValue(client);
+            for (Client client : clients) clientListField.setValue(client);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -115,7 +116,7 @@ public class AddOrderController extends ViewController implements Initializable 
         try {
             ObservableList<Cake> cakes = FXCollections.observableArrayList(this.cakeRecipeService.viewAllRecipes(this.user_id));
             cakeTitleField.getItems().addAll(cakes);
-            for(Cake cake : cakes) cakeTitleField.setValue(cake);
+            for (Cake cake : cakes) cakeTitleField.setValue(cake);
         } catch (Exception e) {
             e.printStackTrace();
         }

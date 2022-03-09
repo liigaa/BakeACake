@@ -2,20 +2,26 @@ DROP DATABASE IF EXISTS bake_a_cake;
 CREATE DATABASE IF NOT EXISTS bake_a_cake;
 USE bake_a_cake;
 
+/*DROP DATABASE IF EXISTS RFU5gLWxAR;
+
+CREATE DATABASE IF NOT EXISTS RFU5gLWxAR;
+
+USE RFU5gLWxAR;*/
+
 CREATE TABLE IF NOT EXISTS users(
-id int not null auto_increment,
-name varchar(100) not null,
-username varchar(100) unique not null,
-password text not null,
-email varchar(100) unique null,
-secret_question varchar(100) not null,
-secret_answer varchar (100) not null,
-primary key(id)
-);
+   id int not null auto_increment,
+   name varchar(100) not null,
+    username varchar(100) unique not null,
+    password text not null,
+    email varchar(100) unique null,
+    secret_question varchar(100) not null,
+    secret_answer varchar (100) not null,
+    primary key(id)
+    );
 
 CREATE TABLE IF NOT EXISTS cake_tin_18(
-    id int not null auto_increment,
-    user_id int not null,
+     id int not null auto_increment,
+     user_id int not null,
     cake_title varchar(100) unique not null,
     flour double (10, 2),
     sugar double (10, 2),
@@ -92,7 +98,7 @@ CREATE TABLE IF NOT EXISTS cake_tin_22(
     );
 
 CREATE TABLE IF NOT EXISTS shopping_list(
-    id int not null auto_increment,
+   id int not null auto_increment,
     user_id int not null,
     flour double (10, 2),
     sugar double (10, 2),
@@ -116,7 +122,7 @@ CREATE TABLE IF NOT EXISTS shopping_list(
     primary key(id)
     );
 
-    CREATE TABLE IF NOT EXISTS clients(
+CREATE TABLE IF NOT EXISTS clients(
     user_id int not null,
     client_id int not null auto_increment,
     client_name varchar(100) not null,
@@ -125,18 +131,18 @@ CREATE TABLE IF NOT EXISTS shopping_list(
     primary key(client_id)
     );
 
-    CREATE TABLE IF NOT EXISTS orders(
-        user_id int not null,
-        id int not null auto_increment,
-        client_name varchar(100) not null,
-        client_id int not null,
-        cake_title varchar(100)  not null,
-        cake_tin_size varchar(20) not null,
-        delivery_date varchar(20) not null,
-        delivery_time varchar(20) not null,
-        delivery_options varchar(20) not null,
-        description text null,
-        status varchar(20) not null,
-        primary key(id));
+CREATE TABLE IF NOT EXISTS orders(
+    user_id int not null,
+   id int not null auto_increment,
+   client_name varchar(100) not null,
+    client_id int not null,
+    cake_title varchar(100)  not null,
+    cake_tin_size varchar(20) not null,
+    delivery_date varchar(20) not null,
+    delivery_time varchar(20) not null,
+    delivery_options varchar(20) not null,
+    description text null,
+    status varchar(20) not null,
+    primary key(id));
 
 

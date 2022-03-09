@@ -34,7 +34,6 @@ public class CakeRecipeController extends ViewController implements Initializabl
     public TextField confectionersSugarField;
     public TextField sourCreamField;
     public TextArea otherTextArea;
-
     public TextField cakeTitleField;
     public ChoiceBox<Double> tinSize;
     private Double[] tins = {18.0, 20.0, 22.0};
@@ -60,6 +59,11 @@ public class CakeRecipeController extends ViewController implements Initializabl
     }
 
     public void addCakeRecipe(ActionEvent actionEvent) {
+
+        if (cakeTitleField.getText().isEmpty()){
+            showAlert(null, "Please enter cake title!", Alert.AlertType.ERROR);
+            return;
+        }
 
 
         Cake cake = new Cake(cakeTitleField.getText(), convertField(flourField.getText()), convertField(sugarField.getText()),
@@ -97,7 +101,6 @@ public class CakeRecipeController extends ViewController implements Initializabl
 
         showAlert(null, "Recipe added successfully", Alert.AlertType.INFORMATION);
         clear();
-
 
     }
 

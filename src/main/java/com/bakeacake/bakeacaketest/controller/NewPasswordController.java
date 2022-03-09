@@ -5,7 +5,6 @@ import com.bakeacake.bakeacaketest.service.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 
 import java.net.URL;
@@ -17,8 +16,8 @@ public class NewPasswordController extends ViewController implements Initializab
 
     public PasswordField passwordField;
     public PasswordField confirmPasswordField;
-    public ComboBox<String> secretQuestionBox;
-    private String[] secretQuestion = {"Your cat's name", "Your dog's name", "Your first teacher's name"};
+    //public ComboBox<String> secretQuestionBox;
+    //private final String[] secretQuestion = {"Your cat's name", "Your dog's name", "Your first teacher's name"};
 
     UserService userService = new UserService();
 

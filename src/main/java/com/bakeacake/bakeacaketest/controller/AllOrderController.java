@@ -1,4 +1,5 @@
 package com.bakeacake.bakeacaketest.controller;
+
 import com.bakeacake.bakeacaketest.model.Order;
 import com.bakeacake.bakeacaketest.repository.DataManager;
 import com.bakeacake.bakeacaketest.service.OrderService;
@@ -9,15 +10,20 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AllOrderController extends ViewController implements Initializable {
-    @FXML ChoiceBox<String> statusField;
+    @FXML
+    ChoiceBox<String> statusField;
     private final String[] status = {"All", "Pending", "Delivered", "Canceled"};
-    @FXML DatePicker startDataField;
-    @FXML DatePicker endDataField;
-    @FXML ListView<Order> listViewField;
+    @FXML
+    DatePicker startDataField;
+    @FXML
+    DatePicker endDataField;
+    @FXML
+    ListView<Order> listViewField;
     public Button homeButton;
     private Integer user_id = DataManager.getInstance().getLoggedInUserId();
     OrderService orderService = new OrderService();
@@ -32,37 +38,42 @@ public class AllOrderController extends ViewController implements Initializable 
     }
 
     public void handleOderList(ActionEvent actionEvent) {
-        if(statusField.getValue().equals("All")){
-            if(startDataField.getValue() != null && endDataField.getValue() !=null){
+        if (statusField.getValue().equals("All")) {
+            if (startDataField.getValue() != null && endDataField.getValue() != null) {
                 listViewField.getItems().clear();
                 viewAllWithDateOrder();
-            }else{
+            } else {
                 listViewField.getItems().clear();
-                viewAllOrders();}
-        }else if(statusField.getValue().equals("Pending")){
-            if(startDataField.getValue() != null && endDataField.getValue() !=null){
+                viewAllOrders();
+            }
+        } else if (statusField.getValue().equals("Pending")) {
+            if (startDataField.getValue() != null && endDataField.getValue() != null) {
                 listViewField.getItems().clear();
                 viewPendingWithDateOrder();
-            }else{
+            } else {
                 listViewField.getItems().clear();
-                viewAllPendingOrders();}
-        }else if(statusField.getValue().equals("Delivered")){
-            if(startDataField.getValue() != null && endDataField.getValue() !=null){
+                viewAllPendingOrders();
+            }
+        } else if (statusField.getValue().equals("Delivered")) {
+            if (startDataField.getValue() != null && endDataField.getValue() != null) {
                 listViewField.getItems().clear();
                 viewDeliveredWithDateOrder();
-            }else{
+            } else {
                 listViewField.getItems().clear();
-                viewAllDeliveredOrders();}
-        }else if(statusField.getValue().equals("Canceled")){
-            if(startDataField.getValue() != null && endDataField.getValue() !=null){
+                viewAllDeliveredOrders();
+            }
+        } else if (statusField.getValue().equals("Canceled")) {
+            if (startDataField.getValue() != null && endDataField.getValue() != null) {
                 listViewField.getItems().clear();
                 viewCanceledWithDateOrder();
-            }else{
+            } else {
                 listViewField.getItems().clear();
-                viewAllCanceledOrders();}
+                viewAllCanceledOrders();
+            }
         }
     }
-    private void viewAllOrders(){
+
+    private void viewAllOrders() {
         try {
             ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllOder(this.user_id));
             lookForOrders(orders);
@@ -70,7 +81,8 @@ public class AllOrderController extends ViewController implements Initializable 
             e.printStackTrace();
         }
     }
-    private void viewAllWithDateOrder(){
+
+    private void viewAllWithDateOrder() {
         String startData = String.valueOf(startDataField.getValue());
         String endData = String.valueOf(endDataField.getValue());
         try {
@@ -82,7 +94,8 @@ public class AllOrderController extends ViewController implements Initializable 
             ex.printStackTrace();
         }
     }
-    private void viewAllPendingOrders(){
+
+    private void viewAllPendingOrders() {
         try {
             ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllPendingOder(this.user_id));
             lookForOrders(orders);
@@ -90,7 +103,8 @@ public class AllOrderController extends ViewController implements Initializable 
             e.printStackTrace();
         }
     }
-    private void viewPendingWithDateOrder(){
+
+    private void viewPendingWithDateOrder() {
         String startData = String.valueOf(startDataField.getValue());
         String endData = String.valueOf(endDataField.getValue());
         try {
@@ -104,15 +118,15 @@ public class AllOrderController extends ViewController implements Initializable 
     }
 
     private void lookForOrders(ObservableList<Order> orders) {
-        for(Order order1 : orders){
-            Order order = new Order(order1.getClient(), order1.getCake(),order1.getTinSize(),
+        for (Order order1 : orders) {
+            Order order = new Order(order1.getClient(), order1.getCake(), order1.getTinSize(),
                     order1.getDatePicker(), order1.getDeliveryTime(), order1.getDeliveryOptions(),
                     order1.getDescription(), order1.getStatus());
             listViewField.getItems().addAll(order);
         }
     }
 
-    private void viewAllDeliveredOrders(){
+    private void viewAllDeliveredOrders() {
         try {
             ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllDeliveredOder(this.user_id));
             lookForOrders(orders);
@@ -120,7 +134,8 @@ public class AllOrderController extends ViewController implements Initializable 
             e.printStackTrace();
         }
     }
-    private void viewDeliveredWithDateOrder(){
+
+    private void viewDeliveredWithDateOrder() {
         String startData = String.valueOf(startDataField.getValue());
         String endData = String.valueOf(endDataField.getValue());
         try {
@@ -132,7 +147,8 @@ public class AllOrderController extends ViewController implements Initializable 
             ex.printStackTrace();
         }
     }
-    private void viewAllCanceledOrders(){
+
+    private void viewAllCanceledOrders() {
         try {
             ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllCanceledOder(this.user_id));
             lookForOrders(orders);
@@ -140,7 +156,8 @@ public class AllOrderController extends ViewController implements Initializable 
             e.printStackTrace();
         }
     }
-    private void viewCanceledWithDateOrder(){
+
+    private void viewCanceledWithDateOrder() {
         String startData = String.valueOf(startDataField.getValue());
         String endData = String.valueOf(endDataField.getValue());
         try {
@@ -152,18 +169,20 @@ public class AllOrderController extends ViewController implements Initializable 
             ex.printStackTrace();
         }
     }
+
     public void handleClientInfo(ActionEvent actionEvent) {
         try {
             ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllOder(this.user_id));
             String name = listViewField.getSelectionModel().getSelectedItem().getClient();
             String title = listViewField.getSelectionModel().getSelectedItem().getCake();
             String status = listViewField.getSelectionModel().getSelectedItem().getStatus();
-            for(Order order : orders){
-                if(order.getClient().equals(name) && order.getCake().equals(title)
-                        && order.getStatus().equals(status)){
+            for (Order order : orders) {
+                if (order.getClient().equals(name) && order.getCake().equals(title)
+                        && order.getStatus().equals(status)) {
                     DataManager.getInstance().setClientId(order.getClient_id());
                     changeScene(actionEvent, "client_info");
-                }}
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -175,12 +194,13 @@ public class AllOrderController extends ViewController implements Initializable 
             String name = listViewField.getSelectionModel().getSelectedItem().getClient();
             String title = listViewField.getSelectionModel().getSelectedItem().getCake();
             String status = listViewField.getSelectionModel().getSelectedItem().getStatus();
-            for(Order order : orders){
-                if(order.getClient().equals(name) && order.getCake().equals(title)
-                        && order.getStatus().equals(status)){
+            for (Order order : orders) {
+                if (order.getClient().equals(name) && order.getCake().equals(title)
+                        && order.getStatus().equals(status)) {
                     DataManager.getInstance().setOrderId(order.getId());
                     changeScene(actionEvent, "order_update");
-                }}
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

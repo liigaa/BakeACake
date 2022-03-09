@@ -32,13 +32,18 @@ public class ResetPasswordController extends ViewController implements Initializ
     }
 
     public void collectUserResetPasswordInformation(ActionEvent actionEvent) {
+        if (usernameField.getText().isEmpty() || emailField.getText().isEmpty() ||
+                secretQuestionBox.getValue().isEmpty() || answerField.getText().isEmpty()){
+            showAlert(null, "Please fill in all fields", Alert.AlertType.ERROR);
+            return;
+        }
         try {
             Integer userId = userService.verifyUserForResetPassword(usernameField.getText(), emailField.getText(),
                     secretQuestionBox.getValue(), answerField.getText());
             DataManager.getInstance().setLoggedInUserId(userId);
             changeScene(actionEvent, "reset_password");
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
             showAlert("Login Failed", e.getMessage(), Alert.AlertType.ERROR);
         }
 
