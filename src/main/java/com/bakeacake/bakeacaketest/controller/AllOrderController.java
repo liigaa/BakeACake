@@ -39,7 +39,7 @@ public class AllOrderController extends ViewController implements Initializable 
 
     public void handleOderList(ActionEvent actionEvent) {
         if (statusField.getValue().equals("All")) {
-            if (startDataField.getValue() != null && endDataField.getValue() != null) {
+            if (startDataField.getValue() != null || endDataField.getValue() != null) {
                 listViewField.getItems().clear();
                 viewAllWithDateOrder();
             } else {
@@ -47,7 +47,7 @@ public class AllOrderController extends ViewController implements Initializable 
                 viewAllOrders();
             }
         } else if (statusField.getValue().equals("Pending")) {
-            if (startDataField.getValue() != null && endDataField.getValue() != null) {
+            if (startDataField.getValue() != null || endDataField.getValue() != null) {
                 listViewField.getItems().clear();
                 viewPendingWithDateOrder();
             } else {
@@ -55,7 +55,7 @@ public class AllOrderController extends ViewController implements Initializable 
                 viewAllPendingOrders();
             }
         } else if (statusField.getValue().equals("Delivered")) {
-            if (startDataField.getValue() != null && endDataField.getValue() != null) {
+            if (startDataField.getValue() != null || endDataField.getValue() != null) {
                 listViewField.getItems().clear();
                 viewDeliveredWithDateOrder();
             } else {
@@ -63,7 +63,7 @@ public class AllOrderController extends ViewController implements Initializable 
                 viewAllDeliveredOrders();
             }
         } else if (statusField.getValue().equals("Canceled")) {
-            if (startDataField.getValue() != null && endDataField.getValue() != null) {
+            if (startDataField.getValue() != null || endDataField.getValue() != null) {
                 listViewField.getItems().clear();
                 viewCanceledWithDateOrder();
             } else {
@@ -172,6 +172,7 @@ public class AllOrderController extends ViewController implements Initializable 
 
     public void handleClientInfo(ActionEvent actionEvent) {
         try {
+            if(!(listViewField.getSelectionModel().isEmpty() || listViewField.getItems().isEmpty())){
             ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllOder(this.user_id));
             String name = listViewField.getSelectionModel().getSelectedItem().getClient();
             String title = listViewField.getSelectionModel().getSelectedItem().getCake();
@@ -182,6 +183,8 @@ public class AllOrderController extends ViewController implements Initializable 
                     DataManager.getInstance().setClientId(order.getClient_id());
                     changeScene(actionEvent, "client_info");
                 }
+            }}else {
+                showAlert(null, "Please select order", Alert.AlertType.ERROR);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -190,6 +193,7 @@ public class AllOrderController extends ViewController implements Initializable 
 
     public void handleOrderUpdate(ActionEvent actionEvent) {
         try {
+            if(!(listViewField.getSelectionModel().isEmpty() || listViewField.getItems().isEmpty())){
             ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllOder(this.user_id));
             String name = listViewField.getSelectionModel().getSelectedItem().getClient();
             String title = listViewField.getSelectionModel().getSelectedItem().getCake();
@@ -200,6 +204,8 @@ public class AllOrderController extends ViewController implements Initializable 
                     DataManager.getInstance().setOrderId(order.getId());
                     changeScene(actionEvent, "order_update");
                 }
+            }}else {
+                showAlert(null, "Please select order", Alert.AlertType.ERROR);
             }
         } catch (Exception e) {
             e.printStackTrace();
