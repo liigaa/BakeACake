@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-            prefHeight="700.0" prefWidth="700.0" stylesheets="@stylesheet.css" styleClass="root"
-            xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.ShoppingListController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="650.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.ShoppingListController">
     <children>
 
-        <GridPane fx:id="gridPane" hgap="30.0" layoutX="200.0" layoutY="174.0">
+        <GridPane fx:id="gridPane" hgap="30.0" layoutX="96.0" layoutY="176.0" prefHeight="240.0" prefWidth="450.0" vgap="5.0">
             <children>
 
                 <Label text="Flour" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -52,13 +51,13 @@
                 <Label text="Dark chocolate" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                 <Label fx:id="darkChocolateField" GridPane.columnIndex="3" GridPane.rowIndex="3" />
 
-                <Label text="White chocolate" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                      <Label text="White chocolate" GridPane.columnIndex="2" GridPane.rowIndex="4" />
                 <Label fx:id="whiteChocolateField" GridPane.columnIndex="3" GridPane.rowIndex="4" />
 
                 <Label text="Salt" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                 <Label fx:id="saltField" GridPane.columnIndex="3" GridPane.rowIndex="5" />
 
-                <Label text="Backing Soda" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                <Label text="Baking soda" GridPane.columnIndex="2" GridPane.rowIndex="6" />
                 <Label fx:id="bakingSodaField" GridPane.columnIndex="3" GridPane.rowIndex="6" />
 
                 <Label text="Baking powder" GridPane.columnIndex="2" GridPane.rowIndex="7" />
@@ -71,8 +70,8 @@
                 <Label fx:id="sourCreamField" GridPane.columnIndex="3" GridPane.rowIndex="9" />
             </children>
             <columnConstraints>
-                <ColumnConstraints />
-                <ColumnConstraints />
+                <ColumnConstraints maxWidth="120.0" minWidth="120.0" prefWidth="120.0" />
+                <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
                 <ColumnConstraints />
                 <ColumnConstraints />
             </columnConstraints>
@@ -92,31 +91,19 @@
             <RowConstraints />
             </rowConstraints>
         </GridPane>
-        <Label fx:id="shoppingListLabel" alignment="CENTER" layoutX="23.0" layoutY="103.0" prefHeight="17.0" prefWidth="644.0" text="Shopping list">
+        <Label fx:id="shoppingListLabel" alignment="CENTER" layoutX="71.0" layoutY="95.0" prefHeight="50.0" prefWidth="500.0" text="Shopping list">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
-        <Button fx:id="homeButton" layoutX="48.0" layoutY="36.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="37.0" prefWidth="42.0" />
-        <Button layoutX="589.0" layoutY="48.0" mnemonicParsing="false" onAction="#handleLogout" text="Log out" />
-      <GridPane layoutX="185.0" layoutY="540.0" prefHeight="30.0" prefWidth="279.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
+        <Button fx:id="homeButton" layoutX="35.0" layoutY="35.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="60.0" prefWidth="65.0" />
+        <Button layoutX="470.0" layoutY="604.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="100.0" text="Sign out" />
+      <TextArea fx:id="otherTextArea" layoutX="71.0" layoutY="433.0" prefHeight="122.0" prefWidth="500.0" />
 
 
-                <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#print" prefHeight="25.0" prefWidth="63.0" text="save" />
-            <Button mnemonicParsing="false" onAction="#returnHome" prefHeight="25.0" prefWidth="67.0" text="return" GridPane.columnIndex="1" />
-                <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#clearShoppingList" prefHeight="25.0" prefWidth="65.0" text="clear" GridPane.columnIndex="2" />
-         </children>
-      </GridPane>
-      <TextArea fx:id="otherTextArea" layoutX="139.0" layoutY="374.0" prefHeight="122.0" prefWidth="370.0" />
+          <Button contentDisplay="CENTER" layoutX="71.0" layoutY="604.0" mnemonicParsing="false" onAction="#print" prefHeight="40.0" prefWidth="100.0" text="Save" />
+      <Button layoutX="196.0" layoutY="604.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="40.0" prefWidth="100.0" text="Return" />
+          <Button contentDisplay="CENTER" layoutX="312.0" layoutY="604.0" mnemonicParsing="false" onAction="#clearShoppingList" prefHeight="40.0" prefWidth="140.0" text="Clear list" />
 
 
     </children>

@@ -1,124 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
-            prefWidth="700.0" stylesheets="@stylesheet.css"  styleClass="root" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.bakeacake.bakeacaketest.controller.CakeRecipeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="650.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.CakeRecipeController">
     <children>
-        <Label alignment="CENTER" layoutX="153.0" layoutY="33.0" prefHeight="27.0" prefWidth="308.0"
-               text="ADD NEW RECIPE">
-            <font>
-                <Font size="18.0"/>
-            </font>
-        </Label>
-        <TextField fx:id="cakeTitleField" layoutX="230.0" layoutY="60.0" promptText="Cake Title"/>
-        <ChoiceBox fx:id="tinSize" layoutX="229.0" layoutY="100.0" prefWidth="150.0"/>
+        <TextField fx:id="cakeTitleField" layoutX="112.0" layoutY="116.0" prefHeight="43.0" prefWidth="213.0" promptText="Cake Title" stylesheets="@stylesheet.css" />
+        <ChoiceBox fx:id="tinSize" layoutX="376.0" layoutY="116.0" prefHeight="43.0" prefWidth="180.0" stylesheets="@stylesheet.css" />
 
-        <GridPane layoutX="99.0" layoutY="185.0">
+        <GridPane hgap="12.0" layoutX="87.0" layoutY="176.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" vgap="5.0">
             <children>
 
-                <Label text="Flour" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                <TextField fx:id="flourField" promptText="grams" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Label id="ingredients" text="Flour" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="flourField" promptText="grams" stylesheets="@stylesheet.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-                <Label text="Sugar" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-                <TextField fx:id="sugarField" promptText="grams" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <Label id="ingredients" text="Sugar" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="sugarField" promptText="grams" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <padding>
+                  <Insets top="10.0" />
+               </padding></TextField>
 
-                <Label text="Eggs" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-                <TextField fx:id="eggsField" promptText="grams" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                <Label id="ingredients" text="Eggs" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField fx:id="eggsField" promptText="grams" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-                <Label text="Butter" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
-                <TextField fx:id="butterField" promptText="grams" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <Label id="ingredients" text="Butter" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <TextField fx:id="butterField" promptText="grams" GridPane.columnIndex="1" GridPane.rowIndex="4" />
 
-                <Label text="Cream cheese" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
-                <TextField fx:id="creamCheeseField" promptText="grams" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                <Label id="ingredients" text="Cream cheese" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <TextField fx:id="creamCheeseField" promptText="grams" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
-                <Label text="Vanilla sugar" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
-                <TextField fx:id="vanillaSugarField" promptText="grams" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                <Label id="ingredients" text="Vanilla sugar" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                <TextField fx:id="vanillaSugarField" promptText="grams" GridPane.columnIndex="1" GridPane.rowIndex="6" />
 
-                <Label text="Milk" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
-                <TextField fx:id="milkField" promptText="grams" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+                <Label id="ingredients" text="Milk" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                <TextField fx:id="milkField" promptText="grams" GridPane.columnIndex="1" GridPane.rowIndex="7" />
 
-                <Label text="Oil" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
-                <TextField fx:id="oilField" promptText="grams" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+                <Label id="ingredients" text="Oil" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                <TextField fx:id="oilField" promptText="grams" GridPane.columnIndex="1" GridPane.rowIndex="8" />
 
-                <Label text="Gelatin" GridPane.columnIndex="0" GridPane.rowIndex="9"/>
-                <TextField fx:id="gelatinField" promptText="grams" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
+                <Label id="ingredients" text="Gelatin" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                <TextField fx:id="gelatinField" promptText="grams" GridPane.columnIndex="1" GridPane.rowIndex="9" />
 
-                <Label text="Corn flour" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
-                <TextField fx:id="cornFlourField" promptText="grams" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+                <Label id="ingredients" text="Corn flour" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <TextField fx:id="cornFlourField" promptText="grams" GridPane.columnIndex="3" GridPane.rowIndex="1" />
 
-                <Label text="Cocoa" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
-                <TextField fx:id="cocoaField" promptText="grams" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+                <Label id="ingredients" text="Cocoa" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <TextField fx:id="cocoaField" promptText="grams" GridPane.columnIndex="3" GridPane.rowIndex="2" />
 
-                <Label text="Dark chocolate" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
-                <TextField fx:id="darkChocolateField" promptText="grams" GridPane.columnIndex="3"
-                           GridPane.rowIndex="3"/>
+                <Label id="ingredients" text="Dark chocolate" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <TextField fx:id="darkChocolateField" promptText="grams" GridPane.columnIndex="3" GridPane.rowIndex="3" />
 
-                <Label text="White chocolate" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
-                <TextField fx:id="whiteChocolateField" promptText="grams" GridPane.columnIndex="3"
-                           GridPane.rowIndex="4"/>
+                <Label id="ingredients" text="White chocolate" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <TextField fx:id="whiteChocolateField" promptText="grams" GridPane.columnIndex="3" GridPane.rowIndex="4" />
 
-                <Label text="Salt" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
-                <TextField fx:id="saltField" promptText="grams" GridPane.columnIndex="3" GridPane.rowIndex="5"/>
+                <Label id="ingredients" text="Salt" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                <TextField fx:id="saltField" promptText="grams" GridPane.columnIndex="3" GridPane.rowIndex="5" />
 
-                <Label text="Backing Soda" GridPane.columnIndex="2" GridPane.rowIndex="6"/>
-                <TextField fx:id="bakingSodaField" promptText="grams" GridPane.columnIndex="3" GridPane.rowIndex="6"/>
+                <Label id="ingredients" text="Baking soda" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                <TextField fx:id="bakingSodaField" promptText="grams" GridPane.columnIndex="3" GridPane.rowIndex="6" />
 
-                <Label text="Baking powder" GridPane.columnIndex="2" GridPane.rowIndex="7"/>
-                <TextField fx:id="bakingPowderField" promptText="grams" GridPane.columnIndex="3" GridPane.rowIndex="7"/>
+                <Label id="ingredients" text="Baking powder" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                <TextField fx:id="bakingPowderField" promptText="grams" GridPane.columnIndex="3" GridPane.rowIndex="7" />
 
-                <Label text="Confectioners sugar" GridPane.columnIndex="2" GridPane.rowIndex="8"/>
-                <TextField fx:id="confectionersSugarField" promptText="grams" GridPane.columnIndex="3"
-                           GridPane.rowIndex="8"/>
+                <Label id="ingredients" text="Confectioners sugar" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                <TextField fx:id="confectionersSugarField" promptText="grams" GridPane.columnIndex="3" GridPane.rowIndex="8" />
 
-                <Label text="Sour cream" GridPane.columnIndex="2" GridPane.rowIndex="9"/>
-                <TextField fx:id="sourCreamField" promptText="grams" GridPane.columnIndex="3" GridPane.rowIndex="9"/>
+                <Label id="ingredients" text="Sour cream" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                <TextField fx:id="sourCreamField" promptText="grams" GridPane.columnIndex="3" GridPane.rowIndex="9" />
             </children>
             <columnConstraints>
-                <ColumnConstraints/>
-                <ColumnConstraints/>
-                <ColumnConstraints/>
-                <ColumnConstraints/>
+                <ColumnConstraints />
+                <ColumnConstraints maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                <ColumnConstraints maxWidth="176.0" minWidth="126.0" prefWidth="141.0" />
+                <ColumnConstraints maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints/>
-                <RowConstraints/>
-                <RowConstraints/>
-                <RowConstraints/>
-                <RowConstraints/>
-                <RowConstraints/>
-                <RowConstraints/>
-                <RowConstraints/>
-                <RowConstraints/>
-                <RowConstraints/>
-                <RowConstraints/>
-                <RowConstraints/>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
             </rowConstraints>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
         </GridPane>
-        <Button fx:id="homeButton" layoutX="53.0" layoutY="48.0" mnemonicParsing="false" onAction="#returnHome"
-                prefHeight="25.0" prefWidth="34.0"/>
-        <Button layoutX="585.0" layoutY="48.0" mnemonicParsing="false" onAction="#handleLogout" text="Log out"/>
-        <TextArea fx:id="otherTextArea" layoutX="137.0" layoutY="456.0" prefHeight="122.0" prefWidth="370.0"
-                  promptText="Other ingredients"/>
-        <GridPane layoutX="188.0" layoutY="596.0">
-            <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-            </rowConstraints>
-            <children>
+        <Button fx:id="homeButton" layoutX="35.0" layoutY="35.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="60.0" prefWidth="65.0" />
+        <TextArea fx:id="otherTextArea" layoutX="87.0" layoutY="506.0" prefHeight="83.0" prefWidth="500.0" promptText="Other ingredients" />
+      <Text fill="#a1326f" layoutX="231.0" layoutY="65.0" style="-fx-font-size: 28;" text="Add new recipe" textOrigin="CENTER" wrappingWidth="213.0" />
 
 
-                <Button mnemonicParsing="false" onAction="#addCakeRecipe" text="Add"/>
-                <Button mnemonicParsing="false" onAction="#returnHome" text="return" GridPane.columnIndex="1"/>
-            </children>
-        </GridPane>
+          <Button alignment="CENTER" contentDisplay="CENTER" layoutX="112.0" layoutY="604.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addCakeRecipe" prefHeight="40.0" prefWidth="180.0" text="Add recipe" />
+          <Button alignment="CENTER" contentDisplay="CENTER" layoutX="315.0" layoutY="604.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#returnHome" prefHeight="40.0" prefWidth="110.0" text="Return" />
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="446.0" layoutY="604.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="110.0" text="Sign out" />
 
     </children>
 </AnchorPane>
