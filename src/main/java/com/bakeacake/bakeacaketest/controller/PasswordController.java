@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
 public class PasswordController extends ViewController implements Initializable {
 
     public PasswordField newPasswordField;
+    public PasswordField confirmPasswordField;
     public Button homeButton;
 
     UserService userService = new UserService();
@@ -35,10 +36,15 @@ public class PasswordController extends ViewController implements Initializable 
                 showAlert(null, "New password field is empty. Please enter new password!", Alert.AlertType.INFORMATION);
                 return;
             }
+            if (!(newPasswordField.getText().equals(confirmPasswordField.getText()))) {
+                showAlert(null, "Password and Confirmation password doesn't mach", Alert.AlertType.ERROR);
+                return;
+            }
             showAlert(null, "Password changed successfully", Alert.AlertType.INFORMATION);
             //changeScene(actionEvent, "home");
 
             newPasswordField.clear();
+            confirmPasswordField.clear();
 
         } catch (Exception e) {
             e.printStackTrace();
