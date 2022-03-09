@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
 public class ClientUpdateController extends ViewController implements Initializable {
     @FXML Label clientLabel;
     @FXML TextField phoneField;
-    @FXML TextField addressField;
+    @FXML TextArea addressField;
     public Button homeButton;
     OrderService orderService = new OrderService();
     @Override
@@ -26,7 +26,7 @@ public class ClientUpdateController extends ViewController implements Initializa
             Client client = orderService.viewClientProfile(client_id);
             phoneField.setText(client.getPhoneNumber());
             addressField.setText(client.getAddress());
-            clientLabel.setText(client.getName() + " profile update");
+            clientLabel.setText( "Update " + client.getName() + " profile");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -42,7 +42,7 @@ public class ClientUpdateController extends ViewController implements Initializa
             this.orderService.updateClient(client, client_id);
             phoneField.clear();
             addressField.clear();
-            showAlert(null, client.getName()+" profile updated", Alert.AlertType.INFORMATION);
+            showAlert(null, client.getName()+ " profile updated", Alert.AlertType.INFORMATION);
 
         } catch (Exception e) {
             e.printStackTrace();
