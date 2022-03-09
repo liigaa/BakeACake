@@ -33,12 +33,12 @@ public class ViewController {
         alert.setContentText(message);
 
         if (alertType.equals(Alert.AlertType.ERROR)){
-            Image image = new Image(String.valueOf(Main.class.getResource("/images/error.jpg")));
+            Image image = new Image(String.valueOf(Main.class.getResource("/images/error.png")));
             ImageView imageView = new ImageView(image);
             alert.setGraphic(imageView);
         }
         if (alertType.equals(Alert.AlertType.INFORMATION)){
-            Image image = new Image(String.valueOf(Main.class.getResource("/images/information.jpg")));
+            Image image = new Image(String.valueOf(Main.class.getResource("/images/information.png")));
             ImageView imageView = new ImageView(image);
             alert.setGraphic(imageView);
         }
