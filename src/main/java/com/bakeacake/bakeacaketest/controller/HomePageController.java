@@ -33,14 +33,10 @@ public class HomePageController extends ViewController implements Initializable 
             initClock();
             addWelcomeText();
 
-
         } catch (Exception e) {
             showAlert("Main load failed", e.getMessage(), Alert.AlertType.ERROR);
             e.printStackTrace();
-
         }
-
-
     }
 
     private void initClock() {
@@ -61,7 +57,7 @@ public class HomePageController extends ViewController implements Initializable 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        welcomeLabel.setText("Welcome " + name);
+        welcomeLabel.setText("Welcome, " + name + "!");
     }
 
 
