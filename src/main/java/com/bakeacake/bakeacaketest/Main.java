@@ -16,7 +16,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/view/login.fxml"));
 //        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/view/login.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load(), 700, 700);
-        Scene scene = new Scene(root, 700, 700);
+        Scene scene = new Scene(root, 650, 700);
 //       scene.getStylesheets().add(getClass().getResource("/stylesheet.css").toExternalForm());
 //        scene.getStylesheets().add("/stylesheet.css");
 
@@ -25,7 +25,7 @@ public class Main extends Application {
         scene.getStylesheets().clear();
         scene.getStylesheets().add(css);
 
-        stage.setTitle("Bake a Cake");
+        stage.setTitle("BAKE A CAKE");
         Image icon = new Image(String.valueOf(Main.class.getResource("/images/favicon.png")));
         stage.getIcons().add(icon);
         stage.setScene(scene);
