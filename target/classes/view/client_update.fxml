@@ -1,75 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
 <?import javafx.geometry.Insets?>
-<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-            stylesheets="@stylesheet.css"  styleClass="root"
-            fx:controller="com.bakeacake.bakeacaketest.controller.ClientUpdateController"
-            prefHeight="700.0" prefWidth="700.0">
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="650.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.ClientUpdateController">
     <children>
-        <VBox alignment="TOP_CENTER" layoutX="172.0" layoutY="161.0" prefHeight="298.0" prefWidth="303.0">
-            <children>
-                <Label fx:id="clientLabel" text="Label">
-                    <VBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                    </VBox.margin>
-                </Label>
-                <GridPane>
-                    <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
-                    <children>
-                        <Label alignment="TOP_RIGHT" text="Phone number" GridPane.halignment="RIGHT">
-                            <GridPane.margin>
-                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                            </GridPane.margin>
-                        </Label>
-                        <TextField fx:id="phoneField" text="Label" GridPane.columnIndex="1">
-                            <GridPane.margin>
-                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                            </GridPane.margin>
-                        </TextField>
-                        <Label text="Address" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
-                            <GridPane.margin>
-                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                            </GridPane.margin>
-                        </Label>
-                        <TextField fx:id="addressField" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                            <GridPane.margin>
-                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                            </GridPane.margin>
-                        </TextField>
-                    </children>
-                </GridPane>
-                <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
-                    <children>
-                        <Button mnemonicParsing="false" onAction="#handleUpdate" text="Update">
-                            <HBox.margin>
-                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                            </HBox.margin>
-                        </Button>
-                        <Button mnemonicParsing="false" onAction="#handleReturn" text="Return">
-                            <HBox.margin>
-                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                            </HBox.margin>
-                        </Button>
-                    </children>
-                </HBox>
-            </children>
-        </VBox>
-        <Button fx:id="homeButton" layoutX="54.0" layoutY="60.0" mnemonicParsing="false" onAction="#returnHome"
-                prefHeight="36.0" prefWidth="35.0"/>
-        <Button layoutX="603.0" layoutY="65.0" mnemonicParsing="false" onAction="#handleLogout" text="Log out"/>
+          <Label fx:id="clientLabel" layoutX="100.0" layoutY="211.0" text="Update client profile" />
+          <GridPane hgap="10.0" layoutX="96.0" layoutY="275.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="500.0" vgap="15.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.0" minWidth="10.0" prefWidth="143.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="364.0" minWidth="10.0" prefWidth="347.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="93.0" minHeight="10.0" prefHeight="93.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+              <children>
+                  <Label alignment="TOP_RIGHT" text="Phone number" GridPane.halignment="LEFT">
+                      <GridPane.margin>
+                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                      </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="phoneField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" text="Number" GridPane.columnIndex="1" GridPane.halignment="LEFT">
+                      <GridPane.margin>
+                          <Insets />
+                      </GridPane.margin>
+                  </TextField>
+                  <Label text="Address" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                      <GridPane.margin>
+                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                      </GridPane.margin>
+                  </Label>
+                  <TextArea fx:id="addressField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="91.0" prefWidth="250.0" text="Address" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="1">
+                      <GridPane.margin>
+                          <Insets />
+                      </GridPane.margin>
+                  </TextArea>
+              </children>
+          </GridPane>
+        <Button fx:id="homeButton" layoutX="35.0" layoutY="35.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="60.0" prefWidth="65.0" />
+            <Button layoutX="134.0" layoutY="455.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleUpdate" prefHeight="40.0" prefWidth="140.0" text="Update profile" />
+            <Button layoutX="296.0" layoutY="455.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleReturn" prefHeight="40.0" prefWidth="100.0" text="Return" />
+        <Button layoutX="416.0" layoutY="455.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="100.0" text="Sign out" />
     </children>
 </AnchorPane>
