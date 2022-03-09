@@ -21,14 +21,15 @@ public class ClientController extends ViewController implements Initializable {
 
     public void handleAddNewClient(ActionEvent actionEvent) {
         Client client = new Client(nameField.getText(), phoneField.getText(), addressField.getText());
-        if (nameField.getText().isEmpty() || phoneField.getText().isEmpty()) {
-            showAlert(null, "Please provide name and phone number", Alert.AlertType.ERROR);
-        }
+
         try {
+            if (nameField.getText().isEmpty() || phoneField.getText().isEmpty()) {
+                showAlert(null, "Please provide name and phone number", Alert.AlertType.ERROR);
+            }else{
             Integer user_id = DataManager.getInstance().getLoggedInUserId();
             orderService.addClient(user_id, client);
             showAlert(null, "Client " + nameField.getText() + " added successfully", Alert.AlertType.INFORMATION);
-            clear();
+            clear();}
         }catch (Exception e){
             e.printStackTrace();
         }

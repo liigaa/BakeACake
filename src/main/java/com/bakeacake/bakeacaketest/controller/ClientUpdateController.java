@@ -43,7 +43,7 @@ public class ClientUpdateController extends ViewController implements Initializa
             phoneField.clear();
             addressField.clear();
             showAlert(null, client.getName()+ " profile updated", Alert.AlertType.INFORMATION);
-
+            changeScene(actionEvent, "client_info");
         } catch (Exception e) {
             e.printStackTrace();
         }
