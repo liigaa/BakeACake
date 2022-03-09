@@ -1,29 +1,241 @@
-/*background*/
+            /* BACKGROUND, FONT */
 
 .root{
-    -fx-background-color: #FBBFC3;
+    -fx-background-color: #ffa4c4;
     -fx-font-family: "Arial Rounded MT Bold";
-    -fx-background-image: url("../images/macarons.jpeg");
-    /*-fx-background-size: 100% 100%;*/
-    -fx-background-position: top left;
+    -fx-background-image: url("../images/background.jpg");
+    -fx-background-size: 100% 100%;
 }
 
-
-/* reusable buttons*/
+            /* REUSABLE BUTTONS */
 .button {
     -fx-text-fill: #3C3D43;
-    -fx-background-color: rgba(255, 108, 161, 0.53);
-    -fx-border-radius: 30;
+    -fx-background-color: #ffa4c4;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 5;
 }
-
 
 .button:hover {
     -fx-background-color: #ECEDEC;
 }
 
-/*date, time*/
-#dateTime {
-    -fx-text-fill: white;
+#homeButton{
+    -fx-background-color: #ffa4c4;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-border-width: 2;
+    -fx-border-color: #ffa4c4;
+    -fx-padding: 5;
 }
 
-/*measurements, ingredients*/
+#homeButton:pressed {
+    -fx-background-color: #ECEDEC;
+    -fx-border-color: #c5cbcf;
+}
+
+#homeButton:hover {
+    -fx-background-color: #ECEDEC;
+    -fx-border-color: #c5cbcf;
+}
+
+            /* TEXT FIELD, TEXT AREA */
+.text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: #ECEDEC;
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5;
+}
+
+.text-field:focused {
+    /*-fx-focus-color: #ac37a6;*/
+    -fx-border-width: 2;
+    -fx-border-color: #ffdfeb;
+}
+
+.text-area {
+    -fx-background-color: transparent;
+    -fx-border-color: #ECEDEC;
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5;
+}
+
+.text-area:focused {
+    /*-fx-focus-color: #FBBFC3;*/
+    -fx-border-width: 2;
+    -fx-border-color: #ffdfeb;
+}
+
+.label {
+    -fx-text-fill: #3C3D43;
+    -fx-font-size: 16px;
+
+}
+            /* DROPDOWN LISTS */
+.combo-box {
+    -fx-border-color: #ffdfeb;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5;
+    -fx-text-fill: #3C3D43;
+    -fx-font-size: 12px;
+    -fx-background-color: #ffffff;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #ffffff;
+}
+
+.combo-box .list-cell:hover{
+    -fx-background-color: #A1316D;
+}
+
+.combo-box-popup .list-cell {
+    -fx-background-color: #ffdfeb;
+}
+
+/*.combo-box .list-cell:selected{*/
+/*    -fx-background-color: #ffa4c4;*/
+/*}*/
+
+.choice-box {
+    -fx-border-color: #ffdfeb;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5;
+    -fx-text-fill: #3C3D43;
+    -fx-font-size: 12px;
+    -fx-background-color: #ffffff;
+}
+
+.choice-box .list-cell {
+    -fx-background-color: #ffffff;
+}
+
+.choice-box .list-cell:hover{
+    -fx-background-color: #ecedec;
+}
+
+.list-view {
+    -fx-border-color: #ECEDEC;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 5;
+}
+
+.list-cell {
+    -fx-background-color: #ffdfeb;
+}
+
+.list-view .list-cell:hover{
+    -fx-background-color: #A1316D;
+}
+
+.date-picker .text-field {
+     -fx-control-inner-background: yellow ;
+}
+
+                /*  CALENDAR  */
+
+.date-picker {
+    -fx-background-color: #ffffff;
+}
+.date-picker-popup > .month-year-pane {
+    -fx-background-color: #ffdfeb;
+    /*-fx-background-insets: 0 0 0 0, 0 0 1 0;*/
+    -fx-padding: 0.5px;
+}
+
+.date-cell {
+    -fx-background-color: #ffdfeb;
+    /*-fx-font-family: "Andalus";*/
+    -fx-font-size: 12.0;
+     -fx-text-fill: #3c3d43;
+            }
+
+.date-cell:hover {
+    -fx-background-color: #ECEDEC;
+    /*-fx-font-family: "Andalus";*/
+    -fx-font-size: 12.0;
+    -fx-text-fill:#3c3d43;
+}
+
+.date-cell.selected {
+    -fx-background-color: #a1326f;
+    -fx-font-size: 12.0;
+    -fx-text-fill: #ECEDEC;
+}
+
+/*.date-picker > .arrow-button > .arrow {*/
+/*    !*-fx-opacity:0;*!*/
+/*    -fx-background-color: transparent;*/
+/*}*/
+
+/* .date-picker > .arrow {*/
+/*    -fx-background-color: white;*/
+/*}*/
+
+            /* DATE & TIME */
+#dateTime {
+      -fx-text-fill: #492236;
+      -fx-font-size: 16px;
+}
+
+            /* WINDOW HEADING LABELS */
+#welcomeLabel {
+    -fx-font-size: 28;
+    -fx-text-fill: #a1326f;
+}
+
+#shoppingListLabel {
+    -fx-font-size: 28;
+    -fx-text-fill: #a1326f;
+}
+
+#clientLabel {
+    -fx-font-size: 28;
+    -fx-text-fill: #a1326f;
+}
+#allRecipesHeading {
+    -fx-font-size: 28;
+    -fx-text-fill: #a1326f;
+}
+
+.text {
+     /*-fx-font-size: 28;*/
+     -fx-text-fill: #a1326f;
+}
+
+            /*LOG-IN SCREEN PASSWORD, ACCOUNT*/
+
+#forgotPassword {
+    -fx-background-color: transparent;
+    -fx-text-fill: #3c3d43;
+    -fx-underline: true;
+}
+#forgotPassword:hover{
+    -fx-text-fill: #fc409e;
+     -fx-font-weight: 900;
+}
+
+#createAccount {
+    -fx-background-color: transparent;
+    -fx-text-fill: #3c3d43;
+    -fx-underline: true;
+}
+
+#createAccount:hover {
+    -fx-text-fill: #fc409e;
+    -fx-font-weight: 900;
+}
+
+            /* INGREDIENTS, TEXT ELEMENTS*/
+
+#ingredients {
+    -fx-text-fill: #3c3d43;
+    -fx-font-size: 14px;
+}
