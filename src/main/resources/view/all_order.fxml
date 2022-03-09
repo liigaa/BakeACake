@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="650.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.AllOrderController">
-   <childrengit
+   <children>
       <VBox alignment="CENTER" layoutX="89.0" layoutY="145.0" prefHeight="178.0" prefWidth="500.0">
          <children>
             <ChoiceBox fx:id="statusField" prefWidth="230.0" stylesheets="@stylesheet.css">
