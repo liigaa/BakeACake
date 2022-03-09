@@ -5,10 +5,7 @@ import com.bakeacake.bakeacaketest.service.OrderService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Tooltip;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,7 +13,8 @@ import java.util.ResourceBundle;
 public class ClientController extends ViewController implements Initializable {
     @FXML TextField nameField;
     @FXML TextField phoneField;
-    @FXML TextField addressField;
+    @FXML
+    TextArea addressField;
     public Button homeButton;
 
     private OrderService orderService = new OrderService();
