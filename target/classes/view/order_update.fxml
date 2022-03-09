@@ -13,33 +13,31 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="700.0" prefWidth="700.0" stylesheets="@stylesheet.css"  styleClass="root"
-            xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.bakeacake.bakeacaketest.controller.OrderUpdateController">
+<AnchorPane prefHeight="700.0" prefWidth="650.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.OrderUpdateController">
     <children>
-        <VBox alignment="CENTER" layoutX="50.0" layoutY="135.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="456.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+        <VBox alignment="CENTER" layoutX="25.0" layoutY="141.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="440.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
             <children>
-                <Text fill="#186565" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18px" text="Order Update" />
-                <Label fx:id="clientLabel" text="Label" />
+                <Label fx:id="clientLabel" text="Client name" />
                 <Label fx:id="cakeLabel" text="Label" />
-                <ComboBox fx:id="tinSizeField" prefWidth="175.0" />
-                <DatePicker fx:id="datePicker" />
-                <TextField fx:id="timeField" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="175.0" promptText="Pick-up or delivery time (00:00)" />
-                <ChoiceBox fx:id="deliveryField" prefWidth="175.0" />
-                <TextArea fx:id="descriptionField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="175.0" promptText="Description" />
-                <ChoiceBox fx:id="statusField" layoutX="223.0" layoutY="211.0" prefWidth="175.0" />
-                <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
-                    <children>
-                        <Button mnemonicParsing="false" onAction="#handleUpdateOrder" text="Update Order" />
-                        <Button mnemonicParsing="false" onAction="#handleReturn" text="Return" />
-                    </children>
-                    <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                    </padding>
-                </HBox>
+                <ComboBox fx:id="tinSizeField" prefHeight="37.0" prefWidth="280.0" />
+                <DatePicker fx:id="datePicker" prefHeight="28.0" prefWidth="280.0" />
+                <TextField fx:id="timeField" alignment="CENTER" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="280.0" promptText="Pick-up or delivery time (00:00)" />
+                <ChoiceBox fx:id="deliveryField" prefHeight="31.0" prefWidth="280.0" />
+                <TextArea fx:id="descriptionField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="280.0" promptText="Description" />
+                <ChoiceBox fx:id="statusField" layoutX="223.0" layoutY="211.0" prefHeight="31.0" prefWidth="280.0" />
             </children>
         </VBox>
-        <Button fx:id="homeButton" layoutX="50.0" layoutY="53.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="39.0" prefWidth="41.0" />
-        <Button layoutX="583.0" layoutY="51.0" mnemonicParsing="false" onAction="#handleLogout" text="Log out" />
+        <Button fx:id="homeButton" layoutX="35.0" layoutY="35.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="60.0" prefWidth="65.0" />
+      <Text fill="#a1326f" layoutX="153.0" layoutY="134.0" style="-fx-font-size: 28;" text="Update order information" />
+          <HBox alignment="TOP_CENTER" layoutX="36.0" layoutY="600.0" prefHeight="61.0" prefWidth="600.0" spacing="40.0">
+              <children>
+                  <Button mnemonicParsing="false" onAction="#handleUpdateOrder" prefHeight="40.0" prefWidth="120.0" text="Update Order" />
+                  <Button mnemonicParsing="false" onAction="#handleReturn" prefHeight="40.0" prefWidth="100.0" text="Return" />
+              <Button mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="100.0" text="Sign out" />
+              </children>
+              <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+              </padding>
+          </HBox>
     </children>
 </AnchorPane>

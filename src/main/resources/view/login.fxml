@@ -1,51 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
-            prefWidth="700.0" stylesheets="@stylesheet.css"  styleClass="root" xmlns="http://javafx.com/javafx/17"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="650.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.LoginController">
     <children>
-        <GridPane alignment="CENTER" hgap="10" layoutX="214.0" layoutY="301.0" vgap="10"
-                  xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+        <GridPane alignment="BASELINE_CENTER" hgap="10.0" layoutX="125.0" layoutY="350.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="400.0" stylesheets="@stylesheet.css" vgap="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
             <children>
-                <Text fill="#186565" style="-fx-font-size: 18px" text="Welcome to Bake a Cake" GridPane.columnIndex="0"
-                      GridPane.columnSpan="2" GridPane.rowIndex="0"/>
-                <Label text="Enter your user name" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Label alignment="CENTER" layoutX="41.0" layoutY="99.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="90.0" stylesheets="@stylesheet.css" text="Username" textAlignment="RIGHT" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="usernameField" layoutX="141.0" layoutY="99.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="220.0" stylesheets="@stylesheet.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-                <Label text="Enter your password" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-                <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-
-                <Button onAction="#handleLoadRegister"
-                        style="-fx-font-size: 14px; -fx-text-fill: white; -fx-background-color: #444F4F" text="Register"
-                        GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-                <Button fx:id="logInButton" onAction="#handleUserLogin"
-                        style="-fx-font-size: 14px; -fx-text-fill: white; -fx-background-color: #444F4F" text="Login"
-                        GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-
-                <Button mnemonicParsing="false" onAction="#resetPassword" prefHeight="9.0" prefWidth="119.0"
-                        text="Forgot password?" GridPane.rowIndex="4"/>
+                <Label alignment="CENTER" layoutX="41.0" layoutY="149.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="90.0" text="Password" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <PasswordField fx:id="passwordField" layoutX="141.0" layoutY="149.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="220.0" stylesheets="@stylesheet.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             </children>
             <columnConstraints>
-                <ColumnConstraints/>
-                <ColumnConstraints/>
+                <ColumnConstraints />
+                <ColumnConstraints />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints/>
-                <RowConstraints/>
-                <RowConstraints/>
-                <RowConstraints/>
-                <RowConstraints/>
-                <RowConstraints/>
-                <RowConstraints/>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                <RowConstraints />
             </rowConstraints>
 
 
         </GridPane>
+
+          <Button fx:id="createAccount" layoutX="308.0" layoutY="532.0" onAction="#handleLoadRegister" prefHeight="23.0" prefWidth="128.0" stylesheets="@stylesheet.css" text="Create an account" />
+          <Button fx:id="logInButton" layoutX="168.0" layoutY="482.0" onAction="#handleUserLogin" prefHeight="40.0" prefWidth="315.0" style="-fx-font-size: 18; -fx-text-fill: white; -fx-background-color: #A1316D" stylesheets="@stylesheet.css" text="Sign In" />
+
+                <Button fx:id="forgotPassword" alignment="CENTER" layoutX="357.0" layoutY="453.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#resetPassword" prefHeight="27.0" prefWidth="128.0" stylesheets="@stylesheet.css" text="Forgot password?" />
+          <Text fill="#a1316d" layoutX="165.0" layoutY="341.0" style="-fx-font-size: 20;" text="Welcome to the app! Please login" />
+      <Text fill="#6f003d" layoutX="215.0" layoutY="551.0" style="-fx-font-size: 16;" text="New here?" />
+      <ImageView fitHeight="254.0" fitWidth="423.0" layoutX="114.0" layoutY="47.0">
+         <image>
+            <Image url="@../images/bakecake.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>
