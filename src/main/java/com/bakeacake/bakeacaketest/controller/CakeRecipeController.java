@@ -59,49 +59,52 @@ public class CakeRecipeController extends ViewController implements Initializabl
     }
 
     public void addCakeRecipe(ActionEvent actionEvent) {
-
-        if (cakeTitleField.getText().isEmpty()){
-            showAlert(null, "Please enter cake title!", Alert.AlertType.ERROR);
-            return;
-        }
-
-
-        Cake cake = new Cake(cakeTitleField.getText(), convertField(flourField.getText()), convertField(sugarField.getText()),
-                convertField(eggsField.getText()), convertField(butterField.getText()), convertField(creamCheeseField.getText()),
-                convertField(vanillaSugarField.getText()), convertField(milkField.getText()), convertField(oilField.getText()),
-                convertField(gelatinField.getText()), convertField(cornFlourField.getText()), convertField(cocoaField.getText()),
-                convertField(darkChocolateField.getText()), convertField(whiteChocolateField.getText()),
-                convertField(saltField.getText()), convertField(bakingSodaField.getText()), convertField(bakingPowderField.getText()),
-                convertField(confectionersSugarField.getText()), convertField(sourCreamField.getText()), otherTextArea.getText());
-
-
         try {
-            Integer user_id = DataManager.getInstance().getLoggedInUserId();
 
-            if (tinSize.getValue().equals(20.0)) {
-                cakeRecipeService.addCakeTin20(user_id, cake);
-                cakeRecipeService.addCakeTin22(user_id, convertIngredients20to22());
-                cakeRecipeService.addCakeTin18(user_id, convertIngredients20to18());
-
-            } else if (tinSize.getValue().equals(18.0)) {
-                cakeRecipeService.addCakeTin18(user_id, cake);
-                cakeRecipeService.addCakeTin20(user_id, convertIngredients18to20());
-                cakeRecipeService.addCakeTin22(user_id, convertIngredients18to22());
-            } else if (tinSize.getValue().equals(22.0)) {
-                cakeRecipeService.addCakeTin22(user_id, cake);
-                cakeRecipeService.addCakeTin18(user_id, convertIngredients22to18());
-                cakeRecipeService.addCakeTin20(user_id, convertIngredients22to20());
+            if (cakeTitleField.getText().isEmpty()) {
+                showAlert(null, "Please enter cake title!", Alert.AlertType.ERROR);
+                return;
             }
 
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+            Cake cake = new Cake(cakeTitleField.getText(), convertField(flourField.getText()), convertField(sugarField.getText()),
+                    convertField(eggsField.getText()), convertField(butterField.getText()), convertField(creamCheeseField.getText()),
+                    convertField(vanillaSugarField.getText()), convertField(milkField.getText()), convertField(oilField.getText()),
+                    convertField(gelatinField.getText()), convertField(cornFlourField.getText()), convertField(cocoaField.getText()),
+                    convertField(darkChocolateField.getText()), convertField(whiteChocolateField.getText()),
+                    convertField(saltField.getText()), convertField(bakingSodaField.getText()), convertField(bakingPowderField.getText()),
+                    convertField(confectionersSugarField.getText()), convertField(sourCreamField.getText()), otherTextArea.getText());
 
+
+            try {
+                Integer user_id = DataManager.getInstance().getLoggedInUserId();
+
+                if (tinSize.getValue().equals(20.0)) {
+                    cakeRecipeService.addCakeTin20(user_id, cake);
+                    cakeRecipeService.addCakeTin22(user_id, convertIngredients20to22());
+                    cakeRecipeService.addCakeTin18(user_id, convertIngredients20to18());
+
+                } else if (tinSize.getValue().equals(18.0)) {
+                    cakeRecipeService.addCakeTin18(user_id, cake);
+                    cakeRecipeService.addCakeTin20(user_id, convertIngredients18to20());
+                    cakeRecipeService.addCakeTin22(user_id, convertIngredients18to22());
+                } else if (tinSize.getValue().equals(22.0)) {
+                    cakeRecipeService.addCakeTin22(user_id, cake);
+                    cakeRecipeService.addCakeTin18(user_id, convertIngredients22to18());
+                    cakeRecipeService.addCakeTin20(user_id, convertIngredients22to20());
+                }
+
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+
+            }
+
+            showAlert(null, "Recipe added successfully", Alert.AlertType.INFORMATION);
+            clear();
+        }catch (NumberFormatException e){
+            showAlert(null, "Please enter only  numbers\n" + e.getMessage(), Alert.AlertType.ERROR);
         }
-
-        showAlert(null, "Recipe added successfully", Alert.AlertType.INFORMATION);
-        clear();
-
     }
 
     public Cake convertIngredients20to18() {
