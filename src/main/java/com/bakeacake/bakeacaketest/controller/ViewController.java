@@ -49,7 +49,7 @@ public class ViewController {
         }
 
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-        stage.getIcons().add(new Image(Main.class.getResource("/images/favicon_2.png").toString()));
+        stage.getIcons().add(new Image(Main.class.getResource("/images/favicon.png").toString()));
         alert.setHeaderText(null);
         alert.show();
 
