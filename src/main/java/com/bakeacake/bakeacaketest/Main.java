@@ -8,7 +8,6 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class Main extends Application {
     @Override
@@ -26,7 +25,7 @@ public class Main extends Application {
         scene.getStylesheets().add(css);
 
         stage.setTitle("BAKE A CAKE");
-        Image icon = new Image(String.valueOf(Main.class.getResource("/images/favicon.png")));
+        Image icon = new Image(String.valueOf(Main.class.getResource("/images/favicon_2.png")));
         stage.getIcons().add(icon);
 
         //Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
