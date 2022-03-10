@@ -26,9 +26,9 @@
             </children>
         </VBox>
         <Button fx:id="homeButton" layoutX="35.0" layoutY="35.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="60.0" prefWidth="65.0" />
-        <Button layoutX="454.0" layoutY="604.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="120.0" text="Sign out" />
+        <Button layoutX="454.0" layoutY="604.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="120.0" styleClass="main_btn" text="Sign out" />
       <Text fill="#a1326f" layoutX="224.0" layoutY="75.0" style="-fx-font-size: 28;" styleClass="choice-box" text="Add new order" />
-            <Button layoutX="319.0" layoutY="604.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="40.0" prefWidth="120.0" text="Return" />
+            <Button layoutX="319.0" layoutY="604.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="40.0" prefWidth="120.0" styleClass="main_btn" text="Return" />
             <Button layoutX="80.0" layoutY="604.0" mnemonicParsing="false" onAction="#handleAddOrder" prefHeight="40.0" prefWidth="221.0" text="Add Order" />
     </children>
 </AnchorPane>

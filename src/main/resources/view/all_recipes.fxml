@@ -9,9 +9,9 @@
     <children>
         <Label fx:id="allRecipesHeading" alignment="CENTER" layoutX="100.0" layoutY="95.0" prefHeight="33.0" prefWidth="450.0" text="All your recipes">
         </Label>
-        <Button layoutX="191.0" layoutY="550.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="40.0" prefWidth="120.0" text="Return" />
+        <Button layoutX="191.0" layoutY="550.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="40.0" prefWidth="120.0" styleClass="main_btn" text="Return" />
         <Button fx:id="homeButton" layoutX="35.0" layoutY="35.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="60.0" prefWidth="65.0" />
-        <Button layoutX="339.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="120.0" text="Sign Out" />
+        <Button layoutX="339.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="120.0" styleClass="main_btn" text="Sign Out" />
           <ChoiceBox fx:id="allCakesChoiceBox" layoutX="205.0" layoutY="184.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="240.0" />
           <Button layoutX="102.0" layoutY="271.0" mnemonicParsing="false" onAction="#viewRecipe" prefHeight="50.0" prefWidth="206.0" text="View Recipe" />
           <Button layoutX="348.0" layoutY="271.0" mnemonicParsing="false" onAction="#updateRecipe" prefHeight="50.0" prefWidth="200.0" text="Update" />
