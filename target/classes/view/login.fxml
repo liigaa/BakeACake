@@ -45,7 +45,7 @@
                 <Button fx:id="forgotPassword" alignment="CENTER" layoutX="357.0" layoutY="453.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#resetPassword" prefHeight="27.0" prefWidth="128.0" stylesheets="@stylesheet.css" text="Forgot password?" />
           <Text fill="#a1316d" layoutX="216.0" layoutY="338.0" style="-fx-font-size: 20;" text="Welcome! Please login" />
       <Text fill="#6f003d" layoutX="224.0" layoutY="549.0" style="-fx-font-size: 16;" text="New here?" />
-      <ImageView fitHeight="233.0" fitWidth="388.0" layoutX="132.0" layoutY="59.0">
+      <ImageView fitHeight="217.0" fitWidth="361.0" layoutX="147.0" layoutY="77.0">
          <image>
             <Image url="@../images/bakecake.png" />
          </image>
