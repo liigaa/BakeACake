@@ -11,9 +11,9 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="650.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.ClientInfoController">
    <children>
       <Button fx:id="homeButton" layoutX="35.0" layoutY="35.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="60.0" prefWidth="65.0" />
-      <Button layoutX="406.0" layoutY="451.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="120.0" text="Sign out" />
-      <Button layoutX="125.0" layoutY="451.0" mnemonicParsing="false" onAction="#handleUpdate" prefHeight="40.0" prefWidth="120.0" text="Update" />
-      <Button layoutX="265.0" layoutY="451.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="40.0" prefWidth="120.0" text="Return" />
+      <Button layoutX="426.0" layoutY="451.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="110.0" styleClass="main_btn" text="Sign out" />
+      <Button layoutX="131.0" layoutY="451.0" mnemonicParsing="false" onAction="#handleUpdate" prefHeight="40.0" prefWidth="150.0" text="Update info" />
+      <Button layoutX="299.0" layoutY="451.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="40.0" prefWidth="110.0" styleClass="main_btn" text="Return" />
       <Label fx:id="clientLabel" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="155.0" layoutY="95.0" prefHeight="33.0" prefWidth="355.0" text="Client information" />
       <GridPane hgap="10.0" layoutX="108.0" layoutY="193.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="205.0" prefWidth="450.0" vgap="5.0">
         <columnConstraints>

@@ -97,12 +97,12 @@
             </font>
         </Label>
         <Button fx:id="homeButton" layoutX="35.0" layoutY="35.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="60.0" prefWidth="65.0" />
-        <Button layoutX="470.0" layoutY="604.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="100.0" text="Sign out" />
+        <Button layoutX="470.0" layoutY="604.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="100.0" styleClass="main_btn" text="Sign out" />
       <TextArea fx:id="otherTextArea" layoutX="75.0" layoutY="434.0" prefHeight="140.0" prefWidth="500.0" />
 
 
           <Button contentDisplay="CENTER" layoutX="71.0" layoutY="604.0" mnemonicParsing="false" onAction="#print" prefHeight="40.0" prefWidth="100.0" text="Save" />
-      <Button layoutX="348.0" layoutY="604.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="40.0" prefWidth="100.0" text="Return" />
+      <Button layoutX="348.0" layoutY="604.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="40.0" prefWidth="100.0" styleClass="main_btn" text="Return" />
           <Button contentDisplay="CENTER" layoutX="192.0" layoutY="604.0" mnemonicParsing="false" onAction="#clearShoppingList" prefHeight="40.0" prefWidth="140.0" text="Clear list" />
 
 

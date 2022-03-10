@@ -26,7 +26,7 @@
         </VBox>
         <Button fx:id="homeButton" layoutX="35.0" layoutY="35.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="60.0" prefWidth="65.0" />
             <Button layoutX="95.0" layoutY="604.0" mnemonicParsing="false" onAction="#handleUpdateOrder" prefHeight="40.0" prefWidth="180.0" text="Update Order" />
-            <Button layoutX="297.0" layoutY="604.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="40.0" prefWidth="120.0" text="Return" />
-        <Button layoutX="436.0" layoutY="604.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="120.0" text="Sign out" />
+            <Button layoutX="297.0" layoutY="604.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="40.0" prefWidth="120.0" styleClass="main_btn" text="Return" />
+        <Button layoutX="436.0" layoutY="604.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="120.0" styleClass="main_btn" text="Sign out" />
     </children>
 </AnchorPane>
