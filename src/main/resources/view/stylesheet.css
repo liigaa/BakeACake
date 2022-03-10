@@ -108,18 +108,24 @@
     -fx-background-radius: 5;
     -fx-padding: 5;
     -fx-text-fill: #3C3D43;
-    -fx-font-size: 12px;
     -fx-background-color: #ffffff;
 }
 
-.choice-box .list-cell {
-    -fx-background-color: #d3a918;
+.choice-box .context-menu{
+    -fx-background-color: #ffffff;
+    -fx-font-size: 14px;
 }
 
-.choice-box .list-cell:hover{
-    -fx-background-color: #26c097;
+.choice-box .menu-item:focused{
+    -fx-background-color: #ffdfeb;
+    /*-fx-font-size: 14px;*/
 }
 
+.choice-box > .label{
+    -fx-background-color: #ffffff;
+    -fx-font-size: 14px;
+    -fx-mark-color:  #1dcb9d;
+}
 
 .list-view {
     -fx-border-color: #ECEDEC;
@@ -135,6 +141,7 @@
     -fx-background-color: #ECEDEC;
     -fx-border-color: #ffffff;
     -fx-border-radius: 2;
+    -fx-text-fill: #55555b;
 }
 
 .list-view .list-cell:hover{
@@ -153,11 +160,12 @@
 
 .date-picker .button {
     -fx-background-color: #ffdfeb;
+    -fx-border-color: none;
 }
 
 .date-cell {
     -fx-background-color: #ffdfeb;
-    -fx-font-size: 11px;
+    -fx-font-size: 11;
     -fx-pref-width:45px ;
     -fx-pref-height:40px ;
     -fx-text-fill: #55555b;
@@ -167,8 +175,8 @@
 
 .date-cell:hover {
     -fx-background-color: #f1f1f1;
-    -fx-font-size: 12.0;
-    -fx-text-fill:#3c3d43;
+    -fx-font-size: 14;
+    -fx-text-fill:#a1326f;
 }
 
 .date-cell.selected {
@@ -263,7 +271,6 @@
     -fx-font-size: 16px;
 }
 
-#clientLabel {
-    -fx-text-fill: #1dcb9d;
-    -fx-font-size: 14px;
+#cakeLabel{
+
 }
