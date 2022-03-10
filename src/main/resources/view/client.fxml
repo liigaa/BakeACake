@@ -16,10 +16,10 @@
             <children>
 
                 <Label text="Full Name" />
-                <TextField fx:id="nameField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" GridPane.columnIndex="1" />
+                <TextField fx:id="nameField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" GridPane.columnIndex="1" />
 
                 <Label alignment="CENTER" text="Phone number" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                <TextField fx:id="phoneField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="phoneField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
                 <Label contentDisplay="TOP" text="Address" GridPane.columnIndex="0" GridPane.rowIndex="2" />
                 <TextArea fx:id="addressField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
@@ -36,10 +36,10 @@
             </rowConstraints>
         </GridPane>
         <Button fx:id="homeButton" layoutX="35.0" layoutY="35.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="60.0" prefWidth="65.0" />
-        <Button layoutX="426.0" layoutY="490.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="120.0" text="Sign out" />
+        <Button layoutX="439.0" layoutY="490.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="110.0" text="Sign out" />
 
-          <Button layoutX="134.0" layoutY="490.0" onAction="#handleAddNewClient" prefHeight="40.0" prefWidth="120.0" text="Add client" />
-          <Button layoutX="283.0" layoutY="490.0" onAction="#handleReturn" prefHeight="40.0" prefWidth="120.0" text="Return" />
+          <Button layoutX="125.0" layoutY="490.0" onAction="#handleAddNewClient" prefHeight="40.0" prefWidth="171.0" text="Add client" />
+          <Button layoutX="315.0" layoutY="490.0" onAction="#handleReturn" prefHeight="40.0" prefWidth="110.0" text="Return" />
       <Text fill="#a1326f" layoutX="125.0" layoutY="202.0" style="-fx-font-size: 28;" styleClass="choice-box" text="Register new client" />
     </children>
 </AnchorPane>

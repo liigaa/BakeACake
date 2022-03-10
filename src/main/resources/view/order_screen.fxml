@@ -7,15 +7,15 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="650.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.OrderController">
     <children>
-        <VBox alignment="CENTER" layoutX="58.0" layoutY="229.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="550.0" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+        <VBox alignment="CENTER" layoutX="50.0" layoutY="253.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="194.0" prefWidth="550.0" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
             <children>
                   <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleAddClient" prefHeight="50.0" prefWidth="250.0" text="New Client" />
                   <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleAddOrder" prefHeight="50.0" prefWidth="250.0" text="Existing client" />
             </children>
         </VBox>
       <Button fx:id="homeButton" layoutX="35.0" layoutY="35.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="60.0" prefWidth="65.0" />
-      <Text fill="#a1326f" layoutX="207.0" layoutY="210.0" style="-fx-font-size: 28;" styleClass="choice-box" text="Choose client type" />
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="158.0" layoutY="600.0" minHeight="0.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="40.0" prefWidth="150.0" text="Return" />
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="359.0" layoutY="600.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="150.0" text="Sign out" />
+      <Text fill="#a1326f" layoutX="199.0" layoutY="246.0" style="-fx-font-size: 28;" styleClass="choice-box" text="Choose client type" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="165.0" layoutY="537.0" minHeight="0.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="40.0" prefWidth="150.0" text="Return" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="335.0" layoutY="537.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="150.0" text="Sign out" />
     </children>
 </AnchorPane>
