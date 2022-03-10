@@ -34,7 +34,8 @@ public class ShoppingList {
     private String other;
 
 
-    public ShoppingList(double flour, double sugar, double eggs, double butter, double creamCheese, double vanillaSugar, double milk, double oil, double gelatin, double cornFlour, double cocoa, double darkChocolate, double whiteChocolate, double salt, double bakingSoda, double bakingPowder, double confectionersSugar, double sour_cream) {
+    public ShoppingList(double flour, double sugar, double eggs, double butter, double creamCheese, double vanillaSugar, double milk, double oil, double gelatin, double cornFlour,
+                        double cocoa, double darkChocolate, double whiteChocolate, double salt, double bakingSoda, double bakingPowder, double confectionersSugar, double sour_cream) {
         this.flour = flour;
         this.sugar = sugar;
         this.eggs = eggs;

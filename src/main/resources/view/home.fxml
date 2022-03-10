@@ -7,17 +7,17 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="650.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.HomePageController">
     <children>
-        <Button layoutX="109.0" layoutY="586.0" mnemonicParsing="false" onAction="#changePassword" prefHeight="40.0" prefWidth="267.0" text="Change password">
+        <Button layoutX="109.0" layoutY="580.0" mnemonicParsing="false" onAction="#changePassword" prefHeight="40.0" prefWidth="267.0" text="Change password">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button layoutX="394.0" layoutY="586.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="149.0" text="Sign out">
+        <Button layoutX="394.0" layoutY="580.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="149.0" text="Sign out">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Label fx:id="welcomeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="175.0" layoutY="170.0" prefHeight="50.0" prefWidth="300.0" stylesheets="@stylesheet.css" text="Welcome text" textAlignment="CENTER">
+        <Label fx:id="welcomeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="120.0" layoutY="134.0" prefHeight="50.0" prefWidth="410.0" stylesheets="@stylesheet.css" text="Welcome text" textAlignment="CENTER">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
@@ -27,27 +27,27 @@
                 <Font size="14.0" />
             </font>
         </Label>
-        <Button layoutX="110.0" layoutY="266.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addNewRecipe" prefHeight="50.0" prefWidth="200.0" stylesheets="@stylesheet.css" text="Add new recipe" textAlignment="CENTER">
+        <Button layoutX="110.0" layoutY="255.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addNewRecipe" prefHeight="50.0" prefWidth="200.0" stylesheets="@stylesheet.css" text="Add new recipe" textAlignment="CENTER">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-        <Button layoutX="346.0" layoutY="340.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addNewOrder" prefHeight="50.0" prefWidth="200.0" text="Add new order">
+        <Button layoutX="346.0" layoutY="329.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addNewOrder" prefHeight="50.0" prefWidth="200.0" text="Add new order">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-        <Button layoutX="110.0" layoutY="420.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToShoppingList" prefHeight="50.0" prefWidth="433.0" text="Shopping list">
+        <Button layoutX="110.0" layoutY="409.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToShoppingList" prefHeight="50.0" prefWidth="433.0" text="Shopping list">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-        <Button layoutX="346.0" layoutY="266.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewOrders" prefHeight="50.0" prefWidth="200.0" text="Orders">
+        <Button layoutX="346.0" layoutY="255.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewOrders" prefHeight="50.0" prefWidth="200.0" text="Orders">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-        <Button layoutX="110.0" layoutY="340.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewRecipes" prefHeight="50.0" prefWidth="200.0" text="Recipes">
+        <Button layoutX="110.0" layoutY="329.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewRecipes" prefHeight="50.0" prefWidth="200.0" text="Recipes">
             <font>
                 <Font size="18.0" />
             </font>

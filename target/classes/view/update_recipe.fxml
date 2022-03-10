@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -14,12 +15,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="650.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.UpdateRecipeController">
    <children>
-      <GridPane alignment="CENTER" hgap="10.0" layoutX="85.0" layoutY="171.0" prefWidth="500.0" vgap="5.0">
+      <GridPane alignment="CENTER" hgap="8.0" layoutX="80.0" layoutY="164.0" prefWidth="500.0" vgap="5.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints maxWidth="120.0" minWidth="10.0" prefWidth="114.0" />
+            <ColumnConstraints maxWidth="100.0" minWidth="90.0" prefWidth="85.0" />
+            <ColumnConstraints maxWidth="176.0" minWidth="10.0" prefWidth="176.0" />
+          <ColumnConstraints maxWidth="100.0" minWidth="85.0" prefWidth="85.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -50,7 +51,7 @@
              <TextField fx:id="butterField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
    
              <Label text="Cream cheese" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-             <TextField fx:id="creamCheeseField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+             <TextField fx:id="creamCheeseField" prefHeight="30.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
    
              <Label text="Vanilla sugar" GridPane.columnIndex="0" GridPane.rowIndex="5" />
              <TextField fx:id="vanillaSugarField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
@@ -64,47 +65,74 @@
              <Label text="Gelatin" GridPane.columnIndex="0" GridPane.rowIndex="8" />
              <TextField fx:id="gelatinField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
    
-             <Label text="Corn flour" GridPane.columnIndex="2" />
+             <Label text="Corn flour" GridPane.columnIndex="2">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin></Label>
              <TextField fx:id="cornFlourField" GridPane.columnIndex="3" />
    
-             <Label text="Cocoa" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+             <Label text="Cocoa" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin></Label>
              <TextField fx:id="cocoaField" GridPane.columnIndex="3" GridPane.rowIndex="1" />
    
-             <Label text="Dark chocolate" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+             <Label text="Dark chocolate" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin></Label>
              <TextField fx:id="darkChocolateField" GridPane.columnIndex="3" GridPane.rowIndex="2" />
    
-             <Label text="White chocolate" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+             <Label text="White chocolate" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin></Label>
              <TextField fx:id="whiteChocolateField" GridPane.columnIndex="3" GridPane.rowIndex="3" />
    
-             <Label text="Salt" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+             <Label text="Salt" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin></Label>
              <TextField fx:id="saltField" GridPane.columnIndex="3" GridPane.rowIndex="4" />
    
-             <Label text="Baking soda" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+             <Label text="Baking soda" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin></Label>
              <TextField fx:id="bakingSodaField" GridPane.columnIndex="3" GridPane.rowIndex="5" />
    
-             <Label text="Baking powder" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+             <Label text="Baking powder" GridPane.columnIndex="2" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin></Label>
              <TextField fx:id="bakingPowderField" GridPane.columnIndex="3" GridPane.rowIndex="6" />
    
-             <Label text="Confectioners sugar" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+             <Label text="Confectioners sugar" GridPane.columnIndex="2" GridPane.rowIndex="7">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin></Label>
              <TextField fx:id="confectionersSugarField" GridPane.columnIndex="3" GridPane.rowIndex="7" />
    
-             <Label text="Sour cream" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+             <Label text="Sour cream" GridPane.columnIndex="2" GridPane.rowIndex="8">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin></Label>
              <TextField fx:id="sourCreamField" GridPane.columnIndex="3" GridPane.rowIndex="8" />
 
          </children>
 
       </GridPane>
-      <Label fx:id="cakeTitleField" alignment="CENTER" layoutX="41.0" layoutY="138.0" prefHeight="7.0" prefWidth="500.0">
+      <Label fx:id="cakeTitleField" alignment="CENTER" layoutX="100.0" layoutY="108.0" prefHeight="40.0" prefWidth="230.0">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <ComboBox fx:id="tinSize" layoutX="225.0" layoutY="118.0" prefHeight="40.0" prefWidth="200.0" promptText="Select tin size" />
+      <ComboBox fx:id="tinSize" layoutX="349.0" layoutY="108.0" prefHeight="40.0" prefWidth="200.0" promptText="Select tin size" />
       <Button fx:id="homeButton" layoutX="35.0" layoutY="35.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="60.0" prefWidth="65.0" />
-      <Button layoutX="393.0" layoutY="600.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="100.0" text="Sign out" />
-      <TextArea fx:id="otherTextArea" layoutX="85.0" layoutY="503.0" prefHeight="91.0" prefWidth="500.0" />
-      <Text fill="#a1326f" layoutX="228.0" layoutY="75.0" style="-fx-font-size: 28;" text="Update recipe" />
+      <Button layoutX="460.0" layoutY="604.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="120.0" text="Sign out" />
+      <TextArea fx:id="otherTextArea" layoutX="80.0" layoutY="489.0" prefHeight="100.0" prefWidth="500.0" />
+      <Text fill="#a1326f" layoutX="238.0" layoutY="75.0" style="-fx-font-size: 28;" text="Update recipe" />
 
-       <Button layoutX="159.0" layoutY="600.0" mnemonicParsing="false" onAction="#updateRecipe" prefHeight="40.0" prefWidth="100.0" text="Update" />
-       <Button layoutX="275.0" layoutY="600.0" mnemonicParsing="false" onAction="#returnToRecipes" prefHeight="40.0" prefWidth="100.0" text="return" />
+       <Button layoutX="80.0" layoutY="604.0" mnemonicParsing="false" onAction="#updateRecipe" prefHeight="40.0" prefWidth="220.0" text="Update recipe" />
+       <Button layoutX="321.0" layoutY="604.0" mnemonicParsing="false" onAction="#returnToRecipes" prefHeight="40.0" prefWidth="120.0" text="Return" />
    </children>
 </AnchorPane>
