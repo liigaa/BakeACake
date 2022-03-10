@@ -13,17 +13,17 @@
    <children>
       <VBox alignment="CENTER" layoutX="89.0" layoutY="145.0" prefHeight="178.0" prefWidth="500.0">
          <children>
-            <ChoiceBox fx:id="statusField" prefWidth="230.0" stylesheets="@stylesheet.css">
+            <ChoiceBox fx:id="statusField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="230.0" stylesheets="@stylesheet.css">
                <VBox.margin>
                   <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
             </ChoiceBox>
-            <DatePicker fx:id="startDataField" prefHeight="40.0" prefWidth="230.0">
+            <DatePicker fx:id="startDataField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="230.0">
                <VBox.margin>
                   <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
                </VBox.margin>
             </DatePicker>
-            <DatePicker fx:id="endDataField" prefHeight="40.0" prefWidth="230.0">
+            <DatePicker fx:id="endDataField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="230.0">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
                </VBox.margin>
@@ -31,11 +31,11 @@
          </children>
       </VBox>
       <Button fx:id="homeButton" layoutX="35.0" layoutY="35.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="60.0" prefWidth="65.0" />
-      <Button layoutX="354.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="100.0" text="Sign out" />
+      <Button layoutX="354.0" layoutY="604.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="100.0" text="Sign out" />
       <Button layoutX="89.0" layoutY="478.0" mnemonicParsing="false" onAction="#handleOderList" prefHeight="40.0" prefWidth="150.0" text="View all orders" />
       <Button layoutX="439.0" layoutY="478.0" mnemonicParsing="false" onAction="#handleClientInfo" prefHeight="40.0" prefWidth="150.0" text="View client info" />
       <Button layoutX="264.0" layoutY="478.0" mnemonicParsing="false" onAction="#handleOrderUpdate" prefHeight="40.0" prefWidth="150.0" text="Update Order" />
-      <Button layoutX="216.0" layoutY="555.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="40.0" prefWidth="100.0" text="Return" />
+      <Button layoutX="216.0" layoutY="604.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="40.0" prefWidth="100.0" text="Return" />
       <ListView fx:id="listViewField" layoutX="89.0" layoutY="323.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="HORIZONTAL" prefHeight="133.0" prefWidth="500.0" />
       <Text fill="#a1326f" layoutX="238.0" layoutY="121.0" style="-fx-font-size: 28;" styleClass="choice-box" text="Add new order" />
    </children>

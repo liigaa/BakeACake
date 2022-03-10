@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.DialogPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -51,5 +52,9 @@ public class ViewController {
         stage.getIcons().add(new Image(Main.class.getResource("/images/favicon.png").toString()));
         alert.setHeaderText(null);
         alert.show();
+
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add(getClass().getResource("/view/stylesheet.css").toExternalForm());
+        dialogPane.getStyleClass().add("dialog");
     }
 }

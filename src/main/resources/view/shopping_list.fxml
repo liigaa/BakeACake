@@ -12,7 +12,7 @@
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="650.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.ShoppingListController">
     <children>
 
-        <GridPane fx:id="gridPane" hgap="30.0" layoutX="96.0" layoutY="176.0" prefHeight="240.0" prefWidth="450.0" vgap="5.0">
+        <GridPane fx:id="gridPane" alignment="CENTER" hgap="10.0" layoutX="75.0" layoutY="181.0" prefHeight="240.0" prefWidth="500.0" vgap="5.0">
             <children>
 
                 <Label text="Flour" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -70,10 +70,10 @@
                 <Label fx:id="sourCreamField" GridPane.columnIndex="3" GridPane.rowIndex="9" />
             </children>
             <columnConstraints>
-                <ColumnConstraints maxWidth="120.0" minWidth="120.0" prefWidth="120.0" />
-                <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
-                <ColumnConstraints />
-                <ColumnConstraints />
+                <ColumnConstraints maxWidth="135.0" minWidth="106.0" prefWidth="135.0" />
+                <ColumnConstraints maxWidth="70.0" prefWidth="70.0" />
+                <ColumnConstraints maxWidth="183.0" minWidth="95.0" prefWidth="170.0" />
+                <ColumnConstraints maxWidth="70.0" prefWidth="70.0" />
             </columnConstraints>
             <rowConstraints>
                 <RowConstraints />
@@ -91,19 +91,19 @@
             <RowConstraints />
             </rowConstraints>
         </GridPane>
-        <Label fx:id="shoppingListLabel" alignment="CENTER" layoutX="71.0" layoutY="95.0" prefHeight="50.0" prefWidth="500.0" text="Shopping list">
+        <Label fx:id="shoppingListLabel" alignment="CENTER" layoutX="219.0" layoutY="55.0" prefHeight="40.0" prefWidth="227.0" text="Shopping list">
             <font>
                 <Font size="18.0" />
             </font>
         </Label>
         <Button fx:id="homeButton" layoutX="35.0" layoutY="35.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="60.0" prefWidth="65.0" />
         <Button layoutX="470.0" layoutY="604.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="100.0" text="Sign out" />
-      <TextArea fx:id="otherTextArea" layoutX="71.0" layoutY="433.0" prefHeight="122.0" prefWidth="500.0" />
+      <TextArea fx:id="otherTextArea" layoutX="75.0" layoutY="434.0" prefHeight="140.0" prefWidth="500.0" />
 
 
           <Button contentDisplay="CENTER" layoutX="71.0" layoutY="604.0" mnemonicParsing="false" onAction="#print" prefHeight="40.0" prefWidth="100.0" text="Save" />
-      <Button layoutX="196.0" layoutY="604.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="40.0" prefWidth="100.0" text="Return" />
-          <Button contentDisplay="CENTER" layoutX="312.0" layoutY="604.0" mnemonicParsing="false" onAction="#clearShoppingList" prefHeight="40.0" prefWidth="140.0" text="Clear list" />
+      <Button layoutX="348.0" layoutY="604.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="40.0" prefWidth="100.0" text="Return" />
+          <Button contentDisplay="CENTER" layoutX="192.0" layoutY="604.0" mnemonicParsing="false" onAction="#clearShoppingList" prefHeight="40.0" prefWidth="140.0" text="Clear list" />
 
 
     </children>
