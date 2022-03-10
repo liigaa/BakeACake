@@ -54,7 +54,7 @@ public class ViewController {
         alert.show();
 
         DialogPane dialogPane = alert.getDialogPane();
-        dialogPane.getStylesheets().add(getClass().getResource("/view/stylesheet.css").toExternalForm());
+        dialogPane.getStylesheets().add(getClass().getResource("/view/dialog.css").toExternalForm());
         dialogPane.getStyleClass().add("dialog");
     }
 }
