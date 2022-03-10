@@ -12,10 +12,10 @@
         <Button layoutX="191.0" layoutY="550.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="40.0" prefWidth="120.0" text="Return" />
         <Button fx:id="homeButton" layoutX="35.0" layoutY="35.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="60.0" prefWidth="65.0" />
         <Button layoutX="339.0" layoutY="550.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="120.0" text="Sign Out" />
-          <ChoiceBox fx:id="allCakesChoiceBox" layoutX="210.0" layoutY="169.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="230.0" />
-          <Button layoutX="102.0" layoutY="306.0" mnemonicParsing="false" onAction="#viewRecipe" prefHeight="50.0" prefWidth="206.0" text="View Recipe" />
-          <Button layoutX="348.0" layoutY="306.0" mnemonicParsing="false" onAction="#updateRecipe" prefHeight="50.0" prefWidth="200.0" text="Update" />
-          <Button layoutX="105.0" layoutY="392.0" mnemonicParsing="false" onAction="#deleteRecipe" prefHeight="50.0" prefWidth="200.0" text="Delete" />
-          <Button layoutX="348.0" layoutY="392.0" mnemonicParsing="false" onAction="#viewRecipe" prefHeight="50.0" prefWidth="200.0" text="Add to Shopping list" />
+          <ChoiceBox fx:id="allCakesChoiceBox" layoutX="205.0" layoutY="184.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="240.0" />
+          <Button layoutX="102.0" layoutY="271.0" mnemonicParsing="false" onAction="#viewRecipe" prefHeight="50.0" prefWidth="206.0" text="View Recipe" />
+          <Button layoutX="348.0" layoutY="271.0" mnemonicParsing="false" onAction="#updateRecipe" prefHeight="50.0" prefWidth="200.0" text="Update" />
+          <Button layoutX="105.0" layoutY="357.0" mnemonicParsing="false" onAction="#deleteRecipe" prefHeight="50.0" prefWidth="200.0" text="Delete" />
+          <Button layoutX="348.0" layoutY="357.0" mnemonicParsing="false" onAction="#viewRecipe" prefHeight="50.0" prefWidth="200.0" text="Add to Shopping list" />
     </children>
 </AnchorPane>
