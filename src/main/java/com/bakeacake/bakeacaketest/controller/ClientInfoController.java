@@ -9,7 +9,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -68,6 +67,4 @@ public class ClientInfoController extends ViewController implements Initializabl
             ex.printStackTrace();
         }
     }
-
-
 }

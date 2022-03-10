@@ -1,5 +1,4 @@
 package com.bakeacake.bakeacaketest.controller;
-
 import com.bakeacake.bakeacaketest.model.Order;
 import com.bakeacake.bakeacaketest.repository.DataManager;
 import com.bakeacake.bakeacaketest.service.OrderService;
@@ -10,7 +9,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -172,7 +170,7 @@ public class AllOrderController extends ViewController implements Initializable 
 
     public void handleClientInfo(ActionEvent actionEvent) {
         try {
-            if(!(listViewField.getSelectionModel().isEmpty() || listViewField.getItems().isEmpty())){
+            if(!listViewField.getSelectionModel().isEmpty()){
             ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllOder(this.user_id));
             String name = listViewField.getSelectionModel().getSelectedItem().getClient();
             String title = listViewField.getSelectionModel().getSelectedItem().getCake();
@@ -193,7 +191,7 @@ public class AllOrderController extends ViewController implements Initializable 
 
     public void handleOrderUpdate(ActionEvent actionEvent) {
         try {
-            if(!(listViewField.getSelectionModel().isEmpty() || listViewField.getItems().isEmpty())){
+            if(!listViewField.getSelectionModel().isEmpty()){
             ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllOder(this.user_id));
             String name = listViewField.getSelectionModel().getSelectedItem().getClient();
             String title = listViewField.getSelectionModel().getSelectedItem().getCake();

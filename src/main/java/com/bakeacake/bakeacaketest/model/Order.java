@@ -1,5 +1,4 @@
 package com.bakeacake.bakeacaketest.model;
-
 import lombok.*;
 
 @Getter
@@ -18,17 +17,6 @@ public class Order {
     private String description;
     private String status;
 
-    public Order(String tinSize, String datePicker,
-                 String deliveryTime, String deliveryOptions, String description,
-                 String status) {
-        this.tinSize = tinSize;
-        this.datePicker = datePicker;
-        this.deliveryTime = deliveryTime;
-        this.deliveryOptions = deliveryOptions;
-        this.description = description;
-        this.status = status;
-    }
-
     public Order(Integer client_id, String tinSize, String datePicker,
                  String deliveryTime, String deliveryOptions, String description,
                  String status) {
@@ -45,20 +33,6 @@ public class Order {
                  String datePicker, String deliveryTime, String deliveryOptions,
                  String description, String status) {
         this.client = client;
-        this.cake = cake;
-        this.tinSize = tinSize;
-        this.datePicker = datePicker;
-        this.deliveryTime = deliveryTime;
-        this.deliveryOptions = deliveryOptions;
-        this.description = description;
-        this.status = status;
-    }
-
-    public Order(String client, Integer client_id, String cake, String tinSize,
-                 String datePicker, String deliveryTime, String deliveryOptions,
-                 String description, String status) {
-        this.client = client;
-        this.client_id = client_id;
         this.cake = cake;
         this.tinSize = tinSize;
         this.datePicker = datePicker;

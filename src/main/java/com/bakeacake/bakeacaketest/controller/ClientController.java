@@ -51,7 +51,6 @@ public class ClientController extends ViewController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         ImageView imageView = new ImageView(getClass().getResource("/images/favicon.png").toExternalForm());
         homeButton.setGraphic(imageView);
         homeButton.setTooltip(new Tooltip("Home"));
@@ -64,7 +63,6 @@ public class ClientController extends ViewController implements Initializable {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
     }
 
     public void returnHome(ActionEvent actionEvent) {
@@ -73,9 +71,5 @@ public class ClientController extends ViewController implements Initializable {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
     }
-
-
-
 }

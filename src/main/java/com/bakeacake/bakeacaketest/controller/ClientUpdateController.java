@@ -30,7 +30,6 @@ public class ClientUpdateController extends ViewController implements Initializa
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     public void handleUpdate(ActionEvent actionEvent) {
