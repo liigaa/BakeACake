@@ -6,7 +6,7 @@ import com.bakeacake.bakeacaketest.repository.DataManager;
 import com.bakeacake.bakeacaketest.service.ShoppingListService;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
-import javafx.print.PrinterJob;
+import javafx.print.*;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -15,6 +15,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
@@ -41,7 +42,7 @@ public class ShoppingListController extends ViewController implements Initializa
     public Label confectionersSugarField;
     public TextArea otherTextArea;
     public Button homeButton;
-    public AnchorPane anchorPane; 
+    public AnchorPane anchorPane;
     public GridPane gridPane;
     public Label shoppingListLabel;
     public Label sourCreamField;
@@ -64,22 +65,50 @@ public class ShoppingListController extends ViewController implements Initializa
     public void print(ActionEvent actionEvent) {
         Node node = new AnchorPane(shoppingListLabel, otherTextArea, gridPane, homeButton);
 
-        PrinterJob job = PrinterJob.createPrinterJob();
+        PrinterJob printerJob = PrinterJob.createPrinterJob();
+        JobSettings jobSettings = printerJob.getJobSettings();
+        PageLayout pageLayout = jobSettings.getPageLayout();
+        Printer printer = printerJob.getPrinter();
+        pageLayout = printer.createPageLayout(Paper.A4,
+                PageOrientation.PORTRAIT, Printer.MarginType.EQUAL);
+
+        jobSettings.setPageLayout(pageLayout);
         try {
             changeScene(actionEvent, "shopping_list");
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (job != null) {
-            boolean success = job.printPage(node);
+        if (printerJob != null) {
+            boolean success = printerJob.printPage(node);
             if (success) {
-                job.endJob();
+                printerJob.endJob();
 
             }
 
         }
 
     }
+
+
+//    public void print(ActionEvent actionEvent) {
+//        Node node = new AnchorPane(shoppingListLabel, otherTextArea, gridPane, homeButton);
+//
+//        PrinterJob job = PrinterJob.createPrinterJob();
+//        try {
+//            changeScene(actionEvent, "shopping_list");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        if (job != null) {
+//            boolean success = job.printPage(node);
+//            if (success) {
+//                job.endJob();
+//
+//            }
+//
+//        }
+//
+//    }
 
     public void viewShoppingList() {
 
