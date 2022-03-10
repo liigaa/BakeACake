@@ -49,6 +49,5 @@ public class OrderController extends ViewController implements Initializable {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
     }
 }
