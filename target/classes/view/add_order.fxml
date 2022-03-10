@@ -23,7 +23,6 @@
                 <ChoiceBox fx:id="deliveryField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="230.0" />
                 <ChoiceBox fx:id="statusField" layoutX="223.0" layoutY="211.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="230.0" />
                 <TextArea fx:id="descriptionField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="500.0" promptText="Description" />
-                <Label fx:id="labelNote" />
             </children>
         </VBox>
         <Button fx:id="homeButton" layoutX="35.0" layoutY="35.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="60.0" prefWidth="65.0" />

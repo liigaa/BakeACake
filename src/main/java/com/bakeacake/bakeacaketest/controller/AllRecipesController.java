@@ -57,9 +57,10 @@ public class AllRecipesController extends ViewController implements Initializabl
         ImageView imageView = new ImageView(image);
         alert.setGraphic(imageView);
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-        stage.getIcons().add(new Image(Main.class.getResource("/images/favicon.png").toString()));
-
+        //stage.getIcons().add(new Image(Main.class.getResource("/images/favicon.png").toString()));
+        stage.getIcons().add(new Image(Main.class.getResource("/images/stage_icon.png").toString()));
         alert.setHeaderText("Delete recipe?!");
+        alert.setTitle(null);
 
         Optional<ButtonType> result = alert.showAndWait();
         if (result.isPresent() && result.get() == ButtonType.OK) {

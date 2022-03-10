@@ -27,6 +27,8 @@ public class ViewController {
         stage.show();
     }
 
+
+
     public void showAlert(String title, String message, Alert.AlertType alertType) {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
@@ -37,16 +39,17 @@ public class ViewController {
             ImageView imageView = new ImageView(image);
             alert.setGraphic(imageView);
         }
+        if (alertType.equals(Alert.AlertType.CONFIRMATION)){
+            Image image = new Image(String.valueOf(Main.class.getResource("/images/question.png")));
+            ImageView imageView = new ImageView(image);
+            alert.setGraphic(imageView);
+        }
         if (alertType.equals(Alert.AlertType.INFORMATION)){
             Image image = new Image(String.valueOf(Main.class.getResource("/images/information.png")));
             ImageView imageView = new ImageView(image);
             alert.setGraphic(imageView);
         }
-       if (alertType.equals(Alert.AlertType.CONFIRMATION)){
-            Image image = new Image(String.valueOf(Main.class.getResource("/images/question.png")));
-            ImageView imageView = new ImageView(image);
-            alert.setGraphic(imageView);
-        }
+
 
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
         stage.getIcons().add(new Image(Main.class.getResource("/images/stage_icon.png").toString()));

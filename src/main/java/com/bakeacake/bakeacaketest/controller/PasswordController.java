@@ -33,7 +33,7 @@ public class PasswordController extends ViewController implements Initializable 
         try {
             this.userService.changePassword(userId, newPasswordField.getText());
             if (newPasswordField.getText().isEmpty() || newPasswordField.getText() == null) {
-                showAlert(null, "New password field is empty. Please enter new password!", Alert.AlertType.INFORMATION);
+                showAlert(null, "New password field is empty. Please enter new password!", Alert.AlertType.ERROR);
                 return;
             }
             if (!(newPasswordField.getText().equals(confirmPasswordField.getText()))) {
