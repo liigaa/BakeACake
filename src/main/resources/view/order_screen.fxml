@@ -15,7 +15,7 @@
         </VBox>
       <Button fx:id="homeButton" layoutX="35.0" layoutY="35.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="60.0" prefWidth="65.0" />
       <Text fill="#a1326f" layoutX="199.0" layoutY="246.0" style="-fx-font-size: 28;" styleClass="choice-box" text="Choose client type" />
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="165.0" layoutY="537.0" minHeight="0.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="40.0" prefWidth="150.0" text="Return" />
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="335.0" layoutY="537.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="150.0" text="Sign out" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="165.0" layoutY="537.0" minHeight="0.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="40.0" prefWidth="150.0" styleClass="main_btn" text="Return" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="335.0" layoutY="537.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="150.0" styleClass="main_btn" text="Sign out" />
     </children>
 </AnchorPane>

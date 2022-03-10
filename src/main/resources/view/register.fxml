@@ -64,9 +64,9 @@
         </GridPane>
 
           <Button layoutX="130.0" layoutY="546.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleRegistration" prefHeight="40.0" prefWidth="170.0" stylesheets="@stylesheet.css" text="Register account" />
-          <Button layoutX="312.0" layoutY="546.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleCancelRegister" prefHeight="40.0" prefWidth="100.0" stylesheets="@stylesheet.css" text="Cancel" />
+          <Button layoutX="312.0" layoutY="546.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleCancelRegister" prefHeight="40.0" prefWidth="100.0" styleClass="main_btn" stylesheets="@stylesheet.css" text="Cancel" />
 
-          <Button layoutX="423.0" layoutY="546.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleLogin" prefHeight="40.0" prefWidth="100.0" text="Sign In" />
+          <Button layoutX="423.0" layoutY="546.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleLogin" prefHeight="40.0" prefWidth="100.0" styleClass="main_btn" text="Sign In" />
       <Text fill="#a1326f" layoutX="132.0" layoutY="139.0" style="-fx-font-size: 28;" text="Create an account" />
     </children>
 </AnchorPane>

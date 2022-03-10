@@ -134,8 +134,8 @@
 
 
           <Button alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="604.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addCakeRecipe" prefHeight="40.0" prefWidth="220.0" text="Add recipe" />
-          <Button alignment="CENTER" contentDisplay="CENTER" layoutX="325.0" layoutY="604.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#returnHome" prefHeight="40.0" prefWidth="120.0" text="Return" />
-        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="460.0" layoutY="604.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="120.0" text="Sign out" />
+          <Button alignment="CENTER" contentDisplay="CENTER" layoutX="325.0" layoutY="604.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#returnHome" prefHeight="40.0" prefWidth="120.0" styleClass="main_btn" text="Return" />
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="460.0" layoutY="604.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="120.0" styleClass="main_btn" text="Sign out" />
 
     </children>
 </AnchorPane>
