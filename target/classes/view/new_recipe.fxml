@@ -14,8 +14,8 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="650.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.CakeRecipeController">
     <children>
-        <TextField fx:id="cakeTitleField" layoutX="100.0" layoutY="108.0" prefHeight="40.0" prefWidth="230.0" promptText="Cake Title" stylesheets="@stylesheet.css" />
-        <ChoiceBox fx:id="tinSize" layoutX="349.0" layoutY="108.0" prefHeight="40.0" prefWidth="200.0" stylesheets="@stylesheet.css" />
+        <TextField fx:id="cakeTitleField" layoutX="105.0" layoutY="108.0" prefHeight="43.0" prefWidth="230.0" promptText="Cake Title" stylesheets="@stylesheet.css" />
+        <ChoiceBox fx:id="tinSize" layoutX="354.0" layoutY="108.0" prefHeight="30.0" prefWidth="200.0" stylesheets="@stylesheet.css" />
 
         <GridPane hgap="8.0" layoutX="80.0" layoutY="161.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="500.0" vgap="5.0">
             <children>
