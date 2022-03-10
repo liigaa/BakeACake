@@ -31,18 +31,16 @@
     -fx-padding: 5;
 }
 
-#homeButton:pressed {
-    -fx-background-color: #ECEDEC;
-    -fx-border-color: #c5cbcf;
-}
-
 #homeButton:hover {
     -fx-background-color: #ECEDEC;
-    -fx-border-color: #c5cbcf;
+    /*-fx-border-color: #c5cbcf;*/
+    /*-fx-border-width: 2;*/
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.5, 0.0, 0.0);
 }
 
+
             /* TEXT FIELD, TEXT AREA */
+
 .text-field {
     -fx-background-color: transparent;
     -fx-border-color: #ECEDEC;
@@ -59,18 +57,21 @@
 }
 
 .text-area {
-    -fx-background-color: transparent;
     -fx-border-color: #ECEDEC;
     -fx-border-width: 2;
     -fx-border-radius: 5;
     -fx-background-radius: 5;
+    -fx-background-color: white;
     -fx-padding: 5;
+    -fx-text-fill: #3C3D43;
 }
 
 .text-area:focused {
     /*-fx-focus-color: #FBBFC3;*/
     -fx-border-width: 2;
     -fx-border-color: #ffdfeb;
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
 }
 
             /* DROPDOWN LISTS */
@@ -89,7 +90,7 @@
 }
 
 .combo-box .list-cell:hover{
-    -fx-background-color: #A1316D;
+    -fx-border-color: #ffa4c4;
 }
 
 .combo-box-popup .list-cell {
@@ -111,26 +112,33 @@
 }
 
 .choice-box .list-cell {
-    -fx-background-color: #ffffff;
+    -fx-background-color: #d3a918;
 }
 
 .choice-box .list-cell:hover{
-    -fx-background-color: #ecedec;
+    -fx-background-color: #26c097;
 }
+
+
 
 .list-view {
     -fx-border-color: #ECEDEC;
+    -fx-border-width: 2;
     -fx-border-radius: 5;
     -fx-background-radius: 5;
+    -fx-background-color: white;
     -fx-padding: 5;
+    -fx-text-fill: #3C3D43;
 }
 
 .list-cell {
-    -fx-background-color: #ffdfeb;
+    -fx-background-color: #ECEDEC;
+    -fx-border-color: #ffffff;
+    -fx-border-radius: 2;
 }
 
 .list-view .list-cell:hover{
-    -fx-background-color: #A1316D;
+    -fx-background-color: #ffdfeb;
 }
 
                 /*  CALENDAR  */
@@ -140,20 +148,25 @@
 }
 .date-picker-popup > .month-year-pane {
     -fx-background-color: #ffdfeb;
-    /*-fx-background-insets: 0 0 0 0, 0 0 1 0;*/
     -fx-padding: 0.5px;
+}
+
+.date-picker .button {
+    -fx-background-color: #ffdfeb;
 }
 
 .date-cell {
     -fx-background-color: #ffdfeb;
-    /*-fx-font-family: "Andalus";*/
-    -fx-font-size: 12.0;
-     -fx-text-fill: #3c3d43;
-            }
+    -fx-font-size: 11px;
+    -fx-pref-width:45px ;
+    -fx-pref-height:40px ;
+    -fx-text-fill: #55555b;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 1px;
+}
 
 .date-cell:hover {
-    -fx-background-color: #ECEDEC;
-    /*-fx-font-family: "Andalus";*/
+    -fx-background-color: #f1f1f1;
     -fx-font-size: 12.0;
     -fx-text-fill:#3c3d43;
 }
@@ -161,17 +174,14 @@
 .date-cell.selected {
     -fx-background-color: #a1326f;
     -fx-font-size: 12.0;
-    -fx-text-fill: #ECEDEC;
+    -fx-text-fill: #ecebeb;
 }
 
-/*.date-picker > .arrow-button > .arrow {*/
-/*    !*-fx-opacity:0;*!*/
-/*    -fx-background-color: transparent;*/
-/*}*/
+.date-picker .week-number-cell {
+    -fx-background-color: #ffa4c4;
+    -fx-text-fill: #64123e;
 
-/* .date-picker > .arrow {*/
-/*    -fx-background-color: white;*/
-/*}*/
+}
 
             /* DATE & TIME */
 #dateTime {
@@ -232,7 +242,7 @@
     -fx-font-weight: 900;
 }
 
-            /* INGREDIENTS, TEXT ELEMENTS*/
+            /* INGREDIENTS, TEXT ELEMENTS */
 
 #cakeTitleField {
     -fx-background-color: #ffffff;
@@ -253,8 +263,3 @@
     -fx-text-fill: #1dcb9d;
     -fx-font-size: 14px;
 }
-
-
-            /*.label {*/
-            /*    -fx-text-fill: #3C3D43;*/
-            /*    -fx-font-size: 16px;*/

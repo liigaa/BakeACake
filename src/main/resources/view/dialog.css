@@ -1,7 +1,7 @@
 .root{
     -fx-background-color: #ffa4c4;
     -fx-font-family: "Arial Rounded MT Bold";
-    -fx-background-image: url("../images/background.jpg");
+    -fx-background-image: url("../images/a_background.jpg");
     -fx-background-size: 100% 100%;
 }
 
@@ -15,4 +15,5 @@
 
 .button:hover {
     -fx-background-color: #ECEDEC;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.5, 0.0, 0.0);
 }
