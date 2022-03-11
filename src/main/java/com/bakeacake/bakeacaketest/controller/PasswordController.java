@@ -37,6 +37,8 @@ public class PasswordController extends ViewController implements Initializable 
             }
             if (!(newPasswordField.getText().equals(confirmPasswordField.getText()))) {
                 showAlert(null, "Password and Confirmation password doesn't mach", Alert.AlertType.ERROR);
+                newPasswordField.clear();
+                confirmPasswordField.clear();
                 return;
             }
             this.userService.changePassword(userId, newPasswordField.getText());

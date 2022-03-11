@@ -38,6 +38,8 @@ public class NewPasswordController extends ViewController implements Initializab
                 return;
             }
             if (!(passwordField.getText().equals(confirmPasswordField.getText()))) {
+                passwordField.clear();
+                confirmPasswordField.clear();
                 showAlert(null, "Password and Confirmation password doesn't mach", Alert.AlertType.ERROR);
                 return;
             }
