@@ -182,7 +182,7 @@ public class AllOrderController extends ViewController implements Initializable 
                     changeScene(actionEvent, "client_info");
                 }
             }}else {
-                showAlert(null, "Please select order", Alert.AlertType.ERROR);
+                showAlert(null, "Please select order!", Alert.AlertType.ERROR);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -203,7 +203,7 @@ public class AllOrderController extends ViewController implements Initializable 
                     changeScene(actionEvent, "order_update");
                 }
             }}else {
-                showAlert(null, "Please select order", Alert.AlertType.ERROR);
+                showAlert(null, "Please select order!", Alert.AlertType.ERROR);
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -78,7 +78,7 @@ public class ViewRecipeController extends ViewController implements Initializabl
             }
 
         } catch (Exception e) {
-            showAlert("Recipe load failed, please select cake!", e.getMessage(), Alert.AlertType.ERROR);
+            showAlert("Recipe load failed, please select a cake!", e.getMessage(), Alert.AlertType.ERROR);
             e.printStackTrace();
         }
 
@@ -128,13 +128,13 @@ public class ViewRecipeController extends ViewController implements Initializabl
         try {
 
             if (tinSize.getValue() == null) {
-                showAlert(null, "Please choose tin size", Alert.AlertType.ERROR);
+                showAlert(null, "Please choose tin size!", Alert.AlertType.ERROR);
                 return;
             }
             Integer user_id = DataManager.getInstance().getLoggedInUserId();
             this.cakeRecipeService.addToShoppingList(user_id, cake);
 
-            showAlert(null, "Ingredients added to shopping list", Alert.AlertType.INFORMATION);
+            showAlert(null, "Ingredients added to shopping list!", Alert.AlertType.INFORMATION);
         } catch (SQLException e) {
             e.printStackTrace();
             showAlert("Adding recipe failed!", e.getMessage(), Alert.AlertType.ERROR);
@@ -147,7 +147,7 @@ public class ViewRecipeController extends ViewController implements Initializabl
         try {
             changeScene(actionEvent, "all_recipes");
         } catch (Exception ex) {
-            showAlert("Problem with navigation", ex.getMessage(), Alert.AlertType.ERROR);
+            showAlert("Problem with navigation!", ex.getMessage(), Alert.AlertType.ERROR);
         }
     }
 
