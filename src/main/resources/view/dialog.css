@@ -1,4 +1,4 @@
-.root{
+.dialog{
     -fx-background-color: #ffa4c4;
     -fx-font-family: "Arial Rounded MT Bold";
     -fx-background-image: url("../images/a_background.jpg");
@@ -25,4 +25,11 @@
     -fx-border-color: #e5e5e5;
     -fx-border-width: 2;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.07), 7, 0.5, 0.0, 0.0);
+}
+
+.dialog > *.content.label{
+    -fx-background-color: #ad0b44;
+    -fx-padding: 50,50,0,0;
+    -fx-text-alignment: center;
+    /*-fx-background-insets: 100,100,100,100;*/
 }

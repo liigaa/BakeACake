@@ -107,7 +107,7 @@ public class UpdateRecipeController extends ViewController implements Initializa
                     convertField(confectionersSugarField.getText()), convertField(sourCreamField.getText()), otherTextArea.getText());
 
             if (tinSize.getValue() == null) {
-                showAlert(null, "Please choose tin size", Alert.AlertType.ERROR);
+                showAlert(null, "Please choose tin size!", Alert.AlertType.ERROR);
                 return;
             }
 
@@ -136,11 +136,11 @@ public class UpdateRecipeController extends ViewController implements Initializa
 
             }
 
-            showAlert(null, cakeTitle + " updated successfully", Alert.AlertType.INFORMATION);
+            showAlert(null, cakeTitle + " updated successfully!", Alert.AlertType.INFORMATION);
 
             clear();
         }catch (NumberFormatException e){
-            showAlert(null, "Please enter only  numbers\n" + e.getMessage(), Alert.AlertType.ERROR);
+            showAlert(null, "Please enter only numbers!\n" + e.getMessage(), Alert.AlertType.ERROR);
         }
 
     }
@@ -269,7 +269,7 @@ public class UpdateRecipeController extends ViewController implements Initializa
         try {
             changeScene(actionEvent, "all_recipes");
         } catch (Exception ex) {
-            showAlert("Problem with navigation", ex.getMessage(), Alert.AlertType.ERROR);
+            showAlert("Problem with navigation!", ex.getMessage(), Alert.AlertType.ERROR);
         }
     }
 
