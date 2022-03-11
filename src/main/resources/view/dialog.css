@@ -1,19 +1,18 @@
 .dialog{
     -fx-background-color: #ffa4c4;
-    -fx-font-family: "Arial Rounded MT Bold";
+    -fx-font-family: "Arial Rounded MT Bold", sans-serif;
     -fx-background-image: url("../images/a_background.jpg");
     -fx-background-size: 100% 100%;
     -fx-font-size: 16px;
-    /*-fx-padding: 20;*/
+    -fx-text-fill: #4c4c50;
 }
 
 .button {
     -fx-text-fill: #4c4c50;
-    /*-fx-background-color: #ffa4c4;*/
-    -fx-background-color:linear-gradient(#ffa4c4, #fd9ebf);
+    -fx-background-color:linear-gradient(#ffbdda, #ff9bc6);
+    -fx-border-color: #ff9bc6;
     -fx-border-width: 2;
     -fx-border-radius: 10;
-    -fx-border-color: #fd9ebf;
     -fx-background-radius: 10;
     -fx-font-size: 16px;
     -fx-padding: 5;
@@ -28,8 +27,7 @@
 }
 
 .dialog > *.content.label{
-    /*-fx-background-color: #ad0b44;*/
-    -fx-padding: 50,50,0,0;
+    -fx-padding: 50,0,0,0;
     -fx-text-alignment: center;
-    /*-fx-background-insets: 100,100,100,100;*/
+    -fx-text-fill: #4c4c50;
 }

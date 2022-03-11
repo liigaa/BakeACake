@@ -27,7 +27,7 @@ public class ClientInfoController extends ViewController implements Initializabl
         homeButton.setTooltip(new Tooltip("Home"));
         try {
             Client client = this.orderService.viewClientProfile(client_id);
-            clientLabel.setText(client.getName() + " profile");
+            clientLabel.setText(client.getName() + " Profile");
             phoneLabel.setText(client.getPhoneNumber());
             addressLabel.setText(client.getAddress());
         } catch (Exception e) {

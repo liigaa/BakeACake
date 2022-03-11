@@ -1,7 +1,6 @@
             /* BACKGROUND, FONT */
 
 .root{
-    -fx-background-color: #ffa4c4;
     -fx-font-family: "Arial Rounded MT Bold",  sans-serif;
     -fx-background-image: url("../images/background.jpg");
     -fx-background-size: 100% 100%;
@@ -10,11 +9,10 @@
             /* REUSABLE BUTTONS */
 .button {
     -fx-text-fill: #4c4c50;
-    /*-fx-background-color: #ffa4c4;*/
-    -fx-background-color:linear-gradient(#ffa9c9, #fd9ebf);
+    -fx-background-color:linear-gradient(#ffc2de, #ff9bc6);
+    -fx-border-color: #ff9bc6;
     -fx-border-width: 2;
     -fx-border-radius: 10;
-    -fx-border-color: #fd9ebf;
     -fx-background-radius: 10;
     -fx-font-size: 16px;
     -fx-padding: 5;
@@ -29,20 +27,20 @@
 }
 
 .main_btn {
-    -fx-background-color: linear-gradient(#ffcbdc, #ffbed5);
-    -fx-border-color: #ffbed5;
+    -fx-background-color: linear-gradient(#ffddee, #ffc1dd);
+    -fx-border-color: #ffc1dd;
     -fx-border-width: 2;
 }
 #logInButton{
-    -fx-background-color: linear-gradient(#a1316d, #91235e);
+    -fx-background-color: linear-gradient(#af437b, #91235e);
     -fx-border-color: #91235e;
     -fx-border-width: 2;
     -fx-text-fill: white;
     -fx-font-size: 18px;
 }
 #logInButton:hover{
-    -fx-background-color:linear-gradient(#ffa4c4, #fd9ebf);
-    -fx-border-color: #fd9ebf;
+    -fx-background-color:linear-gradient(#ffc2de, #ff9bc6);
+    -fx-border-color: #ff9bc6;
     -fx-text-fill: #55555b;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.07), 7, 0.5, 0.0, 0.0);
 }
@@ -90,8 +88,8 @@
     -fx-border-radius: 5;
     -fx-background-radius: 5;
     -fx-padding: 5;
-    -fx-border-width: 1;
-    -fx-border-color: #ffa4c4;
+    -fx-border-width: 2;
+    -fx-border-color: #ECEDEC;
 }
 
 .combo-box .list-cell {
@@ -99,7 +97,7 @@
 }
 
 .combo-box .list-cell:hover{
-    -fx-border-color: #ffa4c4;
+    -fx-border-color: #ECEDEC;
     -fx-border-color: none;
 }
 
@@ -107,29 +105,23 @@
     -fx-background-color: #ffffff;
 }
 
-/*.combo-box .list-cell:selected{*/
-/*    -fx-background-color: #ffa4c4;*/
-/*}*/
-
 .choice-box {
-    -fx-border-width: 1;
-    -fx-border-color: #ffa4c4;
+    -fx-border-color: #ECEDEC;
+    -fx-border-width: 2;
     -fx-border-radius: 5;
     -fx-background-radius: 5;
     -fx-padding: 5;
     -fx-text-fill: #3C3D43;
     -fx-background-color: #ffffff;
-    -fx-font-size: 14px;
 }
 
 .choice-box .context-menu{
     -fx-background-color: #ffffff;
-    -fx-font-size: 14px;
+
 }
 
 .choice-box .menu-item:focused{
     -fx-background-color: #ffdfeb;
-    -fx-font-size: 14px;
 }
 
 .choice-box > .label{
@@ -137,6 +129,10 @@
     -fx-font-size: 14px;
 }
 
+.choice-box .label{
+     /*-fx-background-color: #ffffff;*/
+     -fx-font-size: 14px;
+}
 
 .list-view {
     -fx-border-color: #ECEDEC;
@@ -158,15 +154,13 @@
 .list-view .list-cell:hover{
     -fx-background-color: #ffdfeb;
 }
-/*.list-view .list-cell:focused{*/
-/*     -fx-background-color: #ffa4c4;*/
-/*}*/
 
 .list-view .list-cell:pressed{
-    -fx-background-color: #ffa4c4;
+    -fx-background-color: #ffb8d6;
 }
-#listViewField .list-cell:focused{
-    -fx-background-color: #ffa4c4;
+
+#listViewField .list-cell:selected{
+    -fx-background-color: #ffb8d6;
 }
 
                 /*  CALENDAR  */
@@ -214,7 +208,7 @@
 
             /* DATE & TIME */
 #dateTime {
-      -fx-text-fill: #a1316d;
+      -fx-text-fill: #64123e;
       -fx-font-size: 16px;
 }
 
@@ -284,14 +278,10 @@
     -fx-background-radius: 5;
     -fx-padding: 5;
     -fx-border-width: 1;
-    -fx-border-color: #ffa4c4;
+    -fx-border-color: #ECEDEC;
 }
 
 .label{
     -fx-text-fill: #55555b;
     -fx-font-size: 16px;
-}
-
-#cakeLabel{
-
 }
