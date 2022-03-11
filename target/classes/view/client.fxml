@@ -22,7 +22,7 @@
                 <TextField fx:id="phoneField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
                 <Label contentDisplay="TOP" text="Address" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                <TextArea fx:id="addressField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="280.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextArea fx:id="addressField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="280.0" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             </children>
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="196.0" minWidth="10.0" prefWidth="120.0" />
