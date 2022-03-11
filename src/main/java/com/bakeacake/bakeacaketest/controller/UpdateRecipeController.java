@@ -93,53 +93,55 @@ public class UpdateRecipeController extends ViewController implements Initializa
 
 
     public void updateRecipe(ActionEvent actionEvent) {
-
-
-        String cakeTitle = DataManager.getInstance().getSelectedCakeTitle();
-
-
-        Cake cake = new Cake(cakeTitle, convertField(flourField.getText()), convertField(sugarField.getText()),
-                convertField(eggsField.getText()), convertField(butterField.getText()), convertField(creamCheeseField.getText()),
-                convertField(vanillaSugarField.getText()), convertField(milkField.getText()), convertField(oilField.getText()),
-                convertField(gelatinField.getText()), convertField(cornFlourField.getText()), convertField(cocoaField.getText()),
-                convertField(darkChocolateField.getText()), convertField(whiteChocolateField.getText()),
-                convertField(saltField.getText()), convertField(bakingSodaField.getText()), convertField(bakingPowderField.getText()),
-                convertField(confectionersSugarField.getText()), convertField(sourCreamField.getText()), otherTextArea.getText());
-
-        if (tinSize.getValue() == null) {
-            showAlert(null, "Please choose tin size", Alert.AlertType.ERROR);
-            return;
-        }
-
-
         try {
-            Integer user_id = DataManager.getInstance().getLoggedInUserId();
 
-            if (tinSize.getValue().equals(20.0)) {
-                cakeRecipeService.updateRecipeTinSize20(user_id, cake, cakeTitle);
-                cakeRecipeService.updateRecipeTinSize22(user_id, convertIngredients20to22(), cakeTitle);
-                cakeRecipeService.updateRecipeTinSize18(user_id, convertIngredients20to18(), cakeTitle);
+            String cakeTitle = DataManager.getInstance().getSelectedCakeTitle();
 
-            } else if (tinSize.getValue().equals(18.0)) {
-                cakeRecipeService.updateRecipeTinSize18(user_id, cake, cakeTitle);
-                cakeRecipeService.updateRecipeTinSize20(user_id, convertIngredients18to20(), cakeTitle);
-                cakeRecipeService.updateRecipeTinSize22(user_id, convertIngredients18to22(), cakeTitle);
-            } else if (tinSize.getValue().equals(22.0)) {
-                cakeRecipeService.updateRecipeTinSize22(user_id, cake, cakeTitle);
-                cakeRecipeService.updateRecipeTinSize18(user_id, convertIngredients22to18(), cakeTitle);
-                cakeRecipeService.updateRecipeTinSize20(user_id, convertIngredients22to20(), cakeTitle);
+
+            Cake cake = new Cake(cakeTitle, convertField(flourField.getText()), convertField(sugarField.getText()),
+                    convertField(eggsField.getText()), convertField(butterField.getText()), convertField(creamCheeseField.getText()),
+                    convertField(vanillaSugarField.getText()), convertField(milkField.getText()), convertField(oilField.getText()),
+                    convertField(gelatinField.getText()), convertField(cornFlourField.getText()), convertField(cocoaField.getText()),
+                    convertField(darkChocolateField.getText()), convertField(whiteChocolateField.getText()),
+                    convertField(saltField.getText()), convertField(bakingSodaField.getText()), convertField(bakingPowderField.getText()),
+                    convertField(confectionersSugarField.getText()), convertField(sourCreamField.getText()), otherTextArea.getText());
+
+            if (tinSize.getValue() == null) {
+                showAlert(null, "Please choose tin size", Alert.AlertType.ERROR);
+                return;
             }
 
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+            try {
+                Integer user_id = DataManager.getInstance().getLoggedInUserId();
 
+                if (tinSize.getValue().equals(20.0)) {
+                    cakeRecipeService.updateRecipeTinSize20(user_id, cake, cakeTitle);
+                    cakeRecipeService.updateRecipeTinSize22(user_id, convertIngredients20to22(), cakeTitle);
+                    cakeRecipeService.updateRecipeTinSize18(user_id, convertIngredients20to18(), cakeTitle);
+
+                } else if (tinSize.getValue().equals(18.0)) {
+                    cakeRecipeService.updateRecipeTinSize18(user_id, cake, cakeTitle);
+                    cakeRecipeService.updateRecipeTinSize20(user_id, convertIngredients18to20(), cakeTitle);
+                    cakeRecipeService.updateRecipeTinSize22(user_id, convertIngredients18to22(), cakeTitle);
+                } else if (tinSize.getValue().equals(22.0)) {
+                    cakeRecipeService.updateRecipeTinSize22(user_id, cake, cakeTitle);
+                    cakeRecipeService.updateRecipeTinSize18(user_id, convertIngredients22to18(), cakeTitle);
+                    cakeRecipeService.updateRecipeTinSize20(user_id, convertIngredients22to20(), cakeTitle);
+                }
+
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+
+            }
+
+            showAlert(null, cakeTitle + " updated successfully", Alert.AlertType.INFORMATION);
+
+            clear();
+        }catch (NumberFormatException e){
+            showAlert(null, "Please enter only  numbers\n" + e.getMessage(), Alert.AlertType.ERROR);
         }
-
-        showAlert(null, cakeTitle + " updated successfully", Alert.AlertType.INFORMATION);
-
-        clear();
-
 
     }
 
