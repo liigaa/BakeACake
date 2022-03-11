@@ -38,23 +38,26 @@ public class ViewController {
             Image image = new Image(String.valueOf(Main.class.getResource("/images/error.png")));
             ImageView imageView = new ImageView(image);
             alert.setGraphic(imageView);
+            alert.show();
         }
         if (alertType.equals(Alert.AlertType.CONFIRMATION)){
             Image image = new Image(String.valueOf(Main.class.getResource("/images/question.png")));
             ImageView imageView = new ImageView(image);
             alert.setGraphic(imageView);
+            alert.showAndWait();
         }
         if (alertType.equals(Alert.AlertType.INFORMATION)){
             Image image = new Image(String.valueOf(Main.class.getResource("/images/information.png")));
             ImageView imageView = new ImageView(image);
             alert.setGraphic(imageView);
+            alert.show();
         }
 
 
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
         stage.getIcons().add(new Image(Main.class.getResource("/images/stage_icon.png").toString()));
         alert.setHeaderText(null);
-        alert.show();
+
 
         DialogPane dialogPane = alert.getDialogPane();
         dialogPane.getStylesheets().add(getClass().getResource("/view/dialog.css").toExternalForm());
