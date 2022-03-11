@@ -40,12 +40,12 @@ public class NewPasswordController extends ViewController implements Initializab
             if (!(passwordField.getText().equals(confirmPasswordField.getText()))) {
                 passwordField.clear();
                 confirmPasswordField.clear();
-                showAlert(null, "Password and Confirmation password doesn't mach", Alert.AlertType.ERROR);
+                showAlert(null, "Password and Confirmation password doesn't match!", Alert.AlertType.ERROR);
                 return;
             }
             this.userService.changePassword(userId, passwordField.getText());
 
-            showAlert(null, "Password changed successfully", Alert.AlertType.INFORMATION);
+            showAlert(null, "Password changed successfully!", Alert.AlertType.INFORMATION);
             changeScene(actionEvent, "home");
 
         } catch (Exception e) {

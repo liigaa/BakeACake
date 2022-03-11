@@ -165,6 +165,9 @@
 .list-view .list-cell:pressed{
     -fx-background-color: #ffa4c4;
 }
+#listViewField .list-cell:focused{
+    -fx-background-color: #ffa4c4;
+}
 
                 /*  CALENDAR  */
 
