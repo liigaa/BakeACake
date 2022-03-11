@@ -48,7 +48,7 @@ public class RegisterController extends ViewController implements Initializable 
         try {
 
             userService.registerUser(user);
-            showAlert(null, "Welcome " + nameField.getText() + "! Please login!", Alert.AlertType.INFORMATION);
+            showAlert(null, "Welcome " + nameField.getText() + "! Please sign in!", Alert.AlertType.INFORMATION);
 
         } catch (SQLException e) {
             e.printStackTrace();
