@@ -26,7 +26,7 @@ public class ClientUpdateController extends ViewController implements Initializa
             Client client = orderService.viewClientProfile(client_id);
             phoneField.setText(client.getPhoneNumber());
             addressField.setText(client.getAddress());
-            clientLabel.setText( "Update " + client.getName() + " profile!");
+            clientLabel.setText( "Update " + client.getName() + " Profile!");
         } catch (Exception e) {
             e.printStackTrace();
         }
