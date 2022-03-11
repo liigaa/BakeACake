@@ -26,7 +26,7 @@ public class ClientUpdateController extends ViewController implements Initializa
             Client client = orderService.viewClientProfile(client_id);
             phoneField.setText(client.getPhoneNumber());
             addressField.setText(client.getAddress());
-            clientLabel.setText( "Update " + client.getName() + " profile");
+            clientLabel.setText( "Update " + client.getName() + " profile!");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -41,7 +41,7 @@ public class ClientUpdateController extends ViewController implements Initializa
             this.orderService.updateClient(client, client_id);
             phoneField.clear();
             addressField.clear();
-            showAlert(null, client.getName()+ " profile updated", Alert.AlertType.INFORMATION);
+            showAlert(null, client.getName()+ " profile updated!", Alert.AlertType.INFORMATION);
             changeScene(actionEvent, "client_info");
         } catch (Exception e) {
             e.printStackTrace();

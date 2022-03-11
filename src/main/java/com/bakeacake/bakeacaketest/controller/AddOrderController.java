@@ -75,14 +75,14 @@ public class AddOrderController extends ViewController implements Initializable 
             String status = statusField.getSelectionModel().getSelectedItem();
 
             if (datePicker.getValue() == null) {
-                showAlert(null, "Please add delivery date", Alert.AlertType.ERROR);
+                showAlert(null, "Please add a delivery date!", Alert.AlertType.ERROR);
             } else if (timeField.getText().isEmpty()) {
-                showAlert(null, "Please add delivery time", Alert.AlertType.ERROR);
+                showAlert(null, "Please add delivery time!", Alert.AlertType.ERROR);
             } else {
                 Order order = new Order(id, tinSize, myDate, deliveryTime,
                         deliverOptions, description, status);
                 orderService.addOrder(this.user_id, order, title, name);
-                showAlert(null, "Order added successfully", Alert.AlertType.INFORMATION);
+                showAlert(null, "Order added successfully!", Alert.AlertType.INFORMATION);
                 changeScene(actionEvent, "order_screen");
             }
         } catch (Exception e) {

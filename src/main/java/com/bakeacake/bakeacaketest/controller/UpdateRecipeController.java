@@ -80,7 +80,7 @@ public class UpdateRecipeController extends ViewController implements Initializa
             }
 
         } catch (Exception e) {
-            showAlert("Recipe load failed, please select cake!", e.getMessage(), Alert.AlertType.ERROR);
+            showAlert("Recipe load failed, please select a cake!", e.getMessage(), Alert.AlertType.ERROR);
             e.printStackTrace();
         }
 
@@ -107,7 +107,7 @@ public class UpdateRecipeController extends ViewController implements Initializa
                 convertField(confectionersSugarField.getText()), convertField(sourCreamField.getText()), otherTextArea.getText());
 
         if (tinSize.getValue() == null) {
-            showAlert(null, "Please choose tin size", Alert.AlertType.ERROR);
+            showAlert(null, "Please choose tin size!", Alert.AlertType.ERROR);
             return;
         }
 
@@ -136,7 +136,7 @@ public class UpdateRecipeController extends ViewController implements Initializa
 
         }
 
-        showAlert(null, cakeTitle + " updated successfully", Alert.AlertType.INFORMATION);
+        showAlert(null, cakeTitle + " updated successfully!", Alert.AlertType.INFORMATION);
 
         clear();
 
@@ -267,7 +267,7 @@ public class UpdateRecipeController extends ViewController implements Initializa
         try {
             changeScene(actionEvent, "all_recipes");
         } catch (Exception ex) {
-            showAlert("Problem with navigation", ex.getMessage(), Alert.AlertType.ERROR);
+            showAlert("Problem with navigation!", ex.getMessage(), Alert.AlertType.ERROR);
         }
     }
 

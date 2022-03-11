@@ -34,7 +34,7 @@ public class HomePageController extends ViewController implements Initializable 
             addWelcomeText();
 
         } catch (Exception e) {
-            showAlert("Main load failed", e.getMessage(), Alert.AlertType.ERROR);
+            showAlert("Main load failed!", e.getMessage(), Alert.AlertType.ERROR);
             e.printStackTrace();
         }
     }

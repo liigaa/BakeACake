@@ -100,10 +100,10 @@ public class CakeRecipeController extends ViewController implements Initializabl
 
             }
 
-            showAlert(null, "Recipe added successfully", Alert.AlertType.INFORMATION);
+            showAlert(null, "Recipe added successfully!", Alert.AlertType.INFORMATION);
             clear();
         }catch (NumberFormatException e){
-            showAlert(null, "Please enter only  numbers\n" + e.getMessage(), Alert.AlertType.ERROR);
+            showAlert(null, "Please enter only numbers!\n" + e.getMessage(), Alert.AlertType.ERROR);
         }
     }
 

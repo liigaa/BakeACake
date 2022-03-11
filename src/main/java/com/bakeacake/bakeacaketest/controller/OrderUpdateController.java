@@ -68,7 +68,7 @@ public class OrderUpdateController extends ViewController implements Initializab
             order.setDescription(descriptionField.getText());
             order.setStatus(statusField.getValue());
             this.orderService.updateOrder(order, order_id);
-            showAlert(null, "order updated successfully", Alert.AlertType.INFORMATION);
+            showAlert(null, "Order updated successfully!", Alert.AlertType.INFORMATION);
             changeScene(actionEvent, "all_order");
         } catch (Exception e) {
             e.printStackTrace();

@@ -25,7 +25,7 @@ public class LoginController extends ViewController implements Initializable {
     public void handleUserLogin(ActionEvent actionEvent) {
 
         if(usernameField.getText().isEmpty() || passwordField.getText().isEmpty()){
-            showAlert(null, "Please enter username and password", Alert.AlertType.ERROR);
+            showAlert(null, "Please enter username and password!", Alert.AlertType.ERROR);
             return;
         }
 
@@ -35,7 +35,7 @@ public class LoginController extends ViewController implements Initializable {
             changeScene(actionEvent, "home");
         } catch (Exception e) {
             e.printStackTrace();
-            showAlert("Login Failed", e.getMessage(), Alert.AlertType.ERROR);
+            showAlert("Login failed!", e.getMessage(), Alert.AlertType.ERROR);
         }
 
     }

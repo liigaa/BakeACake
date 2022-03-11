@@ -33,6 +33,7 @@ public class ViewController {
         Alert alert = new Alert(alertType);
         alert.setTitle(title);
         alert.setContentText(message);
+        alert.setHeaderText(null);
 
         if (alertType.equals(Alert.AlertType.ERROR)){
             Image image = new Image(String.valueOf(Main.class.getResource("/images/error.png")));
@@ -56,7 +57,7 @@ public class ViewController {
 
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
         stage.getIcons().add(new Image(Main.class.getResource("/images/stage_icon.png").toString()));
-        alert.setHeaderText(null);
+//        alert.setHeaderText(null);
 
 
         DialogPane dialogPane = alert.getDialogPane();

@@ -126,13 +126,13 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-      <ComboBox fx:id="tinSize" layoutX="360.0" layoutY="108.0" prefHeight="40.0" prefWidth="180.0" promptText="Select tin size" />
+      <ComboBox fx:id="tinSize" layoutX="360.0" layoutY="108.0" prefHeight="40.0" prefWidth="180.0" promptText="Select Tin Size" />
       <Button fx:id="homeButton" layoutX="30.0" layoutY="30.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="60.0" prefWidth="65.0" />
-      <Button layoutX="460.0" layoutY="604.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="120.0" styleClass="main_btn" text="Sign out" />
+      <Button layoutX="460.0" layoutY="604.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="40.0" prefWidth="120.0" styleClass="main_btn" text="Sign Out" />
       <TextArea fx:id="otherTextArea" layoutX="80.0" layoutY="489.0" prefHeight="100.0" prefWidth="500.0" />
-      <Text fill="#a1326f" layoutX="244.0" layoutY="83.0" style="-fx-font-size: 28;" text="Update recipe" />
+      <Text fill="#a1326f" layoutX="244.0" layoutY="83.0" style="-fx-font-size: 28;" text="Update Recipe" />
 
-       <Button layoutX="80.0" layoutY="604.0" mnemonicParsing="false" onAction="#updateRecipe" prefHeight="40.0" prefWidth="220.0" text="Update recipe" />
+       <Button layoutX="80.0" layoutY="604.0" mnemonicParsing="false" onAction="#updateRecipe" prefHeight="40.0" prefWidth="220.0" text="Update Recipe" />
        <Button layoutX="321.0" layoutY="604.0" mnemonicParsing="false" onAction="#returnToRecipes" prefHeight="40.0" prefWidth="120.0" styleClass="main_btn" text="Return" />
    </children>
 </AnchorPane>
