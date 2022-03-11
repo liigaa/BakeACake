@@ -36,14 +36,14 @@ public class PasswordController extends ViewController implements Initializable 
                 return;
             }
             if (!(newPasswordField.getText().equals(confirmPasswordField.getText()))) {
-                showAlert(null, "Password and Confirmation password doesn't mach", Alert.AlertType.ERROR);
+                showAlert(null, "Password and confirmation password doesn't match!", Alert.AlertType.ERROR);
                 newPasswordField.clear();
                 confirmPasswordField.clear();
                 return;
             }
             this.userService.changePassword(userId, newPasswordField.getText());
 
-            showAlert(null, "Password changed successfully", Alert.AlertType.INFORMATION);
+            showAlert(null, "Password changed successfully!", Alert.AlertType.INFORMATION);
 
             newPasswordField.clear();
             confirmPasswordField.clear();
