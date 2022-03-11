@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
@@ -12,7 +17,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="650.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.CakeRecipeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="650.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.CakeRecipeController">
     <children>
         <TextField fx:id="cakeTitleField" layoutX="111.0" layoutY="108.0" prefHeight="40.0" prefWidth="230.0" promptText="Cake Title" stylesheets="@stylesheet.css" />
         <ChoiceBox fx:id="tinSize" layoutX="360.0" layoutY="108.0" prefHeight="40.0" prefWidth="180.0" stylesheets="@stylesheet.css" />
@@ -129,7 +134,7 @@
          </padding>
         </GridPane>
         <Button fx:id="homeButton" layoutX="30.0" layoutY="30.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="60.0" prefWidth="65.0" />
-        <TextArea fx:id="otherTextArea" layoutX="80.0" layoutY="489.0" prefHeight="100.0" prefWidth="500.0" promptText="Other ingredients" />
+        <TextArea fx:id="otherTextArea" layoutX="80.0" layoutY="489.0" prefHeight="100.0" prefWidth="500.0" promptText="Other ingredients" wrapText="true" />
       <Text fill="#a1326f" layoutX="226.0" layoutY="77.0" style="-fx-font-size: 28;" text="Add New Recipe" textOrigin="CENTER" wrappingWidth="230.0" />
 
 
