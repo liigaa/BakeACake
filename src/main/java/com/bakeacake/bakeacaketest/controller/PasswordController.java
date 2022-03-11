@@ -31,7 +31,6 @@ public class PasswordController extends ViewController implements Initializable 
 
         Integer userId = DataManager.getInstance().getLoggedInUserId();
         try {
-            this.userService.changePassword(userId, newPasswordField.getText());
             if (newPasswordField.getText().isEmpty() || newPasswordField.getText() == null) {
                 showAlert(null, "New password field is empty. Please enter new password!", Alert.AlertType.ERROR);
                 return;
@@ -40,8 +39,9 @@ public class PasswordController extends ViewController implements Initializable 
                 showAlert(null, "Password and Confirmation password doesn't mach", Alert.AlertType.ERROR);
                 return;
             }
+            this.userService.changePassword(userId, newPasswordField.getText());
+
             showAlert(null, "Password changed successfully", Alert.AlertType.INFORMATION);
-            //changeScene(actionEvent, "home");
 
             newPasswordField.clear();
             confirmPasswordField.clear();
