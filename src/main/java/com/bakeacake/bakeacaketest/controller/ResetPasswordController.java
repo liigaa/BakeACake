@@ -34,7 +34,7 @@ public class ResetPasswordController extends ViewController implements Initializ
     public void collectUserResetPasswordInformation(ActionEvent actionEvent) {
         if (usernameField.getText().isEmpty() || emailField.getText().isEmpty() ||
                 secretQuestionBox.getValue().isEmpty() || answerField.getText().isEmpty()){
-            showAlert(null, "Please fill in all fields", Alert.AlertType.ERROR);
+            showAlert(null, "Please fill in all required fields!", Alert.AlertType.ERROR);
             return;
         }
         try {
@@ -44,7 +44,7 @@ public class ResetPasswordController extends ViewController implements Initializ
             changeScene(actionEvent, "reset_password");
         } catch (Exception e) {
             //e.printStackTrace();
-            showAlert("Login Failed", e.getMessage(), Alert.AlertType.ERROR);
+            showAlert("Login failed!", e.getMessage(), Alert.AlertType.ERROR);
         }
 
     }

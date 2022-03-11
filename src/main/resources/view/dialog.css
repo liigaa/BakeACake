@@ -3,24 +3,26 @@
     -fx-font-family: "Arial Rounded MT Bold";
     -fx-background-image: url("../images/a_background.jpg");
     -fx-background-size: 100% 100%;
+    -fx-font-size: 16px;
     /*-fx-padding: 20;*/
 }
 
 .button {
-    -fx-text-fill: #55555b;
-    -fx-background-color: #ffa4c4;
+    -fx-text-fill: #4c4c50;
+    /*-fx-background-color: #ffa4c4;*/
+    -fx-background-color:linear-gradient(#ffa4c4, #fd9ebf);
     -fx-border-width: 2;
     -fx-border-radius: 10;
-    -fx-border-color: #ff9dc0;
+    -fx-border-color: #fd9ebf;
     -fx-background-radius: 10;
-    -fx-font-size: 20px;
-    /*-fx-padding: 5;*/
-    -fx-end-margin: 20;
+    -fx-font-size: 16px;
+    -fx-padding: 5;
+    -fx-background-insets: 0,1,2,3,0;
 }
 
 .button:hover {
-    -fx-background-color: #ECEDEC;
-    -fx-border-color: #dcdcdc;
+    -fx-background-color: linear-gradient(#f3f3f3, #e8e8e8);
+    -fx-border-color: #e5e5e5;
     -fx-border-width: 2;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.5, 0.0, 0.0);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.07), 7, 0.5, 0.0, 0.0);
 }

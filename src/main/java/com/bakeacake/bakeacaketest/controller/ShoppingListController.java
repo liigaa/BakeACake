@@ -156,7 +156,7 @@ public class ShoppingListController extends ViewController implements Initializa
         try {
             changeScene(actionEvent, "home");
         } catch (Exception ex) {
-            showAlert("Problem with navigation", ex.getMessage(), Alert.AlertType.ERROR);
+            showAlert("Problem with navigation!", ex.getMessage(), Alert.AlertType.ERROR);
         }
     }
 

@@ -58,7 +58,7 @@ public class AllRecipesController extends ViewController implements Initializabl
         alert.setGraphic(imageView);
         Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
         stage.getIcons().add(new Image(Main.class.getResource("/images/stage_icon.png").toString()));
-        alert.setContentText("Delete recipe?!");
+        alert.setContentText("Are you sure you want to delete the recipe?");
         alert.setHeaderText(null);
         alert.setTitle(null);
         DialogPane dialogPane = alert.getDialogPane();

@@ -24,11 +24,11 @@ public class ClientController extends ViewController implements Initializable {
 
         try {
             if (nameField.getText().isEmpty() || phoneField.getText().isEmpty()) {
-                showAlert(null, "Please provide name and phone number", Alert.AlertType.ERROR);
+                showAlert(null, "Please provide name and phone number!", Alert.AlertType.ERROR);
             }else{
             Integer user_id = DataManager.getInstance().getLoggedInUserId();
             orderService.addClient(user_id, client);
-            showAlert(null, "Client " + nameField.getText() + " added successfully", Alert.AlertType.INFORMATION);
+            showAlert(null, "Client " + nameField.getText() + " added successfully!", Alert.AlertType.INFORMATION);
             clear();}
         }catch (Exception e){
             e.printStackTrace();
