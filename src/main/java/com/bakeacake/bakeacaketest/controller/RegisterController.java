@@ -35,11 +35,13 @@ public class RegisterController extends ViewController implements Initializable 
                 emailField.getText(), secretQuestionBox.getValue(), answerField.getText());
         if (nameField.getText().isEmpty() || usernameField.getText().isEmpty() || passwordField.getText().isEmpty()
                 || emailField.getText().isEmpty() || answerField.getText().isEmpty()) {
-            showAlert(null, "Please provide name, username, password, email and answer!", Alert.AlertType.ERROR);
+            showAlert(null, "Please provide name, username, password, email and answer ", Alert.AlertType.ERROR);
             return;
         }
         if (!(passwordField.getText().equals(confirmPasswordField.getText()))) {
-            showAlert(null, "Password and confirmation password doesn't match!", Alert.AlertType.ERROR);
+            passwordField.clear();
+            confirmPasswordField.clear();
+            showAlert(null, "Password and Confirmation password doesn't mach", Alert.AlertType.ERROR);
             return;
         }
 
@@ -50,7 +52,7 @@ public class RegisterController extends ViewController implements Initializable 
 
         } catch (SQLException e) {
             e.printStackTrace();
-            showAlert("Registration failed!", e.getMessage(), Alert.AlertType.ERROR);
+            showAlert("Registration failed", e.getMessage(), Alert.AlertType.ERROR);
         }
 
     }

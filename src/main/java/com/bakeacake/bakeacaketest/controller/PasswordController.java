@@ -31,17 +31,19 @@ public class PasswordController extends ViewController implements Initializable 
 
         Integer userId = DataManager.getInstance().getLoggedInUserId();
         try {
-            this.userService.changePassword(userId, newPasswordField.getText());
             if (newPasswordField.getText().isEmpty() || newPasswordField.getText() == null) {
                 showAlert(null, "New password field is empty. Please enter new password!", Alert.AlertType.ERROR);
                 return;
             }
             if (!(newPasswordField.getText().equals(confirmPasswordField.getText()))) {
-                showAlert(null, "Password and confirmation password doesn't match!", Alert.AlertType.ERROR);
+                showAlert(null, "Password and Confirmation password doesn't mach", Alert.AlertType.ERROR);
+                newPasswordField.clear();
+                confirmPasswordField.clear();
                 return;
             }
-            showAlert(null, "Password changed successfully!", Alert.AlertType.INFORMATION);
-            //changeScene(actionEvent, "home");
+            this.userService.changePassword(userId, newPasswordField.getText());
+
+            showAlert(null, "Password changed successfully", Alert.AlertType.INFORMATION);
 
             newPasswordField.clear();
             confirmPasswordField.clear();

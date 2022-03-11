@@ -113,7 +113,7 @@ public class CakeRecipeService {
         connection = DBManager.getConnection();
         ArrayList<Cake> cakes = new ArrayList<>();
 
-        String query = "SELECT * FROM cake_tin_20 WHERE user_id = ?";
+        String query = "SELECT * FROM cake_tin_20 WHERE user_id = ? ORDER BY cake_title";
         PreparedStatement preparedStatement = connection.prepareStatement(query);
         preparedStatement.setInt(1, user_id);
 
