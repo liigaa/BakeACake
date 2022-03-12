@@ -1,10 +1,8 @@
 .dialog{
-    -fx-background-color: #ffa4c4;
     -fx-font-family: "Arial Rounded MT Bold", sans-serif;
     -fx-background-image: url("../images/a_background.jpg");
     -fx-background-size: 100% 100%;
     -fx-font-size: 16px;
-    -fx-text-fill: #4c4c50;
 }
 
 .button {
@@ -14,7 +12,7 @@
     -fx-border-width: 2;
     -fx-border-radius: 10;
     -fx-background-radius: 10;
-    -fx-font-size: 16px;
+    -fx-font-size: 14px;
     -fx-padding: 5;
     -fx-background-insets: 0,1,2,3,0;
 }
@@ -29,5 +27,6 @@
 .dialog > *.content.label{
     -fx-padding: 50,0,0,0;
     -fx-text-alignment: center;
-    -fx-text-fill: #4c4c50;
+    -fx-text-fill: #a1316d;
+    -fx-font-size: 17px;
 }
