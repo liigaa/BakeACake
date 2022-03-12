@@ -6,7 +6,7 @@
     -fx-background-size: 100% 100%;
 }
 
-            /* REUSABLE BUTTONS */
+            /* BUTTONS */
 .button {
     -fx-text-fill: #4c4c50;
     -fx-background-color:linear-gradient(#ffc2de, #ff9bc6);
@@ -46,7 +46,6 @@
 }
 
             /* TEXT FIELD, TEXT AREA */
-
 .text-field {
     -fx-background-color: transparent;
     -fx-border-color: #ECEDEC;
@@ -71,6 +70,7 @@
     -fx-background-color: white;
     -fx-padding: 5;
     -fx-text-fill: #5d5d64;
+
 }
 
 .text-area:focused {
@@ -78,7 +78,11 @@
     -fx-border-width: 2;
     -fx-border-color: #ffdfeb;
     -fx-border-width: 2;
-    -fx-border-radius: 5;
+}
+.text-area:focused .content {
+    -fx-background-color: white;
+    -fx-border-color: none;
+
 }
 
             /* DROPDOWN LISTS */
@@ -106,9 +110,6 @@
     -fx-border-color: #ECEDEC;
     -fx-border-color: none;
 }
-/*.combo-box list-cell:selected {*/
-/*    -fx-border-color: #26c097;*/
-/*}*/
 
 .combo-box-popup .list-cell {
     -fx-background-color: #ffffff;
@@ -120,7 +121,6 @@
     -fx-border-radius: 5;
     -fx-background-radius: 5;
     -fx-padding: 3;
-    /*?????????*/
     -fx-text-fill: #5d5d64;
     -fx-background-color: #ffffff;
 }
@@ -230,7 +230,8 @@
       -fx-font-size: 16px;
 }
 
-            /* WINDOW HEADING LABELS */
+            /* SCREEN HEADING LABELS */
+
 #welcomeLabel {
     -fx-font-size: 28;
     -fx-text-fill: #a1326f;
@@ -251,11 +252,10 @@
 }
 
 .text {
-     /*-fx-font-size: 28;*/
      -fx-text-fill: #a1326f;
 }
 
-            /*LOG-IN SCREEN PASSWORD, ACCOUNT*/
+            /* LOGIN SCREEN PASSWORD, ACCOUNT */
 
 #forgotPassword {
     -fx-background-color: transparent;
@@ -288,6 +288,10 @@
 }
 
             /* INGREDIENTS, TEXT ELEMENTS */
+.label{
+    -fx-text-fill:#5d5d64;
+    -fx-font-size: 16px;
+}
 
 #cakeTitleField {
     -fx-background-color: #ffffff;
@@ -304,9 +308,8 @@
     -fx-border-color: #ffdfeb;
 }
 
-.label{
-    -fx-text-fill:#5d5d64;
-    -fx-font-size: 16px;
+#addOrderCakeTitle{
+    -fx-padding: 5;
 }
 
 #timeField{
