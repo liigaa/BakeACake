@@ -90,26 +90,6 @@ public class ShoppingListController extends ViewController implements Initializa
     }
 
 
-//    public void print(ActionEvent actionEvent) {
-//        Node node = new AnchorPane(shoppingListLabel, otherTextArea, gridPane, homeButton);
-//
-//        PrinterJob job = PrinterJob.createPrinterJob();
-//        try {
-//            changeScene(actionEvent, "shopping_list");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        if (job != null) {
-//            boolean success = job.printPage(node);
-//            if (success) {
-//                job.endJob();
-//
-//            }
-//
-//        }
-//
-//    }
-
     public void viewShoppingList() {
 
         try {

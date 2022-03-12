@@ -66,20 +66,6 @@ public class CakeRecipeController extends ViewController implements Initializabl
 
             if (cakeTitleField.getText().isEmpty()) {
                 showAlert(null, "Please enter cake title!", Alert.AlertType.ERROR);
-//                Alert alert = new Alert(Alert.AlertType.ERROR);
-//
-//                Image image = new Image(String.valueOf(Main.class.getResource("/images/error.png")));
-//                ImageView imageView = new ImageView(image);
-//                alert.setGraphic(imageView);
-//                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-//                stage.getIcons().add(new Image(Main.class.getResource("/images/stage_icon.png").toString()));
-//                alert.setContentText("Please enter cake title!");
-//                alert.setHeaderText(null);
-//                alert.setTitle(null);
-//                DialogPane dialogPane = alert.getDialogPane();
-//                dialogPane.getStylesheets().add(getClass().getResource("/view/dialog.css").toExternalForm());
-//                dialogPane.getStyleClass().add("dialog");
-//                alert.showAndWait();
                 return;
             }
 
