@@ -41,10 +41,9 @@
 #logInButton:hover{
     -fx-background-color:linear-gradient(#ffc2de, #ff9bc6);
     -fx-border-color: #ff9bc6;
-    -fx-text-fill: #55555b;
+    -fx-text-fill: #5d5d64;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.07), 7, 0.5, 0.0, 0.0);
 }
-
 
             /* TEXT FIELD, TEXT AREA */
 
@@ -54,12 +53,12 @@
     -fx-border-width: 2;
     -fx-border-radius: 5;
     -fx-background-radius: 5;
-    -fx-padding: 5;
-    -fx-text-fill: #55555b;
+    -fx-padding:5;
+    -fx-text-fill: #5d5d64;
 }
 
 .text-field:focused {
-    /*-fx-focus-color: #ac37a6;*/
+    -fx-focus-color: #d708cc;
     -fx-border-width: 2;
     -fx-border-color: #ffdfeb;
 }
@@ -71,7 +70,7 @@
     -fx-background-radius: 5;
     -fx-background-color: white;
     -fx-padding: 5;
-    -fx-text-fill: #55555b;
+    -fx-text-fill: #5d5d64;
 }
 
 .text-area:focused {
@@ -88,7 +87,7 @@
     -fx-text-fill: #a1316d;
     -fx-border-radius: 5;
     -fx-background-radius: 5;
-    -fx-padding: 5;
+    -fx-padding: 3;
     -fx-border-width: 2;
     -fx-border-color: #ECEDEC;
 }
@@ -107,9 +106,9 @@
     -fx-border-color: #ECEDEC;
     -fx-border-color: none;
 }
-.combo-box list-cell:selected {
-    -fx-border-color: #26c097;
-}
+/*.combo-box list-cell:selected {*/
+/*    -fx-border-color: #26c097;*/
+/*}*/
 
 .combo-box-popup .list-cell {
     -fx-background-color: #ffffff;
@@ -120,8 +119,9 @@
     -fx-border-width: 2;
     -fx-border-radius: 5;
     -fx-background-radius: 5;
-    -fx-padding: 5,3,3,3;
-    -fx-text-fill: #3C3D43;
+    -fx-padding: 3;
+    /*?????????*/
+    -fx-text-fill: #5d5d64;
     -fx-background-color: #ffffff;
 }
 
@@ -152,15 +152,16 @@
     -fx-border-radius: 5;
     -fx-background-radius: 5;
     -fx-background-color: white;
-    -fx-padding: 5;
-    -fx-text-fill: #3C3D43;
+    -fx-padding: 3;
+    /*?????????????*/
+    -fx-text-fill: #5d5d64;
 }
 
 .list-cell {
     -fx-background-color: #ECEDEC;
     -fx-border-color: #ffffff;
     -fx-border-radius: 2;
-    -fx-text-fill: #55555b;
+    -fx-text-fill: #5d5d64;
 }
 
 .list-view .list-cell:hover{
@@ -180,6 +181,11 @@
 .date-picker {
     -fx-background-color: #ffffff;
 }
+
+.date-picker > .text-field{
+    -fx-padding: 10;
+}
+
 .date-picker-popup > .month-year-pane {
     -fx-background-color: #ffdfeb;
     -fx-padding: 1px;
@@ -195,7 +201,7 @@
     -fx-font-size: 11;
     -fx-pref-width:45px ;
     -fx-pref-height:40px ;
-    -fx-text-fill: #55555b;
+    -fx-text-fill: #5d5d64;
     -fx-border-color: #ffffff;
     -fx-border-width: 1px;
 }
@@ -285,20 +291,24 @@
 
 #cakeTitleField {
     -fx-background-color: #ffffff;
-    -fx-text-fill: #a1316d;
+    -fx-text-fill: #5d5d64;
     -fx-border-radius: 5;
     -fx-background-radius: 5;
-    -fx-padding: 5;
+    -fx-padding: 10;
     -fx-border-width: 2;
     -fx-border-color: #ECEDEC;
+    -fx-font-size: 14px;
 }
-
 
 #cakeTitleField:focused{
     -fx-border-color: #ffdfeb;
 }
 
-            .label{
-    -fx-text-fill: #55555b;
+.label{
+    -fx-text-fill:#5d5d64;
     -fx-font-size: 16px;
+}
+
+#timeField{
+    -fx-padding: 10;
 }
