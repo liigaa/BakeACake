@@ -1,15 +1,12 @@
 package com.bakeacake.bakeacaketest.controller;
 
-import com.bakeacake.bakeacaketest.Main;
 import com.bakeacake.bakeacaketest.model.Cake;
 import com.bakeacake.bakeacaketest.repository.DataManager;
 import com.bakeacake.bakeacaketest.service.CakeRecipeService;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
 
 import java.net.URL;
 import java.sql.SQLException;

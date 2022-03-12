@@ -1,7 +1,6 @@
 package com.bakeacake.bakeacaketest.controller;
 
 import com.bakeacake.bakeacaketest.model.Cake;
-import com.bakeacake.bakeacaketest.model.ShoppingList;
 import com.bakeacake.bakeacaketest.repository.DataManager;
 import com.bakeacake.bakeacaketest.service.CakeRecipeService;
 import javafx.event.ActionEvent;

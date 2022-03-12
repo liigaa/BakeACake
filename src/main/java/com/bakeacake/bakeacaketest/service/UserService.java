@@ -1,15 +1,11 @@
 package com.bakeacake.bakeacaketest.service;
 
-import com.bakeacake.bakeacaketest.model.Cake;
-import com.bakeacake.bakeacaketest.model.Client;
-import com.bakeacake.bakeacaketest.model.Order;
 import com.bakeacake.bakeacaketest.model.User;
 import com.bakeacake.bakeacaketest.repository.DBManager;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 public class UserService {
     private Connection connection = DBManager.getConnection();
