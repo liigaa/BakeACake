@@ -6,6 +6,7 @@ public class DataManager {
     private String selectedCakeTitle = null;
     private Integer clientId = null;
     private Integer orderId = null;
+    private String orderStatus = "Pending";
 
     DataManager(){}
 
@@ -43,5 +44,13 @@ public class DataManager {
 
     public void setOrderId(Integer orderId) {
         this.orderId = orderId;
+    }
+
+    public String getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
     }
 }
