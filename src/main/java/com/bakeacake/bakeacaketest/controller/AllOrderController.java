@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class AllOrderController extends ViewController implements Initializable {
@@ -29,10 +30,16 @@ public class AllOrderController extends ViewController implements Initializable 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         statusField.getItems().addAll(status);
-        statusField.setValue("All");
+        statusField.setValue(DataManager.getInstance().getOrderStatus());
         ImageView imageView = new ImageView(getClass().getResource("/images/favicon.png").toExternalForm());
         homeButton.setGraphic(imageView);
         homeButton.setTooltip(new Tooltip("Home"));
+        startDataField.setValue(null);
+        endDataField.setValue(null);
+        if (statusField.getValue().equals("All")) viewAllOrders();
+        if (statusField.getValue().equals("Pending")) viewAllPendingOrders();
+        if (statusField.getValue().equals("Delivered")) viewAllDeliveredOrders();
+        if (statusField.getValue().equals("Canceled")) viewAllCanceledOrders();
     }
 
     public void handleOderList(ActionEvent actionEvent) {
@@ -170,6 +177,8 @@ public class AllOrderController extends ViewController implements Initializable 
 
     public void handleClientInfo(ActionEvent actionEvent) {
         try {
+            String setStatus = statusField.getValue();
+            DataManager.getInstance().setOrderStatus(setStatus);
             if(!listViewField.getSelectionModel().isEmpty()){
             ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllOder(this.user_id));
             String name = listViewField.getSelectionModel().getSelectedItem().getClient();
@@ -191,6 +200,8 @@ public class AllOrderController extends ViewController implements Initializable 
 
     public void handleOrderUpdate(ActionEvent actionEvent) {
         try {
+            String setStatus = statusField.getValue();
+            DataManager.getInstance().setOrderStatus(setStatus);
             if(!listViewField.getSelectionModel().isEmpty()){
             ObservableList<Order> orders = FXCollections.observableArrayList(this.orderService.viewAllOder(this.user_id));
             String name = listViewField.getSelectionModel().getSelectedItem().getClient();
