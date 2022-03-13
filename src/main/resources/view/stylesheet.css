@@ -1,9 +1,13 @@
             /* BACKGROUND, FONT */
-
 .root{
     -fx-font-family: "Arial Rounded MT Bold",  sans-serif;
     -fx-background-image: url("../images/background.jpg");
     -fx-background-size: 100% 100%;
+}
+
+* {
+     -fx-focus-color: transparent;
+     -fx-border-style: none;
 }
 
             /* BUTTONS */
@@ -74,15 +78,18 @@
 }
 
 .text-area:focused {
-    /*-fx-focus-color: #FBBFC3;*/
     -fx-border-width: 2;
     -fx-border-color: #ffdfeb;
     -fx-border-width: 2;
 }
+
 .text-area:focused .content {
     -fx-background-color: white;
     -fx-border-color: none;
+}
 
+.content {
+    -fx-border-color: white;
 }
 
             /* DROPDOWN LISTS */
@@ -95,9 +102,11 @@
     -fx-border-width: 2;
     -fx-border-color: #ECEDEC;
 }
+
 .combo-box:pressed{
     -fx-border-color: #ffdfeb;
 }
+
 .combo-box:focused{
      -fx-border-color: #ffdfeb;
 }
@@ -153,7 +162,6 @@
     -fx-background-radius: 5;
     -fx-background-color: white;
     -fx-padding: 3;
-    /*?????????????*/
     -fx-text-fill: #5d5d64;
 }
 
@@ -224,10 +232,12 @@
 
 }
 
+
             /* DATE & TIME */
 #dateTime {
       -fx-text-fill: #64123e;
       -fx-font-size: 16px;
+       -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.3), 7, 0.5, 0.0, 0.0);
 }
 
             /* SCREEN HEADING LABELS */

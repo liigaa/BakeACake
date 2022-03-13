@@ -13,7 +13,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="650.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.ViewRecipeController">
     <children>
-        <Label fx:id="cakeTitleField" layoutX="100.0" layoutY="124.0" prefHeight="40.0" prefWidth="230.0" stylesheets="@stylesheet.css" text="Cake name">
+        <Label fx:id="cakeTitleField" layoutX="100.0" layoutY="124.0" prefHeight="40.0" prefWidth="230.0" stylesheets="@stylesheet.css" text="Cake Title">
             <font>
                 <Font size="18.0" />
             </font>
