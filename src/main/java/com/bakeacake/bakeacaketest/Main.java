@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -13,16 +14,13 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/view/login.fxml"));
-//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/view/login.fxml"));
-//        Scene scene = new Scene(fxmlLoader.load(), 700, 700);
         Scene scene = new Scene(root, 650, 700);
-//       scene.getStylesheets().add(getClass().getResource("/stylesheet.css").toExternalForm());
-//        scene.getStylesheets().add("/stylesheet.css");
 
         String css = getClass().getResource("/view/stylesheet.css").toExternalForm();
-//      String css = Objects.requireNonNull(getClass().getResource("/view/stylesheet.css")).toExternalForm();
         scene.getStylesheets().clear();
         scene.getStylesheets().add(css);
+
+        Font.loadFont(getClass().getResource("/font/ShintiaScript.otf").toExternalForm(), 10);
 
         stage.setTitle("BAKE A CAKE");
         Image icon = new Image(String.valueOf(Main.class.getResource("/images/stage_icon.png")));
