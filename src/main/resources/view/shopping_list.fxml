@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
@@ -12,61 +13,115 @@
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="650.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.ShoppingListController">
     <children>
 
-        <GridPane fx:id="gridPane" alignment="CENTER" hgap="10.0" layoutX="75.0" layoutY="153.0" prefHeight="240.0" prefWidth="500.0" vgap="6.0">
+        <GridPane fx:id="gridPane" alignment="CENTER" hgap="10.0" layoutX="75.0" layoutY="124.0" prefHeight="281.0" prefWidth="500.0" vgap="6.0">
             <children>
 
-                <Label text="Flour" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Label text="Flour" GridPane.columnIndex="0" GridPane.rowIndex="1">
+               <padding>
+                  <Insets bottom="2.0" top="1.0" />
+               </padding></Label>
                 <Label fx:id="flourField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-                <Label text="Sugar" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <Label text="Sugar" GridPane.columnIndex="0" GridPane.rowIndex="2">
+               <padding>
+                  <Insets bottom="2.0" top="1.0" />
+               </padding></Label>
                 <Label fx:id="sugarField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-                <Label text="Eggs" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <Label text="Eggs" GridPane.columnIndex="0" GridPane.rowIndex="3">
+               <padding>
+                  <Insets bottom="2.0" top="1.0" />
+               </padding></Label>
                 <Label fx:id="eggsField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-                <Label text="Butter" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <Label text="Butter" GridPane.columnIndex="0" GridPane.rowIndex="4">
+               <padding>
+                  <Insets bottom="2.0" top="1.0" />
+               </padding></Label>
                 <Label fx:id="butterField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
 
-                <Label text="Cream cheese" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <Label text="Cream cheese" GridPane.columnIndex="0" GridPane.rowIndex="5">
+               <padding>
+                  <Insets bottom="2.0" top="1.0" />
+               </padding></Label>
                 <Label fx:id="creamCheeseField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
-                <Label text="Vanilla sugar" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                <Label text="Vanilla sugar" GridPane.columnIndex="0" GridPane.rowIndex="6">
+               <padding>
+                  <Insets bottom="2.0" top="1.0" />
+               </padding></Label>
                 <Label fx:id="vanillaSugarField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
 
-                <Label text="Milk" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                <Label text="Milk" GridPane.columnIndex="0" GridPane.rowIndex="7">
+               <padding>
+                  <Insets bottom="2.0" top="1.0" />
+               </padding></Label>
                 <Label fx:id="milkField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
 
-                <Label text="Oil" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                <Label text="Oil" GridPane.columnIndex="0" GridPane.rowIndex="8">
+               <padding>
+                  <Insets bottom="2.0" top="1.0" />
+               </padding></Label>
                 <Label fx:id="oilField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
 
-                <Label text="Gelatin" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                <Label text="Gelatin" GridPane.columnIndex="0" GridPane.rowIndex="9">
+               <padding>
+                  <Insets bottom="2.0" top="1.0" />
+               </padding></Label>
                 <Label fx:id="gelatinField" GridPane.columnIndex="1" GridPane.rowIndex="9" />
 
-                <Label text="Corn flour" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <Label text="Corn flour" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <padding>
+                  <Insets bottom="2.0" top="1.0" />
+               </padding></Label>
                 <Label fx:id="cornFlourField" GridPane.columnIndex="3" GridPane.rowIndex="1" />
 
-                <Label text="Cocoa" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <Label text="Cocoa" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <padding>
+                  <Insets bottom="2.0" top="1.0" />
+               </padding></Label>
                 <Label fx:id="cocoaField" GridPane.columnIndex="3" GridPane.rowIndex="2" />
 
-                <Label text="Dark chocolate" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <Label text="Dark chocolate" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <padding>
+                  <Insets bottom="2.0" top="1.0" />
+               </padding></Label>
                 <Label fx:id="darkChocolateField" GridPane.columnIndex="3" GridPane.rowIndex="3" />
 
-                      <Label text="White chocolate" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                      <Label text="White chocolate" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <padding>
+                  <Insets bottom="2.0" top="1.0" />
+               </padding></Label>
                 <Label fx:id="whiteChocolateField" GridPane.columnIndex="3" GridPane.rowIndex="4" />
 
-                <Label text="Salt" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                <Label text="Salt" GridPane.columnIndex="2" GridPane.rowIndex="5">
+               <padding>
+                  <Insets bottom="2.0" top="1.0" />
+               </padding></Label>
                 <Label fx:id="saltField" GridPane.columnIndex="3" GridPane.rowIndex="5" />
 
-                <Label text="Baking soda" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                <Label text="Baking soda" GridPane.columnIndex="2" GridPane.rowIndex="6">
+               <padding>
+                  <Insets bottom="2.0" top="1.0" />
+               </padding></Label>
                 <Label fx:id="bakingSodaField" GridPane.columnIndex="3" GridPane.rowIndex="6" />
 
-                <Label text="Baking powder" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                <Label text="Baking powder" GridPane.columnIndex="2" GridPane.rowIndex="7">
+               <padding>
+                  <Insets bottom="2.0" top="1.0" />
+               </padding></Label>
                 <Label fx:id="bakingPowderField" GridPane.columnIndex="3" GridPane.rowIndex="7" />
 
-                <Label text="Confectioners sugar" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                <Label text="Confectioners sugar" GridPane.columnIndex="2" GridPane.rowIndex="8">
+               <padding>
+                  <Insets bottom="2.0" top="1.0" />
+               </padding></Label>
                 <Label fx:id="confectionersSugarField" GridPane.columnIndex="3" GridPane.rowIndex="8" />
 
-                <Label text="Sour cream" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                <Label text="Sour cream" GridPane.columnIndex="2" GridPane.rowIndex="9">
+               <padding>
+                  <Insets bottom="2.0" top="1.0" />
+               </padding></Label>
                 <Label fx:id="sourCreamField" GridPane.columnIndex="3" GridPane.rowIndex="9" />
             </children>
             <columnConstraints>
@@ -76,8 +131,8 @@
                 <ColumnConstraints maxWidth="70.0" prefWidth="70.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints />
-                <RowConstraints />
+                <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                <RowConstraints maxHeight="20.0" minHeight="20.0" prefHeight="20.0" />
                 <RowConstraints />
                 <RowConstraints />
                 <RowConstraints />
@@ -90,8 +145,11 @@
                 <RowConstraints />
             <RowConstraints />
             </rowConstraints>
+         <padding>
+            <Insets top="1.0" />
+         </padding>
         </GridPane>
-        <Label fx:id="shoppingListLabel" alignment="CENTER" layoutX="172.0" layoutY="65.0" prefHeight="40.0" prefWidth="306.0" text="Your Shopping List">
+        <Label fx:id="shoppingListLabel" alignment="CENTER" layoutX="172.0" layoutY="48.0" prefHeight="40.0" prefWidth="306.0" text="Your Shopping List">
             <font>
                 <Font size="18.0" />
             </font>

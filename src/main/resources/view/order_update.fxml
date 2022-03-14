@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="650.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.OrderUpdateController">
     <children>
-        <VBox alignment="CENTER" layoutX="136.0" layoutY="64.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="509.0" prefWidth="400.0" spacing="12.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+        <VBox alignment="CENTER" layoutX="136.0" layoutY="48.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="529.0" prefWidth="400.0" spacing="12.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
             <children>
                 <Label fx:id="clientLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="33.0" prefWidth="315.0" text="Client Name" textAlignment="CENTER" />
                 <Label fx:id="cakeLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="161.0" text="Cake Title" />
@@ -21,7 +21,7 @@
                 <TextField fx:id="timeField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" promptText="Pick-up or delivery time (00:00)" />
                 <ChoiceBox fx:id="deliveryField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" />
                 <ChoiceBox fx:id="statusField" layoutX="223.0" layoutY="211.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" />
-                <TextArea fx:id="descriptionField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="168.0" prefWidth="500.0" promptText="Description" wrapText="true" />
+                <TextArea fx:id="descriptionField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="175.0" prefWidth="500.0" promptText="Description" wrapText="true" />
             </children>
         </VBox>
         <Button fx:id="homeButton" layoutX="30.0" layoutY="30.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="60.0" prefWidth="65.0" />

@@ -11,7 +11,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="650.0" styleClass="root" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bakeacake.bakeacaketest.controller.AllOrderController">
    <children>
-      <VBox alignment="CENTER" layoutX="89.0" layoutY="129.0" prefHeight="178.0" prefWidth="500.0">
+      <VBox alignment="CENTER" layoutX="89.0" layoutY="115.0" prefHeight="178.0" prefWidth="500.0">
          <children>
             <ChoiceBox fx:id="statusField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="230.0" stylesheets="@stylesheet.css">
                <VBox.margin>
@@ -37,6 +37,6 @@
       <Button layoutX="265.0" layoutY="521.0" mnemonicParsing="false" onAction="#handleOrderUpdate" prefHeight="40.0" prefWidth="155.0" text="Update Order" />
       <Button layoutX="212.0" layoutY="581.0" mnemonicParsing="false" onAction="#handleReturn" prefHeight="40.0" prefWidth="120.0" styleClass="main_btn" text="Return" />
       <ListView fx:id="listViewField" layoutX="89.0" layoutY="302.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="HORIZONTAL" prefHeight="197.0" prefWidth="500.0" />
-      <Text id="viewOrdersHeading" boundsType="VISUAL" fill="#a1326f" layoutX="222.0" layoutY="104.0" styleClass="choice-box" text="View All Orders" />
+      <Text id="viewOrdersHeading" boundsType="VISUAL" fill="#a1326f" layoutX="211.0" layoutY="90.0" styleClass="choice-box" text="View All Orders" />
    </children>
 </AnchorPane>
