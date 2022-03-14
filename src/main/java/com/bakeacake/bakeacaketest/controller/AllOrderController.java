@@ -10,7 +10,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class AllOrderController extends ViewController implements Initializable {
@@ -31,15 +30,16 @@ public class AllOrderController extends ViewController implements Initializable 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         statusField.getItems().addAll(status);
         statusField.setValue(DataManager.getInstance().getOrderStatus());
-        ImageView imageView = new ImageView(getClass().getResource("/images/favicon.png").toExternalForm());
-        homeButton.setGraphic(imageView);
-        homeButton.setTooltip(new Tooltip("Home"));
         startDataField.setValue(null);
         endDataField.setValue(null);
         if (statusField.getValue().equals("All")) viewAllOrders();
         if (statusField.getValue().equals("Pending")) viewAllPendingOrders();
         if (statusField.getValue().equals("Delivered")) viewAllDeliveredOrders();
         if (statusField.getValue().equals("Canceled")) viewAllCanceledOrders();
+
+        ImageView imageView = new ImageView(getClass().getResource("/images/favicon.png").toExternalForm());
+        homeButton.setGraphic(imageView);
+        homeButton.setTooltip(new Tooltip("Home"));
     }
 
     public void handleOderList(ActionEvent actionEvent) {
@@ -224,6 +224,7 @@ public class AllOrderController extends ViewController implements Initializable 
     public void handleReturn(ActionEvent actionEvent) {
         try {
             changeScene(actionEvent, "home");
+            DataManager.getInstance().setOrderStatus("Pending");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -232,6 +233,7 @@ public class AllOrderController extends ViewController implements Initializable 
     public void handleLogout(ActionEvent actionEvent) {
         try {
             DataManager.getInstance().setLoggedInUserId(null);
+            DataManager.getInstance().setOrderStatus("Pending");
             changeScene(actionEvent, "login");
         } catch (Exception ex) {
             ex.printStackTrace();
