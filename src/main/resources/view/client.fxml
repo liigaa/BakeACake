@@ -44,6 +44,6 @@
 
           <Button layoutX="125.0" layoutY="474.0" onAction="#handleAddNewClient" prefHeight="40.0" prefWidth="171.0" text="Add Client" />
           <Button layoutX="309.0" layoutY="474.0" onAction="#handleReturn" prefHeight="40.0" prefWidth="110.0" styleClass="main_btn" text="Return" />
-      <Text fill="#a1326f" layoutX="128.0" layoutY="202.0" style="-fx-font-size: 28;" styleClass="choice-box" text="Register New Client" />
+      <Text id="registerClientHeading" fill="#a1326f" layoutX="125.0" layoutY="202.0" styleClass="choice-box" text="Register New Client" />
     </children>
 </AnchorPane>

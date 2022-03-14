@@ -14,7 +14,7 @@
                 <Font size="14.0" />
             </font>
         </Button>
-      <ImageView fitHeight="221.0" fitWidth="248.0" layoutX="389.0" layoutY="14.0">
+      <ImageView fitHeight="221.0" fitWidth="248.0" layoutX="388.0" layoutY="14.0">
          <image>
             <Image url="@../images/KitchenAid.png" />
          </image>
@@ -24,7 +24,7 @@
                 <Font size="14.0" />
             </font>
         </Button>
-        <Label fx:id="welcomeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="103.0" layoutY="267.0" prefHeight="50.0" prefWidth="447.0" stylesheets="@stylesheet.css" text="Welcome text" textAlignment="CENTER">
+        <Label fx:id="welcomeLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="103.0" layoutY="272.0" prefHeight="50.0" prefWidth="447.0" stylesheets="@stylesheet.css" text="Welcome text" textAlignment="CENTER">
             <font>
                 <Font name="System Bold" size="18.0" />
             </font>
@@ -34,37 +34,37 @@
                 <Font size="14.0" />
             </font>
         </Label>
-        <Button layoutX="110.0" layoutY="341.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addNewRecipe" prefHeight="50.0" prefWidth="205.0" stylesheets="@stylesheet.css" text="Add new recipe" textAlignment="CENTER">
+        <Button layoutX="110.0" layoutY="346.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addNewRecipe" prefHeight="50.0" prefWidth="205.0" stylesheets="@stylesheet.css" text="Add New Recipe" textAlignment="CENTER">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-        <Button layoutX="338.0" layoutY="415.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addNewOrder" prefHeight="50.0" prefWidth="205.0" text="Add New Order">
+        <Button layoutX="338.0" layoutY="420.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addNewOrder" prefHeight="50.0" prefWidth="205.0" text="Add New Order">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-        <Button layoutX="110.0" layoutY="490.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToShoppingList" prefHeight="50.0" prefWidth="433.0" text="Shopping List">
+        <Button layoutX="110.0" layoutY="495.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goToShoppingList" prefHeight="50.0" prefWidth="433.0" text="Shopping List">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-        <Button layoutX="338.0" layoutY="341.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewOrders" prefHeight="50.0" prefWidth="205.0" text="Orders">
+        <Button layoutX="338.0" layoutY="346.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewOrders" prefHeight="50.0" prefWidth="205.0" text="Orders">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-        <Button layoutX="110.0" layoutY="415.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewRecipes" prefHeight="50.0" prefWidth="205.0" text="Recipes">
+        <Button layoutX="110.0" layoutY="420.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewRecipes" prefHeight="50.0" prefWidth="205.0" text="Recipes">
             <font>
                 <Font size="18.0" />
             </font>
         </Button>
-      <ImageView fitHeight="244.0" fitWidth="224.0" layoutX="-4.0" layoutY="9.0" rotate="-15.9">
+      <ImageView fitHeight="244.0" fitWidth="224.0" layoutX="-2.0" layoutY="9.0" rotate="-15.9">
          <image>
             <Image url="@../images/Plain_Large.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="197.0" fitWidth="212.0" layoutX="195.0" layoutY="47.0" rotate="-14.6">
+      <ImageView fitHeight="197.0" fitWidth="219.0" layoutX="194.0" layoutY="40.0" rotate="-14.6">
          <image>
             <Image url="@../images/ChefHat2.png" />
          </image>
