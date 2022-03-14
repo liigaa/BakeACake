@@ -73,7 +73,8 @@ public class HomePageController extends ViewController implements Initializable 
     public void handleLogout(ActionEvent actionEvent) {
         try {
             DataManager.getInstance().setLoggedInUserId(null);
-            changeScene(actionEvent, "login");
+//            changeScene(actionEvent, "login");
+            changeScene(actionEvent, "thank_you");
         } catch (Exception ex) {
             ex.printStackTrace();
         }
