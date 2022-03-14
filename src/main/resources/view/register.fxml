@@ -67,6 +67,6 @@
           <Button layoutX="312.0" layoutY="546.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleCancelRegister" prefHeight="40.0" prefWidth="100.0" styleClass="main_btn" stylesheets="@stylesheet.css" text="Cancel" />
 
           <Button layoutX="423.0" layoutY="546.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleLogin" prefHeight="40.0" prefWidth="100.0" styleClass="main_btn" text="Sign In" />
-      <Text id="createAccountHeading" fill="#a1326f" layoutX="123.0" layoutY="139.0" text="Create an Account" />
+      <Text id="createAccountHeading" fill="#a1326f" layoutX="122.0" layoutY="139.0" text="Create an Account" />
     </children>
 </AnchorPane>
