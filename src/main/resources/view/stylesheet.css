@@ -351,7 +351,12 @@
     -fx-font-family: "Shintia Script";
     -fx-font-weight: 400;
 }
-
+#loginWelcomeSub{
+    -fx-font-size: 28;
+    -fx-text-fill: #a1326f;
+    -fx-font-family: "Shintia Script";
+    -fx-font-weight: 400;
+}
 .text {
      -fx-text-fill: #a1326f;
 }
