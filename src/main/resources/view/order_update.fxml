@@ -15,7 +15,7 @@
         <VBox alignment="CENTER" layoutX="136.0" layoutY="64.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="509.0" prefWidth="400.0" spacing="12.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
             <children>
                 <Label fx:id="clientLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="33.0" prefWidth="315.0" text="Client Name" textAlignment="CENTER" />
-                <Label fx:id="cakeLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="161.0" text="Label" />
+                <Label fx:id="cakeLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="161.0" text="Cake Title" />
                 <ComboBox fx:id="tinSizeField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" />
                 <DatePicker fx:id="datePicker" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" />
                 <TextField fx:id="timeField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" promptText="Pick-up or delivery time (00:00)" />
