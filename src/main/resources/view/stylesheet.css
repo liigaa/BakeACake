@@ -242,7 +242,7 @@
             /* SCREEN HEADING LABELS */
 @font-face {
     -fx-font-family: "Shintia Script";
-    src: url("/font/ShintiaScript.dfont");
+    src: url("/font/ShintiaScript.otf");
     font-style: normal;
     font-weight: 400;
 }
