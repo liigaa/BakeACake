@@ -208,9 +208,10 @@ public class AllOrderController extends ViewController implements Initializable 
             String name = listViewField.getSelectionModel().getSelectedItem().getClient();
             String title = listViewField.getSelectionModel().getSelectedItem().getCake();
             String status = listViewField.getSelectionModel().getSelectedItem().getStatus();
+            String date = listViewField.getSelectionModel().getSelectedItem().getDatePicker();
             for (Order order : orders) {
                 if (order.getClient().equals(name) && order.getCake().equals(title)
-                        && order.getStatus().equals(status)) {
+                        && order.getStatus().equals(status) && order.getDatePicker().equals(date)) {
                     DataManager.getInstance().setOrderId(order.getId());
                     changeScene(actionEvent, "order_update");
                 }
